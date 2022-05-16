@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+    
+ {% block body %}
+        <div id="login">
+            <form action="{% url 'select' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input autofocus class="form-control" name="student_id" placeholder="Enter ID">
+                </div>
+                <input class="btn btn-primary" type="submit" value="Login">
+            </form>
+        </div>
+        <div >
+                <h2 id="errorMessage">  
+                    {% if messages %}
+                        {% for message in messages %}
+                            {{ message }}
+                        {% endfor %}
+                    {% endif %}
+                </h2>
+        </div>
+ {% endblock %}
