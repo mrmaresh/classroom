@@ -38,7 +38,9 @@ def restroom_usage(records):
             left_minutes = minutes
             date = records[n].timestamp.date
             total = returned_minutes - left_minutes
-    return 1
+            entry = {'date':date, 'left':left, 'returned':returned, 'total':total}
+            usage.append(entry)
+    return usage
 
 def select(request):
     if request.method == "POST":
