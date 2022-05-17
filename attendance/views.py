@@ -70,7 +70,8 @@ def select(request):
             return render(request, 'select.html',{
                 "student": student,
                 "returning": returning,
-                "usage": usage
+                "usage": usage,
+                "time": datetime.now().time
             })
 
 
