@@ -25,7 +25,8 @@ def select(request):
             student = Student.objects.get(student_id=student_id)
             return render(request, 'select.html',{
                 "student": student,
-                "records": Record.objects.filter(student=student, reason = "use_restroom").order_by('-timestamp')
+                "records_go": Record.objects.filter(student=student, reason = "use_restroom").order_by('-timestamp'),
+                "records_return": Record.objects.filter(student=student, reason = "use_restroom").order_by('-timestamp')
             })
 
 
