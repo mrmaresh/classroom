@@ -40,11 +40,11 @@ def select(request):
             for n in range(len(records)):
                 if n % 2 == 0:
                     returned = records[n].timestamp.time
-                    returned_minutes = returned.hour*60 
+                    returned_minutes = returned.hour*60 + returned.minute
                 else:
                     left = records[n].timestamp.time
                     date = records[n].timestamp.date
-                    minutes =
+                    left_minutes = left
 
 
 
