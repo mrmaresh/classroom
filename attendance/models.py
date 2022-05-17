@@ -21,4 +21,4 @@ class Restroom (models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name = "student")
     timestamp_left = models.DateTimeField()
     timestamp_return = models.DateTimeField()
-    time_restroom = models.
+    time_restroom = models.IntegerField()
