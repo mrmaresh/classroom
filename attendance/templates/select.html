@@ -27,13 +27,24 @@
     </div>
 </form>
 
-{% for use in usage %}
 <div  class=" row d-flex justify-content-center align-content-center "  >
-    Date: {{use.date}}
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Time Out</th>
+            <th>Time Returned</th>
+            <th>Total Minutes</th>
+        </tr>
+    {% for use in usage %}
+        <tr>
+            <td>{{use.date}}</td>
+            <td>{{use.left}}</td>
+            <td>{{use.returned}}</td>
+            <td>{{use.total}}</td>
+        </tr>
+    {% endfor %}
+    </table>
 </div>
-{% endfor %}
-
-
 
 
 {% endblock %}
