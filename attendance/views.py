@@ -25,6 +25,7 @@ def is_returning(records):
         return False
 
 def restroom_usage(records):
+    pass
     usage = []
     for n in range(len(records)):
         time = records[n].timestamp.time
