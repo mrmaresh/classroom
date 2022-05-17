@@ -24,9 +24,10 @@ def select(request):
             return HttpResponseRedirect(reverse("login"))
         else:
             student = Student.objects.get(student_id=student_id)
+            records = Record.objects.filter(student=student).order_by('-timestamp')
+
             return render(request, 'select.html',{
                 "student": student,
-                "records": Record.objects.filter(student=student).order_by('-timestamp'),
                 "return": False
             })
 
