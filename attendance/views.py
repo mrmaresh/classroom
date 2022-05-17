@@ -29,15 +29,14 @@ def restroom_usage(records):
     for n in range(len(records)):
         time = records[n].timestamp.time
         minutes = time.hour*60 + time.minute
-            if n % 2 == 0:
-                returned = time
-                returned_minutes = minutes
-            else:
-                left = time
-                left_minutes = minutes
-                date = records[n].timestamp.date
-                total = returned_minutes - left_minutes
-
+        if n % 2 == 0:
+            returned = time
+            returned_minutes = minutes
+        else:
+            left = time
+            left_minutes = minutes
+            date = records[n].timestamp.date
+            total = returned_minutes - left_minutes
     return 1
 
 def select(request):
@@ -52,15 +51,10 @@ def select(request):
             returning = is_returning(records)
             usage = restroom_usage(records)
 
-
-
-
-
-
-
             return render(request, 'select.html',{
                 "student": student,
-                "returning": returning
+                "returning": returning,
+                "time": datetime.now()
             })
 
 
