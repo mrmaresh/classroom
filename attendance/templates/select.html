@@ -9,7 +9,9 @@
     <input hidden class="form-control" name="reason" value="use_restroom">
     <input hidden class="form-control" name="student_id" value={{student.student_id}}>
     <div  class=" row d-flex justify-content-center align-content-center "  >
-        <input class="bttn choice" type="submit" value="Use Restroom">
+        {% if return == False %}
+            <input class="bttn choice" type="submit" value="Use Restroom">
+        {% endif %}
     </div>
 </form>
 
@@ -18,7 +20,9 @@
     <input hidden class="form-control" name="reason" value="return_restroom">
     <input hidden class="form-control" name="student_id" value={{student.student_id}}>
     <div  class=" row d-flex justify-content-center align-content-center "  >
-        <input class="bttn choice" type="submit" value="Return from Restroom">
+        {% if return == True %}
+            <input class="bttn choice" type="submit" value="Return from Restroom">
+        {% endif %}
     </div>
 </form>
 
