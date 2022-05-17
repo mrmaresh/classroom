@@ -24,6 +24,21 @@ def is_returning(records):
     else:
         return False
 
+def restroom_usage(records):
+    usage = []
+    for n in range(len(records)):
+        time = records[n].timestamp.time
+        minutes = time.hour*60 + time.minute
+            if n % 2 == 0:
+                returned = time
+                returned_minutes = minutes
+            else:
+                left = time
+                left_minutes = minutes
+                date = records[n].timestamp.date
+                total = returned_minutes - left_minutes
+
+    return 1
 
 def select(request):
     if request.method == "POST":
@@ -35,19 +50,10 @@ def select(request):
             student = Student.objects.get(student_id=student_id)
             records = Record.objects.filter(student=student).order_by('-timestamp')
             returning = is_returning(records)
+            usage = restroom_usage(records)
 
-            usage = []
-            for n in range(len(records)):
-                time = records[n].timestamp.time
-                minutes = time.hour*60 + time.minute
-                if n % 2 == 0:
-                    returned = time
-                    returned_minutes = minutes
-                else:
-                    left = time
-                    left_minutes = minutes
-                    date = records[n].timestamp.date
-                    
+
+
 
 
 
