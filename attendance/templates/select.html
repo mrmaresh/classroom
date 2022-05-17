@@ -28,13 +28,15 @@
 </form>
 
 <div  class=" row d-flex justify-content-center align-content-center "  >
-    <table>
-        <tr>
-            <th>Date</th>
-            <th>Time Out</th>
-            <th>Time Returned</th>
-            <th>Total Minutes</th>
-        </tr>
+    <table class = "table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Date</th>
+                <th>Time Out</th>
+                <th>Time Returned</th>
+                <th>Total Minutes</th>
+            </tr>
+        </thead>
     {% for use in usage %}
         <tr>
             <td>{{use.date}}</td>
@@ -45,6 +47,12 @@
     {% endfor %}
     </table>
 </div>
-
+<table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
 
 {% endblock %}
