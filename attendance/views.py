@@ -15,6 +15,15 @@ from .models import Student, Record
 def login(request):
     return render(request, "login.html")
 
+def is_returning(records):
+    if len(records) > 0:
+        if records.reason [0]== "use_restroom" and records[0].timestamp.hour + 1 >= datetime.now().hour and records[0].timestamp.day == datetime.now().day:
+            return True
+        else:
+            return False
+    else:
+        return False
+
 
 def select(request):
     if request.method == "POST":
@@ -25,19 +34,13 @@ def select(request):
         else:
             student = Student.objects.get(student_id=student_id)
             records = Record.objects.filter(student=student).order_by('-timestamp')
-
-            if len(records) > 0:
-                if records.first().reason == "use_restroom" and records[0].timestamp.hour + 1 >= datetime.now().hour and records[0].timestamp.day == datetime.now().day:
-                    returning = True
-                else:
-                    returning = False
-            else:
-                returning = False
+            returning = is_returning(records)
 
             return render(request, 'select.html',{
                 "student": student,
                 "returning": returning
             })
+
 
 
 def record(request):
