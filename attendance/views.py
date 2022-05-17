@@ -27,18 +27,18 @@ def select(request):
             records = Record.objects.filter(student=student).order_by('-timestamp')
 
             if len(records) > 0:
-                if records.first().reason == "use_restroom":
+                if records.first().reason == "use_restroom" and records.first().timestamp.date == datetime.now().date:
                     returning = True
                 else:
                     returning = False
             else:
                 returning = False
 
-                
+
             return render(request, 'select.html',{
                 "student": student,
                 "returning": returning,
-                "time": datetime.now()
+                "time": datetime.now().date
             })
 
 
