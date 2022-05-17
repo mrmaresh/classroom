@@ -27,7 +27,7 @@ def select(request):
             records = Record.objects.filter(student=student).order_by('-timestamp')
 
             if len(records) > 0:
-                if records.first().reason == "use_restroom" and records[0].timestamp.hour + 1 >= datetime.now().hour:
+                if records.first().reason == "use_restroom" and records[0].timestamp.hour + 1 >= datetime.now().hour and records[0].timestamp.day == datetime.now().day:
                     returning = True
                 else:
                     returning = False
