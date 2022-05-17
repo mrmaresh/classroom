@@ -8,7 +8,7 @@
     {% csrf_token %}
     <input hidden class="form-control" name="reason" value="use_restroom">
     <input hidden class="form-control" name="student_id" value={{student.student_id}}>
-    <input class="bttn choice row d-flex justify-content-center align-content-center" type="submit" value="Use Restroom">
+    <input class="bttn choice" type="submit" value="Use Restroom">
 </form>
 
 <form action="{% url 'record'%}" method="post">
