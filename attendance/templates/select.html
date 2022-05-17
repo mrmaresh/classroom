@@ -3,7 +3,7 @@
 {% block body %}
 
 
-<h1 style="padding:30px">Hello, {{student.first}} {{student.last}} Time: {{time}}</h1>
+<h1 style="padding:30px">Hello, {{student.first}} {{student.last}}</h1>
 <form action="{% url 'record' %}" method="post">
     {% csrf_token %}
     <input hidden class="form-control" name="reason" value="use_restroom">
@@ -28,7 +28,7 @@
 </form>
 
 
-<div  class=" row d-flex justify-content-center align-content-center " style ="margin-left:15%; margin-right:15%;" >
+<div  class=" row d-flex justify-content-center align-content-center " style ="margin-left:25%; margin-right:25%;" >
     <h3 style="margin-top:40px; margin-bottom:20px;"> Past Restroom Usage </h3>
     <table class = "table table-sm">
         <thead class="thead-light">
