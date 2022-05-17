@@ -38,7 +38,8 @@ def select(request):
 
             usage = []
             for n in range(len(records)):
-                if n 
+                if n % 2 == 0:
+                    
 
 
 
