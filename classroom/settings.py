@@ -26,7 +26,7 @@ SECRET_KEY = '3aax+coxa9%u-kipu8zw@r4-%o$$brau!cppb33dd0d#s6h68o'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-CSRF_TRUSTED_ORIGINS = ['https://jasonmaresh-code50-85368513-q7pgrwr7529q64-8000.githubpreview.dev']
+CSRF_TRUSTED_ORIGINS = ['https://jasonmaresh-code50-85368513-q7pgrwr7529q64-8000.githubpreview.dev', 'https://jasonmaresh-code50-85368513-q7pgrwr7529q64-8080.githubpreview.dev']
 
 # Application definition
 
