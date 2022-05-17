@@ -23,10 +23,13 @@
 </form>
 
 
-{% for record in records %}
+{% for use in records_use %}
+    {% for return in records_return %}
     <div class=" row d-flex justify-content-center align-content-center ">
-        {{record.reason}}: {{record.timestamp}}
+        Use: {{use.timestamp}}
+        Return: {{return:timestamp}}
     </div>
+    {% endfor %}
 {% endfor %}
 
 {% endblock %}
