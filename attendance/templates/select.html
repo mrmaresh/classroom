@@ -27,7 +27,11 @@
     </div>
 </form>
 
-<h1> The time is {{time}} </h1>
+{% for each use in usage %}
+<div  class=" row d-flex justify-content-center align-content-center "  >
+    Date: {{use['date']}}
+</div>
+{% end for %}
 
 
 

@@ -25,7 +25,7 @@ def is_returning(records):
         return False
 
 def restroom_usage(recordz):
-    
+
     records = list(recordz)
     usage = []
     if not len(records) % 2 == 0:
@@ -69,7 +69,7 @@ def select(request):
             return render(request, 'select.html',{
                 "student": student,
                 "returning": returning,
-                "time": datetime.now().time
+                "usage": usage
             })
 
 
