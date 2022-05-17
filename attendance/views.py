@@ -32,7 +32,7 @@ def restroom_usage(recordz):
     if not len(records) % 2 == 0:
         time = records[0].timestamp
         date = time.date
-        left = time.time
+        left = time
         returned = ""
         total = ""
         entry = {'date':date, 'left':left, 'returned':returned, 'total':total}
@@ -44,10 +44,10 @@ def restroom_usage(recordz):
         time = records[n].timestamp
         minutes = time.hour * 60 + time.minute
         if n % 2 == 0:
-            returned = time.time
+            returned = time
             returned_minutes = minutes
         else:
-            left = time.time
+            left = time
             left_minutes = minutes
             date = time.date
             total = returned_minutes - left_minutes
