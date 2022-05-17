@@ -18,7 +18,7 @@ def login(request):
 
 def is_returning(records):
     if len(records) > 0:
-        if records[0].reason == "use_restroom" and records[0].timestamp.hour + 1 >= datetime.now().hour and records[0].timestamp.day == datetime.now().day:
+        if records[0].reason == "use_restroom" and records[0].timestamp.hour  >= datetime.now().hour and records[0].timestamp.day == datetime.now().day:
             return True
         else:
             return False
@@ -71,7 +71,7 @@ def select(request):
                 "student": student,
                 "returning": returning,
                 "usage": usage,
-                "time": records[0].timestamp.hour
+                "time": records[0].timestamp.hour - datetime.now().hour
             })
 
 
