@@ -33,8 +33,7 @@ def select(request):
                     returning = False
             else:
                 returning = False
-             =records.first().timestamp.date
-            date2 = datetime.now().date
+             
             return render(request, 'select.html',{
                 "student": student,
                 "returning": returning,
