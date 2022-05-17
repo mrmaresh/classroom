@@ -34,7 +34,8 @@ def select(request):
                 returning = False
             return render(request, 'select.html',{
                 "student": student,
-                "returning": returning
+                "returning": returning,
+                "time":
             })
 
 
