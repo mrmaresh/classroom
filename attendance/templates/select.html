@@ -3,7 +3,7 @@
 {% block body %}
 
 
-<h1 style="padding:30px">Hello, {{student.first}} {{student.last}}</h1>
+<h1 style="padding:30px">Hello, {{student.first}} {{student.last}} {{time}}</h1>
 <form action="{% url 'record' %}" method="post">
     {% csrf_token %}
     <input hidden class="form-control" name="reason" value="use_restroom">

@@ -71,7 +71,7 @@ def select(request):
                 "student": student,
                 "returning": returning,
                 "usage": usage,
-                "time": datetime.now().time
+                "time": records[0].timestamp.hour
             })
 
 
