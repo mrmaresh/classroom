@@ -25,10 +25,13 @@ def select(request):
         else:
             student = Student.objects.get(student_id=student_id)
             records = Record.objects.filter(student=student).order_by('-timestamp')
-
+            if records.first().reason == "use_restroom":
+                returning = True
+            else:
+                returning = False
             return render(request, 'select.html',{
                 "student": student,
-                "return": False
+                "returning": returning
             })
 
 
