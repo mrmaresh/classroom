@@ -28,7 +28,7 @@ def restroom_usage(records):
     pass
     '''usage = []
     for n in range(len(records)):
-        time = records[n].timestamp.time
+        time = records[n].timestamp
         minutes = time.hour*60 + time.minute
         if n % 2 == 0:
             returned = time
@@ -55,7 +55,7 @@ def select(request):
             return render(request, 'select.html',{
                 "student": student,
                 "returning": returning,
-                "time": datetime.now().hour
+                "time": datetime.now().time.hour
             })
 
 
