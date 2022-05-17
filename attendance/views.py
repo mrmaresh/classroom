@@ -9,7 +9,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
-from .models import Student, Record
+from .models import Student, Restroom
 
 def login(request):
     return render(request, "login.html")
