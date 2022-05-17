@@ -19,5 +19,6 @@ class Record (models.Model):
 class Restroom (models.Model):
     id = models.AutoField(primary_key=True)
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name = "student")
-    timestamp = models.DateTimeField(auto_now_add=True)
-    reason = models.CharField(max_length=20)
+    timestamp_left = models.DateTimeField()
+    timestamp_return = models.DateTimeField()
+    time_restroom = models.
