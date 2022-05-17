@@ -80,8 +80,8 @@ def record(request):
         student_id = request.POST["student_id"]
         reason = request.POST["reason"]
         student = Student.objects.get(student_id=student_id)
-        timestamp = datetime.now(pytz.timezone('US/Central'))
-        record = Record.objects.create(student=student, reason=reason)
+        timestamp = datetime.now(pytz.timezone('America/Los_Angeles'))
+        record = Record.objects.create(student=student, reason=reason, timestamp=timestamp)
         record.save()
         return HttpResponseRedirect(reverse("login"))
 
