@@ -27,6 +27,7 @@ def select(request):
             return render(request, 'select.html',{
                 "student": student,
                 "records": Restroom.objects.filter(student=student).order_by('-timestamp_left'),
+                "return": True
             })
 
 
