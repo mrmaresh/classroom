@@ -39,8 +39,11 @@ def select(request):
             usage = []
             for n in range(len(records)):
                 if n % 2 == 0:
-                    return = records[n].timestamp
-                    
+                    returned = records[n].timestamp.time
+                else:
+                    left = records[n].timestamp.time
+                    date = records[n].timestamp.date
+                    minutes =
 
 
 
