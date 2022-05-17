@@ -38,13 +38,16 @@ def select(request):
 
             usage = []
             for n in range(len(records)):
+                time = records[n].timestamp.time
+                minutes = time.hour*60 + time.minute
                 if n % 2 == 0:
-                    returned = records[n].timestamp.time
-                    returned_minutes = returned.hour*60 + returned.minute
+                    returned = time
+                    returned_minutes = minutes
                 else:
-                    left = records[n].timestamp.time
+                    left = time
+                    left_minutes = minutes
                     date = records[n].timestamp.date
-                    left_minutes = left
+                    
 
 
 
