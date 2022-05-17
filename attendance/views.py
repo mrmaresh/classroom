@@ -27,7 +27,7 @@ def select(request):
             records = Record.objects.filter(student=student).order_by('-timestamp')
 
             if len(records) > 0:
-                if records.first().reason == "use_restroom" and records.first().timestamp.date == datetime.now().date:
+                if records.first().reason == "use_restroom" and records[0].timestamp.hour + 1 >= datetime.now().hour:
                     returning = True
                 else:
                     returning = False
@@ -37,7 +37,7 @@ def select(request):
             return render(request, 'select.html',{
                 "student": student,
                 "returning": returning,
-                "time": records[0].timestamp.hour + 1
+                "time": records[0].timestamp.hour + 1 >= datetime.now().hour
             })
 
 
