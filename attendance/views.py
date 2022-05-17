@@ -32,8 +32,10 @@ def restroom_usage(recordz):
         time = records[0].timestamp
         date = time.date
         left = time.time
-        returned =
-
+        returned = ""
+        total = ""
+        entry = {'date':date, 'left':left, 'returned':returned, 'total':total}
+        usage.append(entry)
 
 
     for n in range(len(records)):
