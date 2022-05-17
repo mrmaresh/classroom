@@ -33,12 +33,12 @@ def select(request):
                     returning = False
             else:
                 returning = False
-
-
+            date =records.first().timestamp.date
+            date = datetime.strptime(date,"%Y-%m-%d")
             return render(request, 'select.html',{
                 "student": student,
                 "returning": returning,
-                "time": datetime.now().date
+                "time": date == datetime.now().date
             })
 
 
