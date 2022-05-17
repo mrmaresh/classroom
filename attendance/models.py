@@ -13,6 +13,6 @@ class Student (models.Model):
 class Record (models.Model):
     id = models.AutoField(primary_key=True)
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name = "student_record")
-    timestamp = models.DateTimeField()
+    timestamp = models.DateTimeField(auto_now_add=True)
     reason = models.CharField(max_length=20)
 

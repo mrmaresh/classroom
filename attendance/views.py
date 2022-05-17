@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
-import pytz
+
 
 
 
@@ -47,7 +47,7 @@ def restroom_usage(recordz):
             returned = time.time
             returned_minutes = minutes
         else:
-            left = time
+            left = time.time
             left_minutes = minutes
             date = time.date
             total = returned_minutes - left_minutes
@@ -80,8 +80,7 @@ def record(request):
         student_id = request.POST["student_id"]
         reason = request.POST["reason"]
         student = Student.objects.get(student_id=student_id)
-        timestamp = datetime.now(pytz.timezone('America/Los_Angeles'))
-        record = Record.objects.create(student=student, reason=reason, timestamp=timestamp)
+        record = Record.objects.create(student=student, reason=reason)
         record.save()
         return HttpResponseRedirect(reverse("login"))
 
