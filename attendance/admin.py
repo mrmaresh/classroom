@@ -1,13 +1,13 @@
 from django.contrib import admin
 from import_export.admin import ImportExportMixin
 
-from .models import Student, Record
+from .models import Student, Restroom
 
 class StudentAdmin (ImportExportMixin, admin.ModelAdmin):
     list_display = ("first", "last", "student_id", "period", "id")
 
-class RecordAdmin (admin.ModelAdmin):
-    list_display = ("student_id", "timestamp", "reason", "id")
+class RestroomAdmin (admin.ModelAdmin):
+    list_display = ("student", "timestamp_left", "timestamp_return", "time_restroom", "id")
 
 
 
