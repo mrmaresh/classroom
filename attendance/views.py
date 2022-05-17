@@ -26,19 +26,19 @@ def is_returning(records):
 
 def restroom_usage(records):
     pass
-    '''usage = []
+    usage = []
     for n in range(len(records)):
         time = records[n].timestamp
-        minutes = time.hour*60 + time.minute
+        minutes = time.hour * 60 + time.minute
         if n % 2 == 0:
-            returned = time
+            returned = time.time
             returned_minutes = minutes
         else:
-            left = time
+            left = time.time
             left_minutes = minutes
             date = records[n].timestamp.date
             total = returned_minutes - left_minutes
-    return 1'''
+    return 1
 
 def select(request):
     if request.method == "POST":
@@ -55,7 +55,7 @@ def select(request):
             return render(request, 'select.html',{
                 "student": student,
                 "returning": returning,
-                "time": datetime.now().time.hour
+                "time": datetime.now().time
             })
 
 
