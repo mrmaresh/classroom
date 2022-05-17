@@ -24,10 +24,15 @@ def is_returning(records):
     else:
         return False
 
-def restroom_usage(records):
+def restroom_usage(recordz):
     pass
+    records = list(recordz)
     usage = []
     if not len(records) % 2 == 0:
+        time = records[0].timestamp
+        date = time.date
+        left = time.time
+        returned =
 
 
 
@@ -40,7 +45,7 @@ def restroom_usage(records):
         else:
             left = time.time
             left_minutes = minutes
-            date = records[n].timestamp.date
+            date = time.date
             total = returned_minutes - left_minutes
             entry = {'date':date, 'left':left, 'returned':returned, 'total':total}
             usage.append(entry)
