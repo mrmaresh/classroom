@@ -37,7 +37,8 @@ def select(request):
             returning = is_returning(records)
 
             usage = []
-            for record in records:
+            for n in range(len(records)):
+                
 
 
 
