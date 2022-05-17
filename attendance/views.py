@@ -36,6 +36,12 @@ def select(request):
             records = Record.objects.filter(student=student).order_by('-timestamp')
             returning = is_returning(records)
 
+            usage = []
+            for record in records:
+
+
+
+
             return render(request, 'select.html',{
                 "student": student,
                 "returning": returning
