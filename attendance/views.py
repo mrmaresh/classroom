@@ -24,10 +24,11 @@ def select(request):
         else:
             student = Student.objects.get(student_id=student_id)
             return render(request, 'select.html',{
-                "student": student
+                "student": student,
+                "records": Record.objects.filter(student=student)
             })
 
-        
+
 def record(request):
     if request.method == "POST":
         student_id = request.POST["student_id"]

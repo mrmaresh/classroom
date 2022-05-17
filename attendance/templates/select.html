@@ -23,6 +23,10 @@
 </form>
 
 
-
+{% for record in records %}
+    <div>
+        {{record.reason}}: {{record.timestamp}}
+    </div>
+{% endfor %}
 
 {% endblock %}
