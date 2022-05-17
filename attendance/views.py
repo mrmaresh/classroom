@@ -39,6 +39,7 @@ def select(request):
             usage = []
             for n in range(len(records)):
                 if n % 2 == 0:
+                    return = records[n].timestamp
                     
 
 
