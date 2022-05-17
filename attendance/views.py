@@ -35,6 +35,8 @@ def record(request):
         student_id = request.POST["student_id"]
         reason = request.POST["reason"]
         student = Student.objects.get(student_id=student_id)
+        if reason == "use_restroom":
+            
         record = Record.objects.create(student=student, reason=reason)
         record.save()
         return HttpResponseRedirect(reverse("login"))
