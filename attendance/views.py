@@ -25,7 +25,7 @@ def is_returning(records):
         return False
 
 def restroom_usage(recordz):
-    pass
+    
     records = list(recordz)
     usage = []
     if not len(records) % 2 == 0:
@@ -36,6 +36,7 @@ def restroom_usage(recordz):
         total = ""
         entry = {'date':date, 'left':left, 'returned':returned, 'total':total}
         usage.append(entry)
+        records.pop(0)
 
 
     for n in range(len(records)):
