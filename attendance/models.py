@@ -10,9 +10,15 @@ class Student (models.Model):
     period = models.CharField(max_length=1)
 
 
+class Record (models.Model):
+    id = models.AutoField(primary_key=True)
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name = "student_record")
+    timestamp = models.DateTimeField(auto_now_add=True)
+    reason = models.CharField(max_length=20)
+
 class Restroom (models.Model):
     id = models.AutoField(primary_key=True)
-    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name = "student")
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name = "student_restroom")
     timestamp_left = models.DateTimeField()
     timestamp_return = models.DateTimeField()
     time_restroom = models.IntegerField()
