@@ -27,6 +27,10 @@ def is_returning(records):
 def restroom_usage(records):
     pass
     usage = []
+    if not len(records) % 2 == 0:
+
+
+
     for n in range(len(records)):
         time = records[n].timestamp
         minutes = time.hour * 60 + time.minute
