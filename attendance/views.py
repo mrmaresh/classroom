@@ -36,8 +36,7 @@ def select(request):
 
             return render(request, 'select.html',{
                 "student": student,
-                "returning": returning,
-                "time": records[0].timestamp.hour + 1 >= datetime.now().hour
+                "returning": returning
             })
 
 
