@@ -47,7 +47,7 @@ def restroom_usage(recordz):
             returned = time.time
             returned_minutes = minutes
         else:
-            left = time.time
+            left = time
             left_minutes = minutes
             date = time.date
             total = returned_minutes - left_minutes
