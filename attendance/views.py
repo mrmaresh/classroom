@@ -38,7 +38,7 @@ def select(request):
             return render(request, 'select.html',{
                 "student": student,
                 "returning": returning,
-                "time": datetime.now().date
+                "time": records.first().timestamp.date
             })
 
 
