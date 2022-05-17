@@ -37,6 +37,7 @@
                 <th scope="col">Total Minutes</th>
             </tr>
         </thead>
+        <tbody>
     {% for use in usage %}
         <tr>
             <td>{{use.date}}</td>
@@ -45,14 +46,9 @@
             <td>{{use.total}}</td>
         </tr>
     {% endfor %}
+    </tbody>
     </table>
 </div>
-<table class="table">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+
 
 {% endblock %}
