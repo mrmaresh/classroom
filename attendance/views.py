@@ -33,11 +33,11 @@ def select(request):
                     returning = False
             else:
                 returning = False
-             
+
             return render(request, 'select.html',{
                 "student": student,
                 "returning": returning,
-                "time": records
+                "time": records[0].timestamp.hour + 1
             })
 
 
