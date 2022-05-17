@@ -33,18 +33,14 @@
     <table class = "table table-sm">
         <thead class="thead-light">
             <tr>
-                <th scope="col">Date</th>
-                <th scope="col">Time Out</th>
-                <th scope="col">Time Returned</th>
+                <th scope="col">Date/Time Out</th>
                 <th scope="col">Total Minutes</th>
             </tr>
         </thead>
         <tbody>
     {% for use in usage %}
         <tr>
-            <td>{{use.date}}</td>
             <td>{{use.left}}</td>
-            <td>{{use.returned}}</td>
             <td>{{use.total}}</td>
         </tr>
     {% endfor %}
