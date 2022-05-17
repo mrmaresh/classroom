@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 from django.contrib import messages
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
@@ -25,8 +26,7 @@ def select(request):
             student = Student.objects.get(student_id=student_id)
             return render(request, 'select.html',{
                 "student": student,
-                "records_use": Record.objects.filter(student=student, reason = "use_restroom").order_by('-timestamp'),
-                "records_return": Record.objects.filter(student=student, reason = "return_restroom").order_by('-timestamp')
+                "records": Restroom.objects.filter(student=student).order_by('-timestamp_left'),
             })
 
 
