@@ -27,10 +27,14 @@ def login(request):
                 if records[0].reason == "use_restroom":
                     name = Student.objects.get(student_id = student.student_id).first
                     students.append(name)
+        in_use = True
+    else:
+        in_use = False
 
     return render(request, "login.html",{
         "students": students,
-        "records": record_query
+        "records": record_query,
+        "in_use": in_use
     })
 
 
