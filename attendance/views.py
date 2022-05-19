@@ -19,7 +19,7 @@ def login(request):
     test = Record.objects.all().order_by('-timestamp')[0].timestamp
     return render(request, "login.html",{
         "restroom": record_query,
-        "test": datetime.now().hour == test.hour - 7
+        "test": datetime.now().hour == test.hour - 7 + 24
     })
 
 
