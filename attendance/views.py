@@ -27,6 +27,8 @@ def login(request):
                 if records[0].reason == "use_restroom":
                     name = Student.objects.get(student_id = student.student_id).first
                     students.append(name)
+
+    if len(students) > 0:
         in_use = True
     else:
         in_use = False
