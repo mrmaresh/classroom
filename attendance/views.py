@@ -15,7 +15,7 @@ from .models import Student, Record
 
 def login(request):
     time_threshold = datetime.now() - timedelta(hours=1)
-    record_query = Record.objects.distict('student_id').filter(timestamp__gt=time_threshold)
+    record_query = Record.objects.filter(timestamp__gt=time_threshold).distict('student_id')
 
 
 
