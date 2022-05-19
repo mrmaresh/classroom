@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 from django.contrib import messages
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
@@ -14,6 +14,8 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import Student, Record
 
 def login(request):
+    time_threshold = datetime.now() - timedelta(hours=10)
+    Record.objects.filter(timestamp__gt=time_threshold)
     return render(request, "login.html",{
         "restroom": restroom_list
     })
