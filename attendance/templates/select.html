@@ -27,6 +27,17 @@
     </div>
 </form>
 
+<form action="{% url ''%}" method="post">
+    {% csrf_token %}
+    <input hidden class="form-control" name="student_id" value={{student.student_id}}>
+    <div  class=" row d-flex justify-content-center align-content-center "  >
+        {% if in_use == "True" %}
+            <input class="bttn choice" type="submit" value="Waitlist">
+        {% endif %}
+    </div>
+</form>
+
+
 
 <div  class=" row d-flex justify-content-center align-content-center " style ="margin-left:25%; margin-right:25%;" >
     <h3 style="margin-top:40px; margin-bottom:20px;"> Past Restroom Usage </h3>
