@@ -15,13 +15,13 @@ from .models import Student, Record
 
 def login(request):
     time_threshold = datetime.now() - timedelta(hours=1)
-    record_query = Record.objects.values('student_id').filter(timestamp__gt=time_threshold)
-    records = Record.objects.filter(student_id__in=[item['student_id'] for item in record_query])
+    record_query = Record.objects.distict('student_id').filter(timestamp__gt=time_threshold)
+
 
 
     test = Record.objects.all().order_by('-timestamp')[0].timestamp
     return render(request, "login.html",{
-        "students": records,
+        "students": record_query,
         "test": time_threshold
     })
 
