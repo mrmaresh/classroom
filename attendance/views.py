@@ -22,6 +22,7 @@ def login(request):
     if len(record_query) > 0:
         for record in record_query:
             if record['dcount'] % 2 == 1:
+                
                 student = Student.objects.get(pk=record['student_id'])
                 name = Student.objects.get(student_id = student.student_id).first
                 students.append(name)
