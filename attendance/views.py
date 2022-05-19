@@ -98,7 +98,7 @@ def select(request):
                 "student": student,
                 "returning": returning,
                 "usage": usage,
-                "in_use" = in_use
+                "in_use": in_use
             })
 
 
