@@ -14,11 +14,11 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import Student, Record
 
 def login(request):
-    time_threshold = datetime.now() - timedelta(hours=1)
+    time_threshold = datetime.now() - timedelta(hours=6)
     record_query = Record.objects.filter(timestamp__gt=time_threshold)
     test = Record.objects.all().order_by('-timestamp')[0].timestamp
     return render(request, "login.html",{
-        "restroom": datetime.now().hour == test.hour - 7 + 24,
+        "restroom": record_query,
         "test": time_threshold
     })
 

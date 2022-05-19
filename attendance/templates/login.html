@@ -22,4 +22,8 @@
         </div>
 
         {{test}}
+
+        {% for record in restroom %}
+            <p>{{record.timestamp}}</p>
+        {% endfor %}
  {% endblock %}
