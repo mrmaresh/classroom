@@ -31,7 +31,7 @@
     {% csrf_token %}
     <input hidden class="form-control" name="student_id" value={{student.student_id}}>
     <div  class=" row d-flex justify-content-center align-content-center "  >
-        {% if in_use == "True" %}
+        {% if in_use == "True" and returning == False %}
             <input class="bttn choice" type="submit" value="Waitlist">
         {% endif %}
     </div>
