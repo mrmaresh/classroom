@@ -22,10 +22,6 @@ def login(request):
         if record['dcount'] % 2 == 1:
             name = Student.objects.get(student_id = record['student_id']).first
             students.append(name)
-
-
-
-    test = Record.objects.all().order_by('-timestamp')[0].timestamp
     return render(request, "login.html",{
         "students": students,
         "test": time_threshold
@@ -36,7 +32,7 @@ def login(request):
 
 def is_returning(records):
     if len(records) > 0:
-        if records[0].reason == "use_restroom" and records[0].timestamp.hour - 6 >= datetime.now().hour and records[0].timestamp.day == datetime.now().day:
+        if records[0].reason == "use_restroom":
             return True
         else:
             return False
