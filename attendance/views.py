@@ -88,8 +88,7 @@ def select(request):
             return render(request, 'select.html',{
                 "student": student,
                 "returning": returning,
-                "usage": usage,
-                "time": records[0].timestamp.hour - datetime.now().hour
+                "usage": usage
             })
 
 
