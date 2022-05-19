@@ -16,7 +16,7 @@ from .models import Student, Record
 def login(request):
     time_threshold = datetime.now() - timedelta(hours=10)
     record_query = Record.objects.filter(timestamp__gt=time_threshold)
-    test = Record.objects.filter(student=student).order_by('-timestamp')[0].timestamp
+    test = Record.objects.all().order_by('-timestamp')[0].timestamp
     return render(request, "login.html",{
         "restroom": record_query,
         "test": test
