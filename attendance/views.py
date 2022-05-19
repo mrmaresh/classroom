@@ -18,15 +18,16 @@ def login(request):
     students = []
     time_threshold = datetime.now() - timedelta(hours=1)
     record_query = Record.objects.filter(timestamp__gt=time_threshold).values('student_id').annotate(dcount=Count('student_id'))
-    '''
+
     if len(record_query) > 0:
         for record in record_query:
             if record['dcount'] % 2 == 1:
-                name = Student.objects.get(student_id = record['student_id']).first
+                student = Student.objects.get(pk=record['student_id'])
+                name = Student.objects.get(student_id = student.student_id).first
                 students.append(name)
-                '''
+
     return render(request, "login.html",{
-        "students": record_query
+        "students": students
     })
 
 
