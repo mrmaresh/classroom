@@ -15,9 +15,10 @@ from .models import Student, Record
 
 def login(request):
     time_threshold = datetime.now() - timedelta(hours=10)
-    Record.objects.filter(timestamp__gt=time_threshold)
+    record_query = Record.objects.filter(timestamp__gt=time_threshold)
     return render(request, "login.html",{
-        "restroom": restroom_list
+        "restroom": record_query,
+        "test": datetime.now()
     })
 
 
