@@ -14,7 +14,12 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import Student, Record
 
 def login(request):
-    return render(request, "login.html")
+    return render(request, "login.html",{
+        "restroom": restroom_list
+    })
+
+
+
 
 def is_returning(records):
     if len(records) > 0:
@@ -39,7 +44,6 @@ def restroom_usage(recordz):
         usage.append(entry)
         records.pop(0)
 
-
     for n in range(len(records)):
         time = records[n].timestamp
         minutes = time.hour * 60 + time.minute
@@ -54,6 +58,7 @@ def restroom_usage(recordz):
             entry = {'date':date, 'left':left, 'returned':returned, 'total':total}
             usage.append(entry)
     return usage
+
 
 def select(request):
     if request.method == "POST":
