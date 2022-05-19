@@ -23,8 +23,7 @@ def login(request):
             name = Student.objects.get(student_id = record['student_id']).first
             students.append(name)
     return render(request, "login.html",{
-        "students": students,
-        "test": time_threshold
+        "students": students
     })
 
 
