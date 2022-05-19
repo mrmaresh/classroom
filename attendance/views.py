@@ -19,8 +19,8 @@ def login(request):
     time_threshold = datetime.now() - timedelta(hours=1)
     record_query = Record.objects.filter(timestamp__gt=time_threshold).values('student_id').annotate(dcount=Count('student_id'))
     for record in record_query:
-        if record.dcount % 2 == 1:
-            name = Student.objects.get(student_id = record.student_id).first
+        if record['dcount'] % 2 == 1:
+            name = Student.objects.get(student_id = record['student_id']).first
             students.append(name)
 
 
