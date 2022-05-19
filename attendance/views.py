@@ -15,7 +15,7 @@ from .models import Student, Record
 
 def login(request):
     time_threshold = datetime.now() - timedelta(hours=1)
-    record_query = Record.objects.filter(timestamp__gt=time_threshold).group_by('student_id')
+    record_query = Record.objects.filter(timestamp__gt=time_threshold).values('student_id').annotate(Count('student_id'))
 
 
 
