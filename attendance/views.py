@@ -82,6 +82,7 @@ def restroom_usage(recordz):
 def select(request):
     if request.method == "POST":
         student_id = request.POST["student_id"]
+        in_use = request.POST["in_use"]
         if len(Student.objects.filter(student_id=student_id)) == 0:
             messages.add_message(request, messages.INFO, 'Incorrect Student ID.')
             return HttpResponseRedirect(reverse("login"))
@@ -96,7 +97,8 @@ def select(request):
             return render(request, 'select.html',{
                 "student": student,
                 "returning": returning,
-                "usage": usage
+                "usage": usage,
+                "in_use" = in_use
             })
 
 
