@@ -21,9 +21,9 @@
                 </h2>
         </div>
 
-        {{test}}
+        Threshold: {{test}}
 
         {% for record in restroom %}
-            <p>{{record.timestamp}}</p>
+            <p>{{record.student.student_id}}</p>
         {% endfor %}
  {% endblock %}
