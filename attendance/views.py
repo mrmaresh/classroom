@@ -27,7 +27,8 @@ def login(request):
                 students.append(name)
 
     return render(request, "login.html",{
-        "students": students
+        "students": students,
+        "records": record_query
     })
 
 
