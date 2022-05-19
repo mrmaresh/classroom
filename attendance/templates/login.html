@@ -23,7 +23,7 @@
 
         Threshold: {{test}}
 
-        {% for record in restroom %}
-            <p>{{record.student.student_id}}</p>
+        {% for student in students %}
+            <p>{{student}}</p>
         {% endfor %}
  {% endblock %}
