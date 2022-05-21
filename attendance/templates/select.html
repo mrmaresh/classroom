@@ -16,7 +16,7 @@
             <input hidden class="form-control" name="reason" value="use_restroom">
             <input hidden class="form-control" name="student_id" value={{student.student_id}}>
             <div  class = "text-center"  >
-                {% if returning == False and in_use == "False" %}
+                {% if returning == False %}
                     <input type="submit" value="Use Restroom">
                 {% endif %}
             </div>
