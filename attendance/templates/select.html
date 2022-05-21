@@ -2,7 +2,7 @@
 
 {% block body %}
 
-{% if returning == False %}
+{% if returning == False and in_use == "True" %}
     <div class="dropdown text-end">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
         options
