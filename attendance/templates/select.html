@@ -10,6 +10,18 @@
       <li><a class="dropdown-item" href="#">Action</a></li>
       <li><a class="dropdown-item" href="#">Another action</a></li>
       <li><a class="dropdown-item" href="#">Something else here</a></li>
+      <li>
+        <form action="{% url 'record' %}" method="post">
+            {% csrf_token %}
+            <input hidden class="form-control" name="reason" value="use_restroom">
+            <input hidden class="form-control" name="student_id" value={{student.student_id}}>
+            <div  class = "text-center"  >
+                {% if returning == False and in_use == "False" %}
+                    <input type="submit" value="Use Restroom">
+                {% endif %}
+            </div>
+        </form>
+      </li>
     </ul>
 </div>
 
