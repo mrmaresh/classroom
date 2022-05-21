@@ -2,26 +2,25 @@
 
 {% block body %}
 
-<div class="dropdown text-right">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-      options
-    </button>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-      <li>
-        <form action="{% url 'record' %}" method="post">
-            {% csrf_token %}
-            <input hidden class="form-control" name="reason" value="use_restroom">
-            <input hidden class="form-control" name="student_id" value={{student.student_id}}>
-            <div  class = "text-center"  >
-                {% if returning == False %}
-                    <input type="submit" value="Use Restroom">
-                {% endif %}
-            </div>
-        </form>
-      </li>
-    </ul>
-</div>
-
+{% if returning == False %}
+    <div class="dropdown text-end">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        options
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+        <li>
+            <form action="{% url 'record' %}" method="post">
+                {% csrf_token %}
+                <input hidden class="form-control" name="reason" value="use_restroom">
+                <input hidden class="form-control" name="student_id" value={{student.student_id}}>
+                <div  class = "text-center"  >
+                        <input type="submit" value="Use Restroom">
+                </div>
+            </form>
+        </li>
+        </ul>
+    </div>
+{% endif %}
 
 
 
