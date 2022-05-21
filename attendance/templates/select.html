@@ -33,7 +33,7 @@
     {% csrf_token %}
     <input hidden class="form-control" name="reason" value="return_restroom">
     <input hidden class="form-control" name="student_id" value={{student.student_id}}>
-    <div  class=" row d-flex justify-content-center align-content-center "  >
+    <div  class="text-center "  >
         {% if returning == True %}
             <input class="bttn choice" type="submit" value="Return from Restroom">
         {% endif %}
