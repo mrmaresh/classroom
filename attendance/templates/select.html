@@ -14,17 +14,7 @@
 </div>
 
 
-  <div class="dropdown">
-    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-      Dropdown link
-    </a>
 
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <li><a class="dropdown-item" href="#">Action</a></li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
-    </ul>
-  </div>
 
 <h1 style="padding:30px">Hello, {{student.first}} {{student.last}}</h1>
 <form action="{% url 'record' %}" method="post">
@@ -34,6 +24,7 @@
     <div  class=" row d-flex justify-content-center align-content-center "  >
         {% if returning == False and in_use == "False" %}
             <input class="bttn choice" type="submit" value="Use Restroom">
+            <button type="button" class="btn btn-primary btn-lg">Large button</button>
             <h1 style="color:red; margin-left:15%; margin-right:15%; text-align:center;">PLEASE MAKE SURE YOU LOG BACK IN AFTER YOU RETURN FROM THE RESTROOM! </h1>
         {% endif %}
     </div>
