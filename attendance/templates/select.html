@@ -48,7 +48,7 @@
     </div>
 </form>
 
-<form >
+<form action="{% url 'waitlist'%}" method="post">
     {% csrf_token %}
     <input hidden class="form-control" name="student_id" value={{student.student_id}}>
     <div  class="text-center "  >

@@ -103,6 +103,11 @@ def select(request):
                 "in_use": in_use
             })
 
+def waitlist(request):
+    if request.method == "POST":
+        student_id = request.POST["student_id"]
+        
+
 
 
 def record(request):
