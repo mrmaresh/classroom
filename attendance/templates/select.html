@@ -2,11 +2,11 @@
 
 {% block body %}
 
-<div class="dropdown-menu-end">
+<div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
       options
     </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
       <li>
         <form action="{% url 'record' %}" method="post">
             {% csrf_token %}
