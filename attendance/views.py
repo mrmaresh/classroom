@@ -38,7 +38,8 @@ def login(request):
     return render(request, "login.html",{
         "students": students,
         "records": record_query,
-        "in_use": in_use
+        "in_use": in_use,
+        "waitlist": wait_list
     })
 
 
