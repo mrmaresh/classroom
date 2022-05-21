@@ -111,6 +111,7 @@ def waitlist(request):
         student_id = request.POST["student_id"]
         student = Student.objects.get(student_id = student_id)
         wait_list.append(student.first)
+        return HttpResponseRedirect(reverse("login"))
 
 
 
