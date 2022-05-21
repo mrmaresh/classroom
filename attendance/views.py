@@ -14,6 +14,8 @@ from django.db.models import Count
 
 from .models import Student, Record
 
+wait_list = []
+
 def login(request):
     students = []
     time_threshold = datetime.now() - timedelta(hours=1)
@@ -106,7 +108,9 @@ def select(request):
 def waitlist(request):
     if request.method == "POST":
         student_id = request.POST["student_id"]
-        
+        student = Student.objects.get(student_id = student_id)
+        wait_list.append(student.first)
+
 
 
 
