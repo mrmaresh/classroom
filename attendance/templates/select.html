@@ -13,8 +13,8 @@
                 {% csrf_token %}
                 <input hidden class="form-control" name="reason" value="use_restroom">
                 <input hidden class="form-control" name="student_id" value={{student.student_id}}>
-                <div  class = "text-center"  >
-                        <input type="submit" value="Use Restroom">
+                <div  >
+                        <input class="bttn choice" type="submit" value="Use Restroom">
                 </div>
             </form>
         </li>
