@@ -104,8 +104,7 @@ def select(request):
                 "student": student,
                 "returning": returning,
                 "usage": usage,
-                "in_use": in_use,
-                "empty": empty
+                "in_use": in_use
             })
 
 def waitlist(request):
