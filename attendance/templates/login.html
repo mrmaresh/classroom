@@ -39,9 +39,10 @@
   THE RESTROOM IS AVAILABLE!!!
 {% endif %}
 
-{% for person in waitlist %}
-        <
-{% endfor %}
-
+<ol>
+    {% for person in waitlist %}
+            <li> {{person.first}} </li>
+    {% endfor %}
+</ol>
 
  {% endblock %}
