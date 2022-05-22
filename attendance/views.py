@@ -14,7 +14,7 @@ from django.db.models import Count
 
 from .models import Student, Record
 
-Class Waitinglist:
+Class Waitlist:
     def __init__(self, student, timestamp):
         self.student = student
         self.timestamp = timestamp
