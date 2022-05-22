@@ -98,12 +98,17 @@ def select(request):
             recordz = Record.objects.filter(student=student).order_by('-timestamp')
             returning = is_returning(records)
             usage = restroom_usage(recordz)
+            if len(usage)==0:
+                empty = True
+            else:
+                empty = False
 
             return render(request, 'select.html',{
                 "student": student,
                 "returning": returning,
                 "usage": usage,
-                "in_use": in_use
+                "in_use": in_use,
+                "empty": empty
             })
 
 def waitlist(request):
