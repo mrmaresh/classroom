@@ -14,6 +14,11 @@ from django.db.models import Count
 
 from .models import Student, Record
 
+Class Waitlist:
+    def __init__(self, student, timestamp):
+        self.student = student
+        self.timestamp = timestamp
+
 wait_list = []
 
 def login(request):
@@ -111,8 +116,8 @@ def waitlist(request):
     if request.method == "POST":
         student_id = request.POST["student_id"]
         student = Student.objects.get(student_id = student_id)
-        if student not in wait_list:
-            wait_list.append(student)
+        entry = Waitlist(student, datetime.now())
+        wait_list.append(entry)
         return HttpResponseRedirect(reverse("login"))
 
 
