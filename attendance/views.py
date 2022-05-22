@@ -123,5 +123,8 @@ def record(request):
         student = Student.objects.get(student_id=student_id)
         record = Record.objects.create(student=student, reason=reason)
         record.save()
+        if reason == "use_restroom":
+            if student in wait_list:
+                wait_list.remove(student)
         return HttpResponseRedirect(reverse("login"))
 
