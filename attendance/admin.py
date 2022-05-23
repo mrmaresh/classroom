@@ -4,7 +4,7 @@ from import_export.admin import ImportExportMixin
 from .models import Student, Record
 
 class StudentAdmin (ImportExportMixin, admin.ModelAdmin):
-    list_display = ("first", "last", "student_id", "period", "id")
+    list_display = ("first", "last", "student_id", "period", "exception", "id")
 
 class RecordAdmin (admin.ModelAdmin):
     list_display = ("student_id", "timestamp", "reason", "id")
