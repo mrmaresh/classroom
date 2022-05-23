@@ -35,11 +35,17 @@ def login(request):
     else:
         in_use = False
 
+    if len(waitlist) > 0:
+        waiting = True
+    else:
+        waiting = False
+
     return render(request, "login.html",{
         "students": students,
         "records": record_query,
         "in_use": in_use,
-        "waitlist": wait_list
+        "waitlist": wait_list,
+        "waiting": waiting
     })
 
 
