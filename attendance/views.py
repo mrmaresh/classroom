@@ -126,7 +126,7 @@ def reset(request):
         return HttpResponseRedirect(reverse("dashboard"))
 
 def dashboard(request):
-    records = Record.objects.filter(timestamp__range=["2022-05-22", "2022-05-23"]).order_by('reason')
+    records = Record.objects.filter(timestamp__range=["2022-05-22", "2022-05-23"]).order_by('student.period')
     return render(request, 'dashboard.html',{
         "waitlist": wait_list,
         "records": records
