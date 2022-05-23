@@ -126,7 +126,7 @@ def reset(request):
         return HttpResponseRedirect(reverse("dashboard"))
 
 def dashboard(request):
-    return render(request, 'dashboard.html', {
+    return render(request, 'dashboard.html',{
         "waitlist": wait_list
     })
 
