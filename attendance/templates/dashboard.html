@@ -10,7 +10,7 @@
 </form>
 
 {% for record in records %}
-    <p>{{record.student.first}}: {{record.reason}}           </p>
+    <p>{{record.student.first}}: {{record.reason}}  {{record.timestamp}}         </p>
 {% endfor %}
 
 Debug Info:
