@@ -128,7 +128,7 @@ def reset(request):
 def dashboard(request):
     startdate = datetime.today() - timedelta(days=1)
     enddate = startdate + timedelta(days=1)
-    records = Record.objects.filter(timestamp__ge = startdate)
+    records = Record.objects.filter(timestamp__gt = startdate)
     return render(request, 'dashboard.html',{
         "waitlist": wait_list,
         "records": records
