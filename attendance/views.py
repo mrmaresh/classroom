@@ -18,7 +18,7 @@ wait_list = []
 
 def login(request):
     students = []
-    time_threshold = datetime.now() - timedelta(hours=1)
+    time_threshold = datetime.now() - timedelta(hours=2)
     record_query = Record.objects.filter(timestamp__gt=time_threshold).values('student_id').annotate(dcount=Count('student_id'))
 
     if len(record_query) > 0:
