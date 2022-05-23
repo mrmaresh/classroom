@@ -126,12 +126,13 @@ def reset(request):
         return HttpResponseRedirect(reverse("dashboard"))
 
 def dashboard(request):
-    startdate = datetime.today() - timedelta(days=1)
+    startdate = datetime.today()
     enddate = startdate + timedelta(days=1)
-    records = Record.objects.filter(timestamp__gt = startdate)
+    records = Record.objects.filter(timestamp = startdate)
     return render(request, 'dashboard.html',{
         "waitlist": wait_list,
-        "records": records
+        "records": records,
+        "startdate":startdate
     })
 
 def record(request):
