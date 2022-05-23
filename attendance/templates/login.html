@@ -39,7 +39,8 @@
   THE RESTROOM IS AVAILABLE!!!
 {% endif %}
 
-<div class="text-center align-items-center">
+<div class="row">
+    <div class="col-4 d-flex justify-content-center t">
 {% if waiting == True %}
     <h4> Wait List </h4>
     <ol>
@@ -48,5 +49,6 @@
         {% endfor %}
     </ol>
 {% endif %}
+</div>
 </div>
  {% endblock %}
