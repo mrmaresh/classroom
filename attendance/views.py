@@ -125,6 +125,8 @@ def reset(request):
         wait_list = []
         return render(request, 'dashboard.html')
 
+def dashboard(request):
+    return render(request, 'dashboard.html')
 
 def record(request):
     if request.method == "POST":
