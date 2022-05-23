@@ -122,7 +122,7 @@ def waitlist(request):
 
 def reset(request):
     if request.method == "POST":
-        wait_list = []
+        wait_list.clear()
         return HttpResponseRedirect(reverse("dashboard"))
 
 def dashboard(request):
