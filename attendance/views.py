@@ -126,7 +126,7 @@ def reset(request):
         return HttpResponseRedirect(reverse("dashboard"))
 
 def dashboard(request):
-    
+    Record.objects.filter(date__range=["2011-01-01", "2011-01-31"])
     return render(request, 'dashboard.html',{
         "waitlist": wait_list
     })
