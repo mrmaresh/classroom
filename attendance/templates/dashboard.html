@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<form action="{% url 'reset'%}" method="post">
+    {% csrf_token %}
+    <div  class="text-center "  >
+            <input class="bttn choice" type="submit" value="Reset Waitlist">
+    </div>
+</form>
+
+
+{% endblock %}

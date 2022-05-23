@@ -120,7 +120,10 @@ def waitlist(request):
         wait_list.append(student)
         return HttpResponseRedirect(reverse("login"))
 
-
+def reset(request):
+    if request.method == "POST":
+        wait_list = []
+        return HttpResponseRedirect(reverse("reset"))
 
 
 def record(request):
