@@ -8,6 +8,7 @@ class Student (models.Model):
     last = models.CharField(max_length=20)
     student_id = models.CharField(max_length=10)
     period = models.CharField(max_length=1)
+    exception = models.CharField(max_length=10)
 
 
 class Record (models.Model):
