@@ -30,7 +30,7 @@
     <input hidden class="form-control" name="reason" value="use_restroom">
     <input hidden class="form-control" name="student_id" value={{student.student_id}}>
     <div  class = "text-center"  >
-        {% if returning == False and in_use == "False" %}
+        {% if returning == False and (in_use == "False" or student.exception == "yes") %}
             <input class="bttn choice" type="submit" value="Use Restroom">
             <h1 style="color:red; margin-left:15%; margin-right:15%; text-align:center;">PLEASE MAKE SURE YOU LOG BACK IN AFTER YOU RETURN FROM THE RESTROOM! </h1>
         {% endif %}
