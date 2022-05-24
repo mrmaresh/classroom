@@ -10,13 +10,15 @@
 </form>
 
 {% for record in records %}
-    <p>{{record.student.first}}: {{record.reason}}  {{record.timestamp}}         </p>
+    <p>{{record.student.first}}: {{record.time_out}}  {{record.minutes}} minutes       </p>
 {% endfor %}
 
 Debug Info:
 Waitlist: {{waitlist}}
 Records: {{records}}
 Startdate: {{startdate}}
+Hour: {{hour}}
+Minute: {{minute}}
 
 
 {% endblock %}

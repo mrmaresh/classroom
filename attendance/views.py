@@ -1,5 +1,5 @@
 import json
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from django.contrib import messages
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
@@ -12,7 +12,7 @@ from django.db.models import Count
 
 # Create your views here.
 
-from .models import Student, Record
+from .models import Student, Record, Bathroom
 
 wait_list = []
 
@@ -128,11 +128,13 @@ def reset(request):
 def dashboard(request):
     startdate = datetime.today()-timedelta(hours=8)
     enddate = startdate + timedelta(days=1)
-    records = Record.objects.filter(timestamp__gt = startdate)
+    records = Bathroom.objects.filter(time_out__gt = startdate).order_by('-time_out')
     return render(request, 'dashboard.html',{
         "waitlist": wait_list,
         "records": records,
-        "startdate":startdate.date
+        "startdate":startdate.date,
+        "hour": datetime.now().hour,
+        "minute": datetime.now().minute
     })
 
 def record(request):
@@ -145,5 +147,14 @@ def record(request):
         if reason == "use_restroom":
             if student in wait_list:
                 wait_list.remove(student)
+        if reason == "return_restroom":
+            time_out = Record.objects.filter(student = student).order_by('-timestamp')[1].timestamp
+            time_out_minutes = time_out.hour * 60 + time_out.minute
+            time_back = datetime.now(timezone.utc)
+            time_back_minutes = time_back.hour * 60 + time_back.minute
+            minutes = time_back_minutes - time_out_minutes
+            bathroom = Bathroom.objects.create(student=student, time_out=time_out, time_back=time_back, minutes=minutes)
+            bathroom.save()
+
         return HttpResponseRedirect(reverse("login"))
 
