@@ -52,10 +52,5 @@
 {% endif %}
 </div>
 
-    <p> start: {{start}} </p>
-    <p> finish: {{finish}} </p>
-    <p> period: {{period}} </p>
-    {% for record in records %}
-        <p> {{record.student.first}}: {{record.reason}}, {{record.timestamp}} </p>
-    {% endfor %}
+
  {% endblock %}
