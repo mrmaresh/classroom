@@ -45,7 +45,7 @@ def login(request):
         for record in record_query:
             if record['dcount'] % 2 == 1:
                 student = Student.objects.get(pk=record['student_id'])
-                records = Record.objects.filter(student=student, timestamp__gt=time_threshold).order_by('-timestamp')
+                records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
                 if records[0].reason == "use_restroom":
                     name = Student.objects.get(student_id = student.student_id).first
                     students.append(name)
