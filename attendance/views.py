@@ -18,6 +18,11 @@ schedules = {
     "regular": [ time(6,45,0,0), time(7,55,0,0), time(8,57,0,0), time(10,3,0,0), time(11,5,0,0), time(12,0,0,0), time(12,45,0,0), time(13,46,0,0), time(14,40,0,0)]
 }
 
+def get_current_period()
+    if time.today < schedules["regular"][8]:
+        return 8
+
+
 def login(request):
     students = []
     time_threshold = datetime.now() - timedelta(hours=2)
