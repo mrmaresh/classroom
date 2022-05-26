@@ -61,14 +61,14 @@ def login(request):
 
     return render(request, "login.html",{
         "students": students,
-        "records": student_query,
         "in_use": in_use,
         "waitlist": Waitlist.objects.all(),
         "waiting": waiting,
         "records": Record.objects.filter(timestamp__range = [start,finish]),
         "period": get_current_period(schedule),
         "start": start,
-        "finish": finish
+        "finish": finish,
+        "student_query": student_query
     })
 
 
