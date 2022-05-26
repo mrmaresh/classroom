@@ -101,17 +101,15 @@ def select(request):
             i = get_current_period(schedule)
             start = datetime.combine(date.today(), schedules[schedule][i])
             finish = datetime.combine(date.today(), schedules[schedule][i + 1])
-
             records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
-            recordz = Record.objects.filter(student=student).order_by('-timestamp')
             returning = is_returning(records)
-
             return render(request, 'select.html',{
                 "student": student,
                 "returning": returning,
                 "usage": Bathroom.objects.filter(student=student).order_by('-time_out'),
                 "in_use": in_use
             })
+
 
 def waitlist(request):
     if request.method == "POST":
@@ -122,10 +120,12 @@ def waitlist(request):
             entry.save()
         return HttpResponseRedirect(reverse("login"))
 
+
 def reset(request):
     if request.method == "POST":
         Waitlist.objects.all().delete()
         return HttpResponseRedirect(reverse("dashboard"))
+
 
 def dashboard(request):
     startdate = datetime.today()-timedelta(hours=8)
@@ -138,6 +138,7 @@ def dashboard(request):
         "hour": datetime.now().hour,
         "minute": datetime.now().minute
     })
+
 
 def record(request):
     if request.method == "POST":
