@@ -23,6 +23,8 @@ schedules = {
 
 schedule = "test mode"
 
+
+
 def get_current_period(schedule):
     now = datetime.now()
     for i in range(9):
