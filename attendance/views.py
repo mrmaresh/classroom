@@ -83,6 +83,8 @@ def is_returning(records):
     else:
         return False
 
+
+
 def restroom_usage(recordz):
 
     records = list(recordz)
