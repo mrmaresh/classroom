@@ -14,7 +14,6 @@ from django.db.models import Count
 
 from .models import Student, Record, Bathroom, Waitlist
 
-wait_list = []
 
 def login(request):
     students = []
@@ -131,7 +130,7 @@ def dashboard(request):
     enddate = startdate + timedelta(days=1)
     records = Bathroom.objects.filter(time_out__gt = startdate).order_by('-time_out')
     return render(request, 'dashboard.html',{
-        "waitlist": wait_list,
+        "waitlist": Waitlist.objects.all(),
         "records": records,
         "startdate":startdate.date,
         "hour": datetime.now().hour,
