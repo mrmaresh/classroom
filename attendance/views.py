@@ -41,7 +41,7 @@ def login(request):
 
     student_query = Record.objects.filter(timestamp__range = [start,finish]).values('student')
 
-    if len(record_query) > 0:
+    if len(student_query) > 0:
         for student in student_query:
             records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
             if records[0].reason == "use_restroom":
