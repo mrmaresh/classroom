@@ -125,6 +125,7 @@ def select(request):
         else:
             student = Student.objects.get(student_id=student_id)
             time_threshold = datetime.now() - timedelta(hours=1)
+            
             records = Record.objects.filter(student=student, timestamp__gt=time_threshold).order_by('-timestamp')
             recordz = Record.objects.filter(student=student).order_by('-timestamp')
             returning = is_returning(records)
