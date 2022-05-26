@@ -7,7 +7,9 @@
 {% endblock %}
 
  {% block body %}
- start: {{start}}, finish: {{finish}}, period: {{period}}
+    <p> start: {{start}} </p>
+    <p> finish: {{finish}} </p>
+    <p> period: {{period}} </p>
  {{time}}
     <div  style = "text-align:center; margin-top:100px"  >
         {% for student in students %}
