@@ -15,7 +15,7 @@ from django.db.models import Count
 from .models import Student, Record, Bathroom, Waitlist
 
 schedules = {
-    "regular": [ time(6,45,0,0), time(7,55,0,0), time(8,57,0,0)]
+    "regular": [ time(6,45,0,0), time(7,55,0,0), time(8,57,0,0), time(10,3,0,0), time(11,5,0,0), time(12,0,0,0), time(12,45,0,0), time(13,46,0,0)]
 }
 
 def login(request):
@@ -48,7 +48,7 @@ def login(request):
         "in_use": in_use,
         "waitlist": Waitlist.objects.all(),
         "waiting": waiting,
-        "time": schedules["regular"][0].time
+        "time": schedules["regular"][7]
     })
 
 
