@@ -44,7 +44,7 @@ def login(request):
         "students": students,
         "records": record_query,
         "in_use": in_use,
-        "waitlist": wait_list,
+        "waitlist": Waitlist.objects.all(),
         "waiting": waiting
     })
 

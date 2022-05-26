@@ -45,7 +45,7 @@
     <h4> Wait List </h4>
     <ol >
         {% for person in waitlist %}
-            <li> {{person.first}} </li>
+            <li> {{person.student.first}} </li>
         {% endfor %}
     </ol>
 {% endif %}
