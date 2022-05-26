@@ -1,5 +1,5 @@
 import json
-from datetime import datetime, timedelta, timezone, time
+from datetime import datetime, timedelta, timezone, time, date
 from django.contrib import messages
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
@@ -42,8 +42,8 @@ def login(request):
     else:
         waiting = False
     today = datetime.date.today()
-    start = datetime.combine(today, schedules["regular"][0])
-    finish = datetime.combine(today, schedules["regular"][8])
+    start = datetime.combine(date.today(), schedules["regular"][0])
+    finish = datetime.combine(date.today(), schedules["regular"][8])
     return render(request, "login.html",{
         "students": students,
         "records": record_query,
