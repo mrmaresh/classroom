@@ -68,7 +68,7 @@ def login(request):
         "waitlist": Waitlist.objects.all(),
         "waiting": waiting,
         "time": Record.objects.filter(timestamp__range = [start,finish]),
-        "period": get_current_period
+        "period": get_current_period("even")
     })
 
 
