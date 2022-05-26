@@ -22,11 +22,8 @@ schedules = {
 
 def get_current_period(schedule):
     now = datetime.now()
-    if schedule in ["regular"]:
-        r = 9
-    elif schedule in ["odd", "even"]:
-        r = 6
-    for i in range(r):
+
+    for i in range(9):
         hour = schedules[schedule][i].hour
         minute = schedules[schedule][i].minute
         then = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
@@ -59,8 +56,8 @@ def login(request):
     else:
         waiting = False
     i = get_current_period("even")
-    start = datetime.combine(date.today(), schedules["regular"][i])
-    finish = datetime.combine(date.today(), schedules["regular"][i+1])
+    start = datetime.combine(date.today(), schedules["even"][i])
+    finish = datetime.combine(date.today(), schedules["even"][i+2])
     return render(request, "login.html",{
         "students": students,
         "records": record_query,
