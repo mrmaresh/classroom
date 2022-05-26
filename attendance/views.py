@@ -41,7 +41,7 @@ def login(request):
         waiting = True
     else:
         waiting = False
-    
+
     start = datetime.combine(date.today(), schedules["regular"][0])
     finish = datetime.combine(date.today(), schedules["regular"][8])
     return render(request, "login.html",{
@@ -50,7 +50,7 @@ def login(request):
         "in_use": in_use,
         "waitlist": Waitlist.objects.all(),
         "waiting": waiting,
-        "time": Record.objects.filter(timestamp__range[start, finish])
+        "time": start
     })
 
 
