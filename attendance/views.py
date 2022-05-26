@@ -54,9 +54,11 @@ def login(request):
         waiting = True
     else:
         waiting = False
-    i = get_current_period("odd")
-    start = datetime.combine(date.today(), schedules["odd"][i])
-    finish = datetime.combine(date.today(), schedules["odd"][i + 1])
+
+    schedule = "odd"
+    i = get_current_period(schedule)
+    start = datetime.combine(date.today(), schedules[schedule][i])
+    finish = datetime.combine(date.today(), schedules[schedule][i + 1])
     return render(request, "login.html",{
         "students": students,
         "records": record_query,
@@ -64,7 +66,7 @@ def login(request):
         "waitlist": Waitlist.objects.all(),
         "waiting": waiting,
         "time": Record.objects.filter(timestamp__range = [start,finish]),
-        "period": get_current_period("odd"),
+        "period": get_current_period(schedule),
         "start": start,
         "finish": finish
     })
