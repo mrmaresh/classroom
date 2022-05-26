@@ -27,7 +27,7 @@ def get_current_period(schedule):
         minute = schedules[schedule][i].minute
         then = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
         if now < then:
-            return i
+            return i - 1
     return 0
 
 
