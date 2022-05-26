@@ -12,7 +12,7 @@ from django.db.models import Count
 
 # Create your views here.
 
-from .models import Student, Record, Bathroom
+from .models import Student, Record, Bathroom, Waitlist
 
 wait_list = []
 
@@ -123,7 +123,7 @@ def waitlist(request):
 
 def reset(request):
     if request.method == "POST":
-        wait_list.clear()
+        Waitlist.objects.all().delete()
         return HttpResponseRedirect(reverse("dashboard"))
 
 def dashboard(request):
