@@ -23,7 +23,11 @@ schedules = {
 
 schedule = "test mode"
 
+# Create a function that sets the default schedule and have it automatically run every morning prior to school
+# Create a function that resets the waitlist every change of period automatically
 
+def clear_waitlist():
+    
 
 def get_current_period(schedule):
     now = datetime.now()
