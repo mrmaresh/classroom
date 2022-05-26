@@ -137,7 +137,7 @@ def select(request):
             return render(request, 'select.html',{
                 "student": student,
                 "returning": returning,
-                "usage": usage,
+                "usage": Bathroom.objects.filter(student=student)
                 "in_use": in_use
             })
 
