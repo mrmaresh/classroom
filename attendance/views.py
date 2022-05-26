@@ -40,14 +40,14 @@ def login(request):
     students = []
 
     student_query = Record.objects.filter(timestamp__range = [start,finish]).values('student')
-
+    '''
     if len(student_query) > 0:
         for student in student_query:
             records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
             if records[0].reason == "use_restroom":
                 name = Student.objects.get(student_id = student.student_id).first
                 students.append(name)
-
+    '''
     if len(students) > 0:
         in_use = True
     else:
@@ -61,7 +61,7 @@ def login(request):
 
     return render(request, "login.html",{
         "students": students,
-        "records": record_query,
+        "records": student_query,
         "in_use": in_use,
         "waitlist": Waitlist.objects.all(),
         "waiting": waiting,
