@@ -50,6 +50,8 @@ def login(request):
         "in_use": in_use,
         "waitlist": Waitlist.objects.all(),
         "waiting": waiting,
+        "start": start,
+        "finish": finish,
         "time": Record.objects.filter(timestamp__range = [start,finish])
     })
 
