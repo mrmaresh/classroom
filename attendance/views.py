@@ -158,6 +158,5 @@ def record(request):
             minutes = time_back_minutes - time_out_minutes
             bathroom = Bathroom.objects.create(student=student, time_out=time_out, time_back=time_back, minutes=minutes)
             bathroom.save()
-
         return HttpResponseRedirect(reverse("login"))
 
