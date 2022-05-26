@@ -105,8 +105,6 @@ def select(request):
             records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
             recordz = Record.objects.filter(student=student).order_by('-timestamp')
             returning = is_returning(records)
-            usage = restroom_usage(recordz)
-
 
             return render(request, 'select.html',{
                 "student": student,
