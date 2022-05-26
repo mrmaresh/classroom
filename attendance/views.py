@@ -35,7 +35,7 @@ def login(request):
     else:
         in_use = False
 
-    if len(wait_list) > 0:
+    if len(Waitlist.objects.all()) > 0:
         waiting = True
     else:
         waiting = False
