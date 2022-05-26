@@ -7,7 +7,10 @@
 
 
 {% block body %}
-
+<p>
+    In Use? {{in_use}}
+</p>
+<p> Returning? {{returning}} </p>
 {% if returning == False and in_use == "True" %}
     <div class="dropdown text-end">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
