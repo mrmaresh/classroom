@@ -1,4 +1,5 @@
 import json
+import time
 from datetime import datetime, timedelta, timezone, time, date
 from django.contrib import messages
 from django.shortcuts import render
@@ -27,7 +28,8 @@ schedule = "test mode"
 # Create a function that resets the waitlist every change of period automatically
 
 def clear_waitlist():
-    
+    pass
+
 
 def get_current_period(schedule):
     now = datetime.now()
