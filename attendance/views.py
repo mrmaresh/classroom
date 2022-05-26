@@ -1,5 +1,5 @@
 import json
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta, timezone, time
 from django.contrib import messages
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
@@ -15,7 +15,7 @@ from django.db.models import Count
 from .models import Student, Record, Bathroom, Waitlist
 
 schedules = {
-    "regular": [ time(6,45,0,0), time(7,55,0,0)]
+    "regular": [ time(6,45,0,0), time(7,55,0,0), time(8,57,0,0)]
 }
 
 def login(request):
@@ -48,7 +48,7 @@ def login(request):
         "in_use": in_use,
         "waitlist": Waitlist.objects.all(),
         "waiting": waiting,
-        "time": datetime.now().time
+        "time": schedules["regular"]
     })
 
 
