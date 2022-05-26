@@ -19,7 +19,7 @@ schedules = {
 }
 
 def get_current_period():
-    t = 2
+    t = time(6,40,0,0)
     if t < schedules["regular"][8]:
         return 8
     return 0
@@ -58,7 +58,7 @@ def login(request):
         "waitlist": Waitlist.objects.all(),
         "waiting": waiting,
         "time": Record.objects.filter(timestamp__range = [start,finish]),
-        "period": time.gmtime()
+        "period": get_current_period
     })
 
 
