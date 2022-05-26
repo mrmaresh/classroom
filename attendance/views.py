@@ -22,13 +22,15 @@ schedules = {
 
 def get_current_period(schedule):
     now = datetime.now()
-
-    for i in range(9):
+    if schedule in ["odd"]:
+        list = [0,1,3,5,7,9]
+        r = 6
+    for i in range(r):
         hour = schedules[schedule][i].hour
         minute = schedules[schedule][i].minute
         then = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
         if now < then:
-            return i
+            return list[i]
     return 0
 
 
@@ -55,9 +57,9 @@ def login(request):
         waiting = True
     else:
         waiting = False
-    i = get_current_period("even")
-    start = datetime.combine(date.today(), schedules["even"][i])
-    finish = datetime.combine(date.today(), schedules["even"][i+2])
+    i = get_current_period("odd")
+    start = datetime.combine(date.today(), schedules["odd"][i])
+    finish = datetime.combine(date.today(), schedules["odd"][i+1])
     return render(request, "login.html",{
         "students": students,
         "records": record_query,
@@ -65,7 +67,7 @@ def login(request):
         "waitlist": Waitlist.objects.all(),
         "waiting": waiting,
         "time": Record.objects.filter(timestamp__range = [start,finish]),
-        "period": get_current_period("even")
+        "period": get_current_period("odd")
     })
 
 
