@@ -45,7 +45,7 @@ def get_current_period(schedule):
 
 
 def login(request):
-    
+    clear_waitlist()
     i = get_current_period(schedule)
     start = datetime.combine(date.today(), schedules[schedule][i])
     finish = datetime.combine(date.today(), schedules[schedule][i + 1])
