@@ -41,7 +41,7 @@ def login(request):
         waiting = True
     else:
         waiting = False
-
+    now = 
     start = datetime.combine(datetime.now().date, schedules["regular"][0])
     finish = datetime.combine(datetime.now().date, schedules["regular"][8])
     return render(request, "login.html",{
