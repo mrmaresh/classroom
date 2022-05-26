@@ -56,7 +56,7 @@ def login(request):
         waiting = False
     i = get_current_period("odd")
     start = datetime.combine(date.today(), schedules["odd"][i])
-    finish = datetime.combine(date.today(), schedules["odd"][i+1])
+    finish = datetime.combine(date.today(), schedules["odd"][i])
     return render(request, "login.html",{
         "students": students,
         "records": record_query,
