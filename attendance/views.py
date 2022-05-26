@@ -42,6 +42,8 @@ def login(request):
     else:
         waiting = False
 
+    start = datetime.combine(datetime.now().date, )
+    finish
     return render(request, "login.html",{
         "students": students,
         "records": record_query,
