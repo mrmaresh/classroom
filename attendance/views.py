@@ -39,10 +39,10 @@ def login(request):
     finish = datetime.combine(date.today(), schedules[schedule][i + 1])
     students = []
 
-    student_query = Record.objects.filter(timestamp__range = [start,finish]).values('student')
+    record_query = Record.objects.filter(timestamp__range = [start,finish]).values('student_id').annotate(dcount=Count('student_id'))
     '''
     if len(student_query) > 0:
-        for student in student_query:
+        for record in record_query:
             records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
             if records[0].reason == "use_restroom":
                 name = Student.objects.get(student_id = student.student_id).first
@@ -68,7 +68,7 @@ def login(request):
         "period": get_current_period(schedule),
         "start": start,
         "finish": finish,
-        "student_query": student_query
+        "student_query": record_query
     })
 
 
