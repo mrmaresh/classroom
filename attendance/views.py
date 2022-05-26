@@ -137,7 +137,7 @@ def select(request):
             return render(request, 'select.html',{
                 "student": student,
                 "returning": returning,
-                "usage": Bathroom.objects.filter(student=student)
+                "usage": Bathroom.objects.filter(student=student).order_by('-time_out')
                 "in_use": in_use
             })
 
