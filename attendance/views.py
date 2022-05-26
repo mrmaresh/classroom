@@ -17,7 +17,7 @@ from .models import Student, Record, Bathroom, Waitlist
 schedules = {
     "regular": [ time(6,45,0,0), time(7,55,0,0), time(8,57,0,0), time(10,3,0,0), time(11,5,0,0), time(12,0,0,0), time(12,45,0,0), time(13,46,0,0), time(14,40,0,0)],
     "even":    [time(7,20,0,0), time(7,20,0,0), time(8,7,0,0), time(8,7,0,0), time(10,8,0,0), time(12,2,0,0), time(12,47,0,0), time(12,47,0,0), time(14,40,0,0)],
-    "odd": [time(7,20,0,0), time(8,7,0,0), time(10,8,0,0), time(12,2,0,0), time(12,47,0,0), time(14,40,0,0)]
+    "odd": [time(7,20,0,0), time(8,7,0,0), timetime(10,8,0,0), time(12,2,0,0), time(12,47,0,0), time(14,40,0,0)]
 }
 
 def get_current_period(schedule):
