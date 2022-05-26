@@ -14,7 +14,9 @@ from django.db.models import Count
 
 from .models import Student, Record, Bathroom, Waitlist
 
-
+schedules = {
+    "regular": [ ]
+}
 
 def login(request):
     students = []
