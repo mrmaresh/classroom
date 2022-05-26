@@ -19,9 +19,13 @@ schedules = {
 }
 
 def get_current_period():
-    t = datetime.now().time
-    if t < schedules["regular"][8]:
-        return 8
+    now = datetime.now()
+    for i in range(9):
+        hour = schedules["regular"][i].hour
+        minute = schedules["regular"][i].minute
+        then = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
+        if now < then:
+            return i
     return 0
 
 
