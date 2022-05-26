@@ -15,14 +15,20 @@ from django.db.models import Count
 from .models import Student, Record, Bathroom, Waitlist
 
 schedules = {
-    "regular": [ time(6,45,0,0), time(7,55,0,0), time(8,57,0,0), time(10,3,0,0), time(11,5,0,0), time(12,0,0,0), time(12,45,0,0), time(13,46,0,0), time(14,40,0,0)]
+    "regular": [ time(6,45,0,0), time(7,55,0,0), time(8,57,0,0), time(10,3,0,0), time(11,5,0,0), time(12,0,0,0), time(12,45,0,0), time(13,46,0,0), time(14,40,0,0)],
+    "even": [time(7,20,0,0), time(8,7,0,0), time(10,8,0,0), time(12,2,0,0), time(12,47,0,0), time(14,40,0,0)],
+    "odd": [time(7,20,0,0), time(8,7,0,0), time(10,8,0,0), time(12,2,0,0), time(12,47,0,0), time(14,40,0,0)]
 }
 
-def get_current_period():
+def get_current_period(schedule):
     now = datetime.now()
-    for i in range(9):
-        hour = schedules["regular"][i].hour
-        minute = schedules["regular"][i].minute
+    if schedule = "regular":
+        r = 9
+    elif schedule in ["odd", "even"]:
+        r = 6
+    for i in range(r):
+        hour = schedules[schedule][i].hour
+        minute = schedules[schedule][i].minute
         then = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
         if now < then:
             return i
@@ -52,8 +58,8 @@ def login(request):
         waiting = True
     else:
         waiting = False
-    i = get_current_period()
-    start = datetime.combine(date.today(), schedules["regular"][i-1])
+    i = get_current_period("even")
+    start = datetime.combine(date.today(), schedules["regular"][i])
     finish = datetime.combine(date.today(), schedules["regular"][i+1])
     return render(request, "login.html",{
         "students": students,
