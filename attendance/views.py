@@ -22,7 +22,7 @@ schedules = {
 
 def get_current_period(schedule):
     now = datetime.now()
-    if schedule = "regular":
+    if schedule in ["regular"]:
         r = 9
     elif schedule in ["odd", "even"]:
         r = 6
