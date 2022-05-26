@@ -68,7 +68,7 @@ def login(request):
         "period": get_current_period(schedule),
         "start": start,
         "finish": finish,
-        "student_query": record_query[0]
+        "student_query": record_query
     })
 
 
