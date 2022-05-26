@@ -29,7 +29,7 @@ yoyo = []
 # Create a function that resets the waitlist every change of period automatically
 
 def clear_waitlist():
-    yoyo.appen("sleeping")
+    yoyo.append("sleeping")
     time.sleep(60)
 
 
