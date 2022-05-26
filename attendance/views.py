@@ -124,9 +124,11 @@ def select(request):
             return HttpResponseRedirect(reverse("login"))
         else:
             student = Student.objects.get(student_id=student_id)
-            time_threshold = datetime.now() - timedelta(hours=1)
-            
-            records = Record.objects.filter(student=student, timestamp__gt=time_threshold).order_by('-timestamp')
+            i = get_current_period(schedule)
+            start = datetime.combine(date.today(), schedules[schedule][i])
+            finish = datetime.combine(date.today(), schedules[schedule][i + 1])
+
+            records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
             recordz = Record.objects.filter(student=student).order_by('-timestamp')
             returning = is_returning(records)
             usage = restroom_usage(recordz)
