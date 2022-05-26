@@ -23,14 +23,10 @@ schedules = {
 }
 
 schedule = "test mode"
-yoyo = []
 
 # Create a function that sets the default schedule and have it automatically run every morning prior to school
 # Create a function that resets the waitlist every change of period automatically
 
-def clear_waitlist():
-    yoyo.append("sleeping")
-    time.sleep(60)
 
 
 def get_current_period(schedule):
@@ -45,7 +41,6 @@ def get_current_period(schedule):
 
 
 def login(request):
-    clear_waitlist()
     i = get_current_period(schedule)
     start = datetime.combine(date.today(), schedules[schedule][i])
     finish = datetime.combine(date.today(), schedules[schedule][i + 1])
@@ -80,8 +75,7 @@ def login(request):
         "period": get_current_period(schedule),
         "start": start,
         "finish": finish,
-        "student_query": record_query,
-        "yoyo": yoyo
+        "student_query": record_query
     })
 
 
