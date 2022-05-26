@@ -146,7 +146,7 @@ def record(request):
         record.save()
         if reason == "use_restroom":
             if student in wait_list:
-                wait_list.remove(student)
+                Waitlist.objects.get(student=student).delete()
         if reason == "return_restroom":
             time_out = Record.objects.filter(student = student).order_by('-timestamp')[1].timestamp
             time_out_minutes = time_out.hour * 60 + time_out.minute
