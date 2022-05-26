@@ -88,35 +88,6 @@ def is_returning(records):
 
 
 
-def restroom_usage(recordz):
-
-    records = list(recordz)
-    usage = []
-    if not len(records) % 2 == 0:
-        time = records[0].timestamp
-        date = time.date
-        left = time
-        returned = ""
-        total = ""
-        entry = {'date':date, 'left':left, 'returned':returned, 'total':total}
-        usage.append(entry)
-        records.pop(0)
-
-    for n in range(len(records)):
-        time = records[n].timestamp
-        minutes = time.hour * 60 + time.minute
-        if n % 2 == 0:
-            returned = time
-            returned_minutes = minutes
-        else:
-            left = time
-            left_minutes = minutes
-            date = time.date
-            total = returned_minutes - left_minutes
-            entry = {'date':date, 'left':left, 'returned':returned, 'total':total}
-            usage.append(entry)
-    return usage
-
 
 def select(request):
     if request.method == "POST":
