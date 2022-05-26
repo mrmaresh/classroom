@@ -52,9 +52,9 @@ def login(request):
         waiting = True
     else:
         waiting = False
-
-    start = datetime.combine(date.today(), schedules["regular"][0])
-    finish = datetime.combine(date.today(), schedules["regular"][8])
+    i = get_current_period()
+    start = datetime.combine(date.today(), schedules["regular"][i])
+    finish = datetime.combine(date.today(), schedules["regular"][i+1])
     return render(request, "login.html",{
         "students": students,
         "records": record_query,
