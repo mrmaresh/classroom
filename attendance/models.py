@@ -25,3 +25,5 @@ class Bathroom (models.Model):
     time_back = models.DateTimeField()
     minutes = models.IntegerField()
 
+class Waitlist (models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name = "student_waitlist")
