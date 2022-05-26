@@ -20,6 +20,8 @@ schedules = {
     "odd": [time(7,20,0,0), time(8,7,0,0), time(10,8,0,0), time(10,8,0,0), time(12,2,0,0), time(12,2,0,0), time(12,47,0,0), time(12,47,0,0), time(14,40,0,0)]
 }
 
+schedule = "odd"
+
 def get_current_period(schedule):
     now = datetime.now()
     for i in range(9):
@@ -32,8 +34,11 @@ def get_current_period(schedule):
 
 
 def login(request):
+    i = get_current_period(schedule)
+    start = datetime.combine(date.today(), schedules[schedule][i])
+    finish = datetime.combine(date.today(), schedules[schedule][i + 1])
     students = []
-    time_threshold = datetime.now() - timedelta(hours=2)
+
     record_query = Record.objects.filter(timestamp__gt=time_threshold).values('student_id').annotate(dcount=Count('student_id'))
 
     if len(record_query) > 0:
@@ -55,10 +60,7 @@ def login(request):
     else:
         waiting = False
 
-    schedule = "regular"
-    i = get_current_period(schedule)
-    start = datetime.combine(date.today(), schedules[schedule][i])
-    finish = datetime.combine(date.today(), schedules[schedule][i + 1])
+
     return render(request, "login.html",{
         "students": students,
         "records": record_query,
