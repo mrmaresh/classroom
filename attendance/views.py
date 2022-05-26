@@ -19,7 +19,8 @@ schedules = {
 }
 
 def get_current_period():
-    if time.today < schedules["regular"][8]:
+    
+    if time.today() < schedules["regular"][8]:
         return 8
     return 0
 
