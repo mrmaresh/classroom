@@ -132,8 +132,10 @@ def reset(request):
 
 
 def dashboard(request):
+    i = get_current_period()
+    start = datetime.combine(date.today(), schedules[Schedule][i])
+    finish = datetime.combine(date.today(), schedules[Schedule][i + 1])
     startdate = datetime.today()-timedelta(hours=8)
-    enddate = startdate + timedelta(days=1)
     records = Bathroom.objects.filter(time_out__gt = startdate).order_by('-time_out')
     return render(request, 'dashboard.html',{
         "waitlist": Waitlist.objects.all(),
@@ -142,7 +144,7 @@ def dashboard(request):
         "hour": datetime.now().hour,
         "minute": datetime.now().minute,
         "schedule": Schedule,
-        "records": Record.objects.filter(timestamp__range = [start,finish]),
+        "recordz": Record.objects.filter(timestamp__range = [start,finish]),
         "period": get_current_period(),
         "start": start,
         "finish": finish,
