@@ -141,7 +141,11 @@ def dashboard(request):
         "startdate":startdate.date,
         "hour": datetime.now().hour,
         "minute": datetime.now().minute,
-        "schedule": Schedule
+        "schedule": Schedule,
+        "records": Record.objects.filter(timestamp__range = [start,finish]),
+        "period": get_current_period(),
+        "start": start,
+        "finish": finish,
     })
 
 
