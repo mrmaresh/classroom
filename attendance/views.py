@@ -140,7 +140,8 @@ def dashboard(request):
         "records": records,
         "startdate":startdate.date,
         "hour": datetime.now().hour,
-        "minute": datetime.now().minute
+        "minute": datetime.now().minute,
+        "schedule": Schedule
     })
 
 
