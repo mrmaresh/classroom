@@ -28,3 +28,5 @@ class Bathroom (models.Model):
 class Waitlist (models.Model):
     id = models.AutoField(primary_key=True)
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name = "student_waitlist")
+
+class 
