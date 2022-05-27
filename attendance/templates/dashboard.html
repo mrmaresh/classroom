@@ -15,6 +15,21 @@
     </div>
 </form>
 
+<form >
+    {% csrf_token %}
+    <div  class="text-center "  >
+        <label for="cars">Choose a car:</label>
+            <select id="cars" name="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+            </select>
+            <input class="bttn choice" type="submit" value="Set Schedule">
+    </div>
+</form>
+
+
 {% for record in records %}
     <p>{{record.student.first}}: {{record.time_out}}  {{record.minutes}} minutes       </p>
 {% endfor %}
