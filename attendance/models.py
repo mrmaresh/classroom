@@ -31,4 +31,13 @@ class Waitlist (models.Model):
 
 class Schedule (models.Model):
     id = models.AutoField(primary_key=True)
-    active = 
+    active = models.BooleanField()
+    period_0 = models.IntegerField()
+    period_1 = models.IntegerField()
+    period_2 = models.IntegerField()
+    period_3 = models.IntegerField()
+    period_4 = models.IntegerField()
+    period_5 = models.IntegerField()
+    period_6 = models.IntegerField()
+    period_7 = models.IntegerField()
+    period_8 = models.IntegerField()
