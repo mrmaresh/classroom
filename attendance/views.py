@@ -148,7 +148,9 @@ def dashboard(request):
 def schedule(request):
     if request.method == "POST":
         Schedule = request.POST["schedule"]
-        return HttpResponseRedirect(reverse("dashboard"))
+        return render(request, 'dashboard.html',{
+            "schedule": Schedule
+        })
 
 
 
