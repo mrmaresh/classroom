@@ -41,7 +41,7 @@ def get_current_period():
 
 
 def login(request):
-    i = get_current_period(schedule)
+    i = get_current_period()
     start = datetime.combine(date.today(), schedules[schedule][i])
     finish = datetime.combine(date.today(), schedules[schedule][i + 1])
     students = []
@@ -72,7 +72,7 @@ def login(request):
         "waitlist": Waitlist.objects.all(),
         "waiting": waiting,
         "records": Record.objects.filter(timestamp__range = [start,finish]),
-        "period": get_current_period(schedule),
+        "period": get_current_period(),
         "start": start,
         "finish": finish,
         "student_query": record_query
@@ -102,7 +102,7 @@ def select(request):
             return HttpResponseRedirect(reverse("login"))
         else:
             student = Student.objects.get(student_id=student_id)
-            i = get_current_period(schedule)
+            i = get_current_period()
             start = datetime.combine(date.today(), schedules[schedule][i])
             finish = datetime.combine(date.today(), schedules[schedule][i + 1])
             records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
