@@ -52,9 +52,11 @@ def login(request):
         for record in record_query:
             student = Student.objects.get(student_id = record['student_id'])
             records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
+            '''
             if records[0].reason == "use_restroom":
                 name = Student.objects.get(student_id = record['student_id']).first
                 students.append(name)
+            '''
 
     if len(students) > 0:
         in_use = True
