@@ -22,7 +22,7 @@ schedules = {
     "test mode": [ time(6,45,0,0), time(7,55,0,0), time(8,57,0,0), time(10,3,0,0), time(11,5,0,0), time(12,0,0,0), time(12,45,0,0), time(13,46,0,0), time(23,40,0,0)]
 }
 
-schedule = "test mode"
+schedule = "regular"
 
 # Create a function that sets the default schedule and have it automatically run every morning prior to school
 # Create a function that resets the waitlist every change of period automatically
