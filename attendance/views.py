@@ -29,7 +29,7 @@ schedule = "test mode"
 
 
 
-def get_current_period(schedule):
+def get_current_period():
     now = datetime.now()
     for i in range(9):
         hour = schedules[schedule][i].hour
