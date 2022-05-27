@@ -34,6 +34,13 @@
     <p>{{record.student.first}}: {{record.time_out}}  {{record.minutes}} minutes       </p>
 {% endfor %}
 
+<p> start: {{start}} </p>
+<p> finish: {{finish}} </p>
+<p> period: {{period}} </p>
+{% for record in records %}
+    <p> {{record.student.first}}: {{record.reason}}, {{record.timestamp}} </p>
+{% endfor %}
+
 Debug Info:
 Waitlist: {{waitlist}}
 Records: {{records}}
