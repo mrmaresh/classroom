@@ -6,10 +6,10 @@ from .models import Student, Record, Bathroom, Waitlist
 class StudentAdmin (ImportExportMixin, admin.ModelAdmin):
     list_display = ("first", "last", "student_id", "period", "exception", "id")
 
-class RecordAdmin (admin.ModelAdmin):
+class RecordAdmin (ImportExportMixin, admin.ModelAdmin):
     list_display = ("student_id", "timestamp", "reason", "id")
 
-class BathroomAdmin (admin.ModelAdmin):
+class BathroomAdmin (ImportExportMixin, admin.ModelAdmin):
     list_display = ("student_id", "time_out", "time_back", "minutes", "id")
 
 class WaitlistAdmin (admin.ModelAdmin):
