@@ -103,8 +103,8 @@ def select(request):
         else:
             student = Student.objects.get(student_id=student_id)
             i = get_current_period()
-            start = datetime.combine(date.today(), schedules[schedule][i])
-            finish = datetime.combine(date.today(), schedules[schedule][i + 1])
+            start = datetime.combine(date.today(), schedules[Schedule][i])
+            finish = datetime.combine(date.today(), schedules[Schedule][i + 1])
             records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
             returning = is_returning(records)
             return render(request, 'select.html',{
@@ -146,7 +146,7 @@ def dashboard(request):
 
 def schedule(request):
     if request.method == "POST":
-        schedule = request.POST["schedule"]
+        Schedule = request.POST["schedule"]
         return HttpResponseRedirect(reverse("dashboard"))
 
 
