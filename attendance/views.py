@@ -50,7 +50,8 @@ def login(request):
 
     if len(record_query) > 0:
         for record in record_query:
-            records = Record.objects.filter(student=record['student_id'], timestamp__range = [start,finish]).order_by('-timestamp')
+            student = Student.objects.get(pk = record['student_id'])
+            records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
             if records[0].reason == "use_restroom":
                 name = Student.objects.get(student_id = record['student_id']).first
                 students.append(name)
