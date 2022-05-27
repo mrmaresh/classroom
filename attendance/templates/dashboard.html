@@ -18,12 +18,12 @@
 <form >
     {% csrf_token %}
     <div  class="text-center "  >
-        <label for="cars">Choose a car:</label>
+        <label for="cars">Schedule:</label>
             <select id="cars" name="cars">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="fiat">Fiat</option>
-            <option value="audi">Audi</option>
+                <option value="regular">Regular</option>
+                <option value="even">Even</option>
+                <option value="odd">Odd</option>
+                <option value="test mode">Test Mode</option>
             </select>
             <input class="bttn choice" type="submit" value="Set Schedule">
     </div>
