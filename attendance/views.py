@@ -22,7 +22,7 @@ schedules = {
     "test mode": [ time(6,45,0,0), time(7,55,0,0), time(8,57,0,0), time(10,3,0,0), time(11,5,0,0), time(12,0,0,0), time(12,45,0,0), time(13,46,0,0), time(23,40,0,0)]
 }
 
-schedule = "test mode"
+Schedule = "test mode"
 
 # Create a function that sets the default schedule and have it automatically run every morning prior to school
 # Create a function that resets the waitlist every change of period automatically
@@ -32,8 +32,8 @@ schedule = "test mode"
 def get_current_period():
     now = datetime.now()
     for i in range(9):
-        hour = schedules["test mode"][i].hour
-        minute = schedules["test mode"][i].minute
+        hour = schedules[Schedule][i].hour
+        minute = schedules[Schedule][i].minute
         then = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
         if now < then:
             return i - 1
@@ -42,8 +42,8 @@ def get_current_period():
 
 def login(request):
     i = get_current_period()
-    start = datetime.combine(date.today(), schedules["test mode"][i])
-    finish = datetime.combine(date.today(), schedules["test mode"][i + 1])
+    start = datetime.combine(date.today(), schedules[Schedule][i])
+    finish = datetime.combine(date.today(), schedules[Schedule][i + 1])
     students = []
 
     record_query = Record.objects.filter(timestamp__range = [start,finish]).values('student_id').annotate(dcount=Count('student_id'))
