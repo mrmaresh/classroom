@@ -144,6 +144,14 @@ def dashboard(request):
     })
 
 
+def schedule(request):
+    if request.method == "POST":
+        schedule = request.POST["schedule"]
+        return HttpResponseRedirect(reverse("dashboard"))
+
+
+
+
 def record(request):
     if request.method == "POST":
         student_id = request.POST["student_id"]

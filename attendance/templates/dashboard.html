@@ -15,7 +15,7 @@
     </div>
 </form>
 
-<form >
+<form action="{% url 'schedule'%}" method="post">
     {% csrf_token %}
     <div  class="text-center "  >
         <label for="cars">Schedule:</label>
