@@ -46,7 +46,7 @@ def login(request):
     finish = datetime.combine(date.today(), schedules[Schedule][i + 1])
     students = []
 
-    record_query = Record.objects.filter(timestamp__range = [start,finish]).values('student_id').annotate(dcount=Count('student_id'))
+    record_query = Record.objects.values('student_id').annotate(dcount=Count('student_id'))
 
     '''
     if len(record_query) > 0:
