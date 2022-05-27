@@ -32,8 +32,8 @@ schedule = "test mode"
 def get_current_period():
     now = datetime.now()
     for i in range(9):
-        hour = schedules[schedule][i].hour
-        minute = schedules[schedule][i].minute
+        hour = schedules["test mode"][i].hour
+        minute = schedules["test mode"][i].minute
         then = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
         if now < then:
             return i - 1
@@ -42,8 +42,8 @@ def get_current_period():
 
 def login(request):
     i = get_current_period()
-    start = datetime.combine(date.today(), schedules[schedule][i])
-    finish = datetime.combine(date.today(), schedules[schedule][i + 1])
+    start = datetime.combine(date.today(), schedules["test mode"][i])
+    finish = datetime.combine(date.today(), schedules["test mode"][i + 1])
     students = []
 
     record_query = Record.objects.filter(timestamp__range = [start,finish]).values('student_id').annotate(dcount=Count('student_id'))
