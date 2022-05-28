@@ -15,7 +15,7 @@ from django.db.models import Count
 
 from .models import Student, Record, Bathroom, Waitlist, Schedule
 
-
+# ISSUE:  what happens when
 # Create a function that sets the default schedule and have it automatically run every morning prior to school
 # Create a function that resets the waitlist every change of period automatically
 
@@ -36,7 +36,7 @@ def get_current_period():
 
 def login(request):
     period = get_current_period()
-    start = datetime.combine(date.today(), getattr(Schedule.objects.get(active = True), period[0]))
+    start = datetime.combine(date.today(), getattr(Schedule.objects.get(active = True), period[0])) - timedelta(minutes=7)
     finish = datetime.combine(date.today(), getattr(Schedule.objects.get(active = True), period[1]))
     students = []
 
