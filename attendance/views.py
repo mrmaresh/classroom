@@ -15,14 +15,6 @@ from django.db.models import Count
 
 from .models import Student, Record, Bathroom, Waitlist, Schedule
 
-schedules = {
-    "regular": [ time(6,45,0,0), time(7,55,0,0), time(8,57,0,0), time(10,3,0,0), time(11,5,0,0), time(12,0,0,0), time(12,45,0,0), time(13,46,0,0), time(14,40,0,0)],
-    "even": [time(7,20,0,0), time(8,7,0,0), time(8,7,0,0), time(10,8,0,0), time(10,8,0,0), time(12,2,0,0), time(12,47,0,0), time(14,40,0,0), time(14,40,0,0)],
-    "odd": [time(7,20,0,0), time(8,7,0,0), time(10,8,0,0), time(10,8,0,0), time(12,2,0,0), time(12,2,0,0), time(12,47,0,0), time(12,47,0,0), time(14,40,0,0)],
-    "test mode": [ time(6,45,0,0), time(7,55,0,0), time(8,57,0,0), time(10,3,0,0), time(11,5,0,0), time(12,0,0,0), time(12,45,0,0), time(13,46,0,0), time(23,40,0,0)]
-}
-
-Sch = "regular"
 
 # Create a function that sets the default schedule and have it automatically run every morning prior to school
 # Create a function that resets the waitlist every change of period automatically
