@@ -36,6 +36,8 @@ def get_current_period():
             return [period[i-1], period[i]]
     return [period[0], period[1]]
 
+def restricted(request):
+    return render(request, "restricted.html")
 
 @login_required(login_url='http://mrmaresh.com/')
 def login(request):
