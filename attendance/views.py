@@ -13,7 +13,7 @@ from django.db.models import Count
 
 # Create your views here.
 
-from .models import Student, Record, Bathroom, Waitlist
+from .models import Student, Record, Bathroom, Waitlist, Schedule
 
 schedules = {
     "regular": [ time(6,45,0,0), time(7,55,0,0), time(8,57,0,0), time(10,3,0,0), time(11,5,0,0), time(12,0,0,0), time(12,45,0,0), time(13,46,0,0), time(14,40,0,0)],
@@ -22,7 +22,7 @@ schedules = {
     "test mode": [ time(6,45,0,0), time(7,55,0,0), time(8,57,0,0), time(10,3,0,0), time(11,5,0,0), time(12,0,0,0), time(12,45,0,0), time(13,46,0,0), time(23,40,0,0)]
 }
 
-Schedule = "regular"
+Sch = "regular"
 
 # Create a function that sets the default schedule and have it automatically run every morning prior to school
 # Create a function that resets the waitlist every change of period automatically
@@ -34,8 +34,8 @@ def get_current_period():
 
 
     for i in range(9):
-        hour = schedules[Schedule][i].hour
-        minute = schedules[Schedule][i].minute
+        hour = schedules[Sch][i].hour
+        minute = schedules[Sch][i].minute
         then = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
         if now < then:
             return i - 1
@@ -44,8 +44,8 @@ def get_current_period():
 
 def login(request):
     i = get_current_period()
-    start = datetime.combine(date.today(), schedules[Schedule][i])
-    finish = datetime.combine(date.today(), schedules[Schedule][i + 1])
+    start = datetime.combine(date.today(), schedules[Sch][i])
+    finish = datetime.combine(date.today(), schedules[Sch][i + 1])
     students = []
 
     record_query = Record.objects.values('student_id').annotate(dcount=Count('student_id'))
@@ -81,7 +81,7 @@ def login(request):
         "period": get_current_period(),
         "start": start,
         "finish": finish,
-        "student_query": Schedule.objects.get(active = True)
+        "student_query": Schedule.objects.get(active = True).period_3
     })
 
 
@@ -109,8 +109,8 @@ def select(request):
         else:
             student = Student.objects.get(student_id=student_id)
             i = get_current_period()
-            start = datetime.combine(date.today(), schedules[Schedule][i])
-            finish = datetime.combine(date.today(), schedules[Schedule][i + 1])
+            start = datetime.combine(date.today(), schedules[Sch][i])
+            finish = datetime.combine(date.today(), schedules[Sch][i + 1])
             records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
             returning = is_returning(records)
             return render(request, 'select.html',{
@@ -139,8 +139,8 @@ def reset(request):
 
 def dashboard(request):
     i = get_current_period()
-    start = datetime.combine(date.today(), schedules[Schedule][i])
-    finish = datetime.combine(date.today(), schedules[Schedule][i + 1])
+    start = datetime.combine(date.today(), schedules[Sch][i])
+    finish = datetime.combine(date.today(), schedules[Sch][i + 1])
     startdate = datetime.today()-timedelta(hours=8)
     records = Bathroom.objects.filter(time_out__gt = startdate).order_by('-time_out')
     return render(request, 'dashboard.html',{
@@ -149,7 +149,7 @@ def dashboard(request):
         "startdate":startdate.date,
         "hour": datetime.now().hour,
         "minute": datetime.now().minute,
-        "schedule": Schedule,
+        "schedule": Sch,
         "recordz": Record.objects.filter(timestamp__range = [start,finish]),
         "period": get_current_period(),
         "start": start,
@@ -158,9 +158,9 @@ def dashboard(request):
 
 
 def schedule(request):
-    global Schedule
+    global Sch
     if request.method == "POST":
-        Schedule = request.POST["schedule"]
+        Sch = request.POST["schedule"]
         return HttpResponseRedirect(reverse("dashboard"))
 
 
