@@ -71,8 +71,7 @@ def login(request):
     else:
         waiting = False
 
-    period = 'period_2'
-    value = getattr(Schedule.objects.get(active = True), period)
+
     val = Record.objects.all().first().timestamp.time
     return render(request, "login.html",{
         "students": students,
@@ -83,7 +82,7 @@ def login(request):
         "period": get_current_period(),
         "start": start,
         "finish": finish,
-        "student_query": datetime.combine(date.today(), value)
+        "student_query": finish
     })
 
 
