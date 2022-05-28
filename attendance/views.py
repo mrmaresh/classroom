@@ -43,7 +43,7 @@ def get_current_period():
 
 
 def login(request):
-    i = get_current_period()
+    period = get_current_period()
     start = datetime.combine(date.today(), schedules[Sch][i])
     finish = datetime.combine(date.today(), schedules[Sch][i + 1])
     students = []
