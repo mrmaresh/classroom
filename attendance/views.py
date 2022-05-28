@@ -81,7 +81,7 @@ def login(request):
         "period": get_current_period(),
         "start": start,
         "finish": finish,
-        "student_query": Schedule.objects.get(active = True).schedule
+        "student_query": Schedule.objects.get(active = True)
     })
 
 
