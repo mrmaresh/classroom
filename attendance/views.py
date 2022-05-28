@@ -153,8 +153,12 @@ def dashboard(request):
 def schedule(request):
     if request.method == "POST":
         active = Schedule.objects.get(active = True)
-        
-        Sch = request.POST["schedule"]
+        active.active = False
+        active.save()
+        schedule = request.POST["schedule"]
+        change = Schedule.objects.get(schedule = schedule)
+        change.active = True
+        change.save()
         return HttpResponseRedirect(reverse("dashboard"))
 
 
