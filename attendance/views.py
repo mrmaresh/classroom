@@ -31,7 +31,7 @@ Schedule = "regular"
 
 def get_current_period():
     now = datetime.now()
-    
+
 
     for i in range(9):
         hour = schedules[Schedule][i].hour
@@ -81,7 +81,7 @@ def login(request):
         "period": get_current_period(),
         "start": start,
         "finish": finish,
-        "student_query": record_query
+        "student_query": Schedule.objects.get(active = True).schedule
     })
 
 
