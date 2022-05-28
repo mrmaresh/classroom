@@ -48,15 +48,15 @@ def login(request):
 
     record_query = Record.objects.values('student_id').annotate(dcount=Count('student_id'))
 
-    '''
+
     if len(record_query) > 0:
         for record in record_query:
-            student = Student.objects.get(pk = record['student_id'])
+            student = Student.objects.get(pk = 3)
             records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
             if records[0].reason == "use_restroom":
-                name = Student.objects.get(student_id = record['student_id']).first
+                name = Student.objects.get(pk = 3).first
                 students.append(name)
-    '''
+
 
     if len(students) > 0:
         in_use = True
