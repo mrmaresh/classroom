@@ -51,10 +51,10 @@ def login(request):
 
     if len(record_query) > 0:
         for record in record_query:
-            student = Student.objects.get(pk = 3)
+            student = Student.objects.get(pk = record['student_id'])
             records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
             if records[0].reason == "use_restroom":
-                name = Student.objects.get(pk = 3).first
+                name = Student.objects.get(pk = record['student_id']).first
                 students.append(name)
 
 
