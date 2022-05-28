@@ -102,7 +102,7 @@ def select(request):
         else:
             student = Student.objects.get(student_id=student_id)
             period = get_current_period()
-            start = datetime.combine(date.today(), getattr(Schedule.objects.get(active = True), period[0]))
+            start = datetime.combine(date.today(), getattr(Schedule.objects.get(active = True), period[0])) - timedelta(hours=8)
             finish = datetime.combine(date.today(), getattr(Schedule.objects.get(active = True), period[1]))
             records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
             returning = is_returning(records)
