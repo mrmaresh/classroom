@@ -32,13 +32,13 @@ Sch = "regular"
 def get_current_period():
     now = datetime.now()
 
-    options = ['period_0', 'period_1', 'period_2', 'period_3', 'period_4', 'period_5', 'period_6', 'period_7', 'period_8']
-    for period in options:
-        hour = getattr(Schedule.objects.get(active = True), period).hour
-        minute = getattr(Schedule.objects.get(active = True), period).minute
+    period = ['period_0', 'period_1', 'period_2', 'period_3', 'period_4', 'period_5', 'period_6', 'period_7', 'period_8']
+    for i in range(9):
+        hour = getattr(Schedule.objects.get(active = True), period[i]).hour
+        minute = getattr(Schedule.objects.get(active = True), period[i]).minute
         then = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
         if now < then:
-            return i - 1
+            return period[ i+1 ]
     return 0
 
 
