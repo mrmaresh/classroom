@@ -109,9 +109,9 @@ def select(request):
             return HttpResponseRedirect(reverse("login"))
         else:
             student = Student.objects.get(student_id=student_id)
-            i = get_current_period()
-            start = datetime.combine(date.today(), schedules[Sch][i])
-            finish = datetime.combine(date.today(), schedules[Sch][i + 1])
+            period = get_current_period()
+            start = datetime.combine(date.today(), getattr(Schedule.objects.get(active = True), period[0]))
+            finish = datetime.combine(date.today(), getattr(Schedule.objects.get(active = True), period[1]))
             records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
             returning = is_returning(records)
             return render(request, 'select.html',{
@@ -139,9 +139,9 @@ def reset(request):
 
 
 def dashboard(request):
-    i = get_current_period()
-    start = datetime.combine(date.today(), schedules[Sch][i])
-    finish = datetime.combine(date.today(), schedules[Sch][i + 1])
+    period = get_current_period()
+    start = datetime.combine(date.today(), getattr(Schedule.objects.get(active = True), period[0]))
+    finish = datetime.combine(date.today(), getattr(Schedule.objects.get(active = True), period[1]))
     startdate = datetime.today()-timedelta(hours=8)
     records = Bathroom.objects.filter(time_out__gt = startdate).order_by('-time_out')
     return render(request, 'dashboard.html',{
