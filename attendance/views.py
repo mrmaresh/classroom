@@ -39,7 +39,7 @@ def get_current_period():
 def restricted(request):
     return render(request, "restricted.html")
 
-@login_required(login_url='http://mrmaresh.com/')
+@login_required(login_url='restricted')
 def login(request):
     period = get_current_period()
     start = datetime.combine(date.today(), getattr(Schedule.objects.get(active = True), period[0])) - timedelta(minutes=7)
