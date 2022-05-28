@@ -38,13 +38,13 @@ def get_current_period():
         minute = getattr(Schedule.objects.get(active = True), period[i]).minute
         then = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
         if now < then:
-            return [period[i+1], period[i+2]]
+            return [period[i-1], period[i]]
     return 0
 
 
 def login(request):
-    i = get_current_period()
-    start = datetime.combine(date.today(), schedules[Sch][i])
+    period = get_current_period()
+    start = datetime.combine(date.today(), )
     finish = datetime.combine(date.today(), schedules[Sch][i + 1])
     students = []
 
