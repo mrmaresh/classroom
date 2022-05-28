@@ -18,7 +18,6 @@ from django.db.models import Count
 from .models import Student, Record, Bathroom, Waitlist, Schedule
 
 # ISSUE:  what period is detected during passing period?
-# Create: loginin only access
 # Create a function that sets the default schedule and have it automatically run every morning prior to school
 # Create a function that resets the waitlist every change of period automatically
 
