@@ -44,7 +44,7 @@ def get_current_period():
 
 def login(request):
     period = get_current_period()
-    start = datetime.combine(date.today(), )
+    start = datetime.combine(date.today(), getattr(Schedule.objects.get(active = True), period[0]))
     finish = datetime.combine(date.today(), schedules[Sch][i + 1])
     students = []
 
