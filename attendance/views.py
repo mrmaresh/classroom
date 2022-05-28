@@ -39,7 +39,7 @@ def get_current_period():
         then = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
         if now < then:
             return [period[i-1], period[i]]
-    return 0
+    return [period[0], period[1]]
 
 
 def login(request):
