@@ -2,12 +2,13 @@ import json
 import time
 from datetime import datetime, timedelta, timezone, time, date
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.db.models import Count
-from django.contrib.auth.decorators import login_required
+
 
 
 
@@ -36,6 +37,7 @@ def get_current_period():
     return [period[0], period[1]]
 
 
+@login_required
 def login(request):
     period = get_current_period()
     start = datetime.combine(date.today(), getattr(Schedule.objects.get(active = True), period[0])) - timedelta(minutes=7)
@@ -93,7 +95,7 @@ def is_returning(records):
 
 
 
-
+@login_required
 def select(request):
     if request.method == "POST":
         student_id = request.POST["student_id"]
@@ -132,6 +134,7 @@ def reset(request):
         return HttpResponseRedirect(reverse("dashboard"))
 
 
+@login_required
 def dashboard(request):
     period = get_current_period()
     start = datetime.combine(date.today(), getattr(Schedule.objects.get(active = True), period[0]))
