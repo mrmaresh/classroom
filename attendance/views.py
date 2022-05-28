@@ -37,7 +37,7 @@ def get_current_period():
     return [period[0], period[1]]
 
 
-@login_required
+@login_required(login_url='http://mrmaresh.com/')
 def login(request):
     period = get_current_period()
     start = datetime.combine(date.today(), getattr(Schedule.objects.get(active = True), period[0])) - timedelta(minutes=7)
