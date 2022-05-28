@@ -31,6 +31,8 @@ Schedule = "regular"
 
 def get_current_period():
     now = datetime.now()
+    
+
     for i in range(9):
         hour = schedules[Schedule][i].hour
         minute = schedules[Schedule][i].minute
