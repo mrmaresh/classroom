@@ -38,7 +38,7 @@ def get_current_period():
         minute = getattr(Schedule.objects.get(active = True), period[i]).minute
         then = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
         if now < then:
-            return 0
+            return [period[i+1], period[i+2]]
     return 0
 
 
