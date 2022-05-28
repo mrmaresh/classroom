@@ -71,6 +71,7 @@ def login(request):
     else:
         waiting = False
 
+    period = 'period_2'
 
     return render(request, "login.html",{
         "students": students,
@@ -81,7 +82,7 @@ def login(request):
         "period": get_current_period(),
         "start": start,
         "finish": finish,
-        "student_query": Schedule.objects.get(active = True)
+        "student_query": getattr(Schedule.objects.get(active = True), period)
     })
 
 
