@@ -7,6 +7,7 @@ from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.db.models import Count
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -15,7 +16,8 @@ from django.db.models import Count
 
 from .models import Student, Record, Bathroom, Waitlist, Schedule
 
-# ISSUE:  what happens when
+# ISSUE:  what period is detected during passing period?
+# Create: loginin only access
 # Create a function that sets the default schedule and have it automatically run every morning prior to school
 # Create a function that resets the waitlist every change of period automatically
 
