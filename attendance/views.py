@@ -45,7 +45,7 @@ def get_current_period():
 def login(request):
     period = get_current_period()
     start = datetime.combine(date.today(), getattr(Schedule.objects.get(active = True), period[0]))
-    finish = datetime.combine(date.today(), schedules[Sch][i + 1])
+    finish = datetime.combine(date.today(), getattr(Schedule.objects.get(active = True), period[1]))
     students = []
 
     record_query = Record.objects.values('student_id').annotate(dcount=Count('student_id'))
