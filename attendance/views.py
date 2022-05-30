@@ -35,8 +35,12 @@ def get_current_period():
             return [period[i-1], period[i]]
     return [period[0], period[1]]
 
+
+
 def restricted(request):
     return render(request, "restricted.html")
+
+
 
 @login_required(login_url='restricted')
 def login(request):
@@ -57,7 +61,6 @@ def login(request):
                     name = Student.objects.get(pk = record['student_id']).first
                     students.append(name)
 
-
     if len(students) > 0:
         in_use = True
     else:
@@ -67,7 +70,6 @@ def login(request):
         waiting = True
     else:
         waiting = False
-
 
     val = Record.objects.all().first().timestamp.time
     return render(request, "login.html",{
@@ -79,7 +81,7 @@ def login(request):
         "period": get_current_period(),
         "start": start,
         "finish": finish,
-        "student_query": finish
+        "student_query": "hello"
     })
 
 
