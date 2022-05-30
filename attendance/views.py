@@ -81,7 +81,7 @@ def login(request):
         "period": get_current_period(),
         "start": start,
         "finish": finish,
-        "student_query": datetime.strptime(my_date_string, '%b %d %Y %I:%M%p')
+        "student_query": datetime.strptime("11:31AM", '%I:%M%p')
     })
 
 
