@@ -72,6 +72,8 @@ def login(request):
         waiting = False
 
     val = Record.objects.all().first().timestamp.time
+    datetime.strptime("11:31AM", '%I:%M%p')
+    datetime.now().replace(hour=5, minute=32, second=0, microsecond=0)
     return render(request, "login.html",{
         "students": students,
         "in_use": in_use,
@@ -81,7 +83,7 @@ def login(request):
         "period": get_current_period(),
         "start": start,
         "finish": finish,
-        "student_query": datetime.strptime("11:31AM", '%I:%M%p')
+        "student_query": datetime.now().replace(hour=5, minute=32, second=0, microsecond=0)
     })
 
 
