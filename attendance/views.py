@@ -83,7 +83,7 @@ def login(request):
         "period": get_current_period(),
         "start": start,
         "finish": finish,
-        "student_query": datetime.strptime("11:31AM", '%I:%M%p').replace(month = datetime.now().month, year=datetime.now().year)
+        "student_query": datetime.strptime("11:48AM", '%I:%M%p').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) < datetime.now()
     })
 
 
