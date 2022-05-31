@@ -75,7 +75,6 @@ def login(request):
     else:
         waiting = False
 
-    val = Record.objects.all().first().timestamp.time
     datetime.strptime("11:31AM", '%I:%M%p')
     now = datetime.now()
     '''
