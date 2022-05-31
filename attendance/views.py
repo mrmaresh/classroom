@@ -24,6 +24,7 @@ from .models import Student, Record, Bathroom, Waitlist, Schedule
 
 
 def get_current_period():
+    
     now = datetime.now()
 
     period = ['period_0', 'period_1', 'period_2', 'period_3', 'period_4', 'period_5', 'period_6', 'period_7', 'period_8']
@@ -84,7 +85,7 @@ def login(request):
         "period": get_current_period(),
         "start": start,
         "finish": finish,
-        "student_query": then < now
+        "student_query": then
     })
 
 
