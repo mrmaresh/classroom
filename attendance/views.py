@@ -15,7 +15,7 @@ from django.db.models import Count
 
 # Create your views here.
 
-from .models import Student, Record, Bathroom, Waitlist, Schedule
+from .models import Student, Record, Bathroom, Waitlist #, Schedule
 
 # ISSUE:  what period is detected during passing period?
 # Create a function that sets the default schedule and have it automatically run every morning prior to school
@@ -177,6 +177,7 @@ def dashboard(request):
 
 def schedule(request):
     if request.method == "POST":
+        '''
         active = Schedule.objects.get(active = True)
         active.active = False
         active.save()
@@ -184,6 +185,7 @@ def schedule(request):
         change = Schedule.objects.get(schedule = schedule)
         change.active = True
         change.save()
+        '''
         return HttpResponseRedirect(reverse("dashboard"))
 
 
