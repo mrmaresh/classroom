@@ -24,7 +24,6 @@ from .models import Student, Record, Bathroom, Waitlist, Schedule
 
 
 def get_current_period():
-    
     now = datetime.now()
 
     period = ['period_0', 'period_1', 'period_2', 'period_3', 'period_4', 'period_5', 'period_6', 'period_7', 'period_8']
