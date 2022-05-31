@@ -1,7 +1,7 @@
 from django.contrib import admin
 from import_export.admin import ImportExportMixin
 
-from .models import Student, Record, Bathroom, Waitlist, Schedule
+from .models import Student, Record, Bathroom, Waitlist #, Schedule
 
 class StudentAdmin (ImportExportMixin, admin.ModelAdmin):
     list_display = ("first", "last", "student_id", "period", "exception", "id")
