@@ -28,8 +28,7 @@ def get_current_period():
 
     period = ['period_0', 'period_1', 'period_2', 'period_3', 'period_4', 'period_5', 'period_6', 'period_7', 'period_8']
     for i in range(9):
-
-        then = now 
+        then = datetime.strptime(Schedule.objects.get(schedule = "regular").period_1, '%I:%M%p').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
         if now < then:
             return [period[i-1], period[i]]
     return [period[0], period[1]]
