@@ -29,7 +29,7 @@ def get_current_period():
     period = ['period_0', 'period_1', 'period_2', 'period_3', 'period_4', 'period_5', 'period_6', 'period_7', 'period_8']
     for i in range(9):
 
-        then = now - timedelta(hour=5)
+        then = now 
         if now < then:
             return [period[i-1], period[i]]
     return [period[0], period[1]]
