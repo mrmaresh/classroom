@@ -45,7 +45,6 @@ def restricted(request):
 @login_required(login_url='restricted')
 def login(request):
     period = get_current_period()
-
     start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
     finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
     students = []
@@ -115,8 +114,8 @@ def select(request):
         else:
             student = Student.objects.get(student_id=student_id)
             period = get_current_period()
-            start = datetime.combine(date.today(), getattr(Schedule.objects.get(active = True), period[0])) - timedelta(hours=8)
-            finish = datetime.combine(date.today(), getattr(Schedule.objects.get(active = True), period[1]))
+            start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
+            finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
             records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
             returning = is_returning(records)
             return render(request, 'select.html',{
@@ -146,8 +145,8 @@ def reset(request):
 @login_required
 def dashboard(request):
     period = get_current_period()
-    start = datetime.combine(date.today(), getattr(Schedule.objects.get(active = True), period[0]))
-    finish = datetime.combine(date.today(), getattr(Schedule.objects.get(active = True), period[1]))
+    start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
+    finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
     startdate = datetime.today()-timedelta(hours=8)
     records = Bathroom.objects.filter(time_out__gt = startdate).order_by('-time_out')
     return render(request, 'dashboard.html',{
