@@ -24,6 +24,7 @@ from .models import Student, Record, Bathroom, Waitlist, Schedule
 
 
 def get_current_period():
+    '''
     now = datetime.now()
 
     period = ['period_0', 'period_1', 'period_2', 'period_3', 'period_4', 'period_5', 'period_6', 'period_7', 'period_8']
@@ -31,7 +32,8 @@ def get_current_period():
         then = datetime.strptime(getattr(Schedule.objects.get(active = True), period[i]), '%I:%M%p').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
         if now < then:
             return [period[i-1], period[i]]
-    return [period[0], period[1]]
+    '''
+    return ['period_0', 'period_1']
 
 
 
