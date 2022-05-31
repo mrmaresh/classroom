@@ -21,7 +21,7 @@ from .models import Student, Record, Bathroom, Waitlist, Schedule
 # Create a function that sets the default schedule and have it automatically run every morning prior to school
 # Create a function that resets the waitlist every change of period automatically
 
-
+'''
 
 def get_current_period():
 
@@ -35,7 +35,7 @@ def get_current_period():
 
     return ['period_0', 'period_1']
 
-
+'''
 
 def restricted(request):
     return render(request, "restricted.html")
