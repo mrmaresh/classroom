@@ -15,13 +15,13 @@ from django.db.models import Count
 
 # Create your views here.
 
-from .models import Student, Record, Bathroom, Waitlist #, Schedule
+from .models import Student, Record, Bathroom, Waitlist, Schedule
 
 # ISSUE:  what period is detected during passing period?
 # Create a function that sets the default schedule and have it automatically run every morning prior to school
 # Create a function that resets the waitlist every change of period automatically
 
-'''
+
 
 def get_current_period():
 
@@ -35,7 +35,7 @@ def get_current_period():
 
     return ['period_0', 'period_1']
 
-'''
+
 
 def restricted(request):
     return render(request, "restricted.html")
@@ -44,13 +44,12 @@ def restricted(request):
 
 @login_required(login_url='restricted')
 def login(request):
-    '''
+
     period = get_current_period()
     start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
     finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
-    '''
-    start = datetime.now()
-    finish = datetime.now() - timedelta(minutes=7)
+
+
     students = []
 
     record_query = Record.objects.values('student_id').annotate(dcount=Count('student_id'))
@@ -77,16 +76,16 @@ def login(request):
 
     datetime.strptime("11:31AM", '%I:%M%p')
     now = datetime.now()
-    '''
+
     then = datetime.strptime(Schedule.objects.get(schedule = "regular").period_1, '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
-    '''
+
     return render(request, "login.html",{
         "students": students,
         "in_use": in_use,
         "waitlist": Waitlist.objects.all(),
         "waiting": waiting,
         "records": Record.objects.filter(timestamp__range = [start,finish]),
-        #"period": get_current_period(),
+        "period": get_current_period(),
         "start": start,
         "finish": finish,
         "student_query": now
@@ -116,13 +115,11 @@ def select(request):
             return HttpResponseRedirect(reverse("login"))
         else:
             student = Student.objects.get(student_id=student_id)
-            '''
+
             period = get_current_period()
             start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
             finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
-            '''
-            start = datetime.now()
-            finish = datetime.now() - timedelta(minutes=7)
+
             records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
             returning = is_returning(records)
             return render(request, 'select.html',{
@@ -151,13 +148,11 @@ def reset(request):
 
 @login_required
 def dashboard(request):
-    '''
+
     period = get_current_period()
     start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)  - timedelta(minutes=7)
     finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
-    '''
-    start = datetime.now()
-    finish = datetime.now() - timedelta(minutes=7)
+
     startdate = datetime.today()-timedelta(hours=8)
     records = Bathroom.objects.filter(time_out__gt = startdate).order_by('-time_out')
     return render(request, 'dashboard.html',{
@@ -166,7 +161,7 @@ def dashboard(request):
         "startdate":startdate.date,
         "hour": datetime.now().hour,
         "minute": datetime.now().minute,
-        #"schedule": "Schedule.objects.get(active=True).schedule",
+        "schedule": "Schedule.objects.get(active=True).schedule",
         "recordz": Record.objects.filter(timestamp__range = [start,finish]),
         "period": get_current_period(),
         "start": start,
@@ -176,7 +171,7 @@ def dashboard(request):
 
 def schedule(request):
     if request.method == "POST":
-        '''
+
         active = Schedule.objects.get(active = True)
         active.active = False
         active.save()
@@ -184,7 +179,7 @@ def schedule(request):
         change = Schedule.objects.get(schedule = schedule)
         change.active = True
         change.save()
-        '''
+        
         return HttpResponseRedirect(reverse("dashboard"))
 
 
