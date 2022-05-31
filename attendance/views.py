@@ -90,7 +90,7 @@ def login(request):
         "period": get_current_period(),
         "start": start,
         "finish": finish,
-        "student_query": datetime.strptime(getattr(Schedule.objects.get(active=True), 'period_1'), '%H:%M:%S')
+        "student_query": datetime.strptime(getattr(Schedule.objects.get(active=True), 'period_1'), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
     })
 
 
