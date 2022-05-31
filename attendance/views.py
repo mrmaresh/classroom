@@ -78,7 +78,9 @@ def login(request):
     val = Record.objects.all().first().timestamp.time
     datetime.strptime("11:31AM", '%I:%M%p')
     now = datetime.now()
+    '''
     then = datetime.strptime(Schedule.objects.get(schedule = "regular").period_1, '%I:%M%p').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
+    '''
     return render(request, "login.html",{
         "students": students,
         "in_use": in_use,
@@ -88,7 +90,7 @@ def login(request):
         "period": get_current_period(),
         "start": start,
         "finish": finish,
-        "student_query": then
+        "student_query": now
     })
 
 
