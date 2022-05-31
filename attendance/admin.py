@@ -25,6 +25,7 @@ admin.site.register(Student, StudentAdmin)
 admin.site.register(Record, RecordAdmin)
 admin.site.register(Bathroom, BathroomAdmin)
 admin.site.register(Waitlist, WaitlistAdmin)
+'''
 admin.site.register(Schedule, ScheduleAdmin)
-
+'''
 
