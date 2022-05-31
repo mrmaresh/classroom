@@ -32,7 +32,7 @@ class Waitlist (models.Model):
 
 class Schedule (models.Model):
     id = models.AutoField(primary_key=True)
-    schedule = models.CharField(max_length=20)
+    schedule_name = models.CharField(max_length=20)
     active = models.BooleanField()
     period_0 = models.CharField(max_length=20)
     period_1 = models.CharField(max_length=20)
@@ -43,4 +43,3 @@ class Schedule (models.Model):
     period_6 = models.CharField(max_length=20)
     period_7 = models.CharField(max_length=20)
     period_8 = models.CharField(max_length=20)
-    
