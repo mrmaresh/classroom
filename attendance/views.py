@@ -45,8 +45,12 @@ def restricted(request):
 @login_required(login_url='restricted')
 def login(request):
     period = get_current_period()
+    '''
     start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%I:%M%p').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
     finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%I:%M%p').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
+    '''
+    start = datetime.now()
+    finish = datetime.now() + timedelta(minutes = 5)
     students = []
 
     record_query = Record.objects.values('student_id').annotate(dcount=Count('student_id'))
