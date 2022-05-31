@@ -24,15 +24,15 @@ from .models import Student, Record, Bathroom, Waitlist, Schedule
 
 
 def get_current_period():
-    '''
+
     now = datetime.now()
 
     period = ['period_0', 'period_1', 'period_2', 'period_3', 'period_4', 'period_5', 'period_6', 'period_7', 'period_8']
     for i in range(9):
-        then = datetime.strptime(getattr(Schedule.objects.get(active = True), period[i]), '%I:%M%p').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
+        then = datetime.strptime(getattr(Schedule.objects.get(active = True), period[i]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
         if now < then:
             return [period[i-1], period[i]]
-    '''
+
     return ['period_0', 'period_1']
 
 
@@ -45,12 +45,9 @@ def restricted(request):
 @login_required(login_url='restricted')
 def login(request):
     period = get_current_period()
-    '''
-    start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%I:%M%p').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
-    finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%I:%M%p').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
-    '''
-    start = datetime.now()
-    finish = datetime.now() + timedelta(minutes = 5)
+
+    start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
+    finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
     students = []
 
     record_query = Record.objects.values('student_id').annotate(dcount=Count('student_id'))
@@ -79,7 +76,7 @@ def login(request):
     datetime.strptime("11:31AM", '%I:%M%p')
     now = datetime.now()
     '''
-    then = datetime.strptime(Schedule.objects.get(schedule = "regular").period_1, '%I:%M%p').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
+    then = datetime.strptime(Schedule.objects.get(schedule = "regular").period_1, '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
     '''
     return render(request, "login.html",{
         "students": students,
