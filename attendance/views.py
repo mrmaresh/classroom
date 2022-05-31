@@ -44,9 +44,13 @@ def restricted(request):
 
 @login_required(login_url='restricted')
 def login(request):
+    '''
     period = get_current_period()
     start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
     finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
+    '''
+    start = datetime.now()
+    finish = datetime.now() - timedelta(minutes=7)
     students = []
 
     record_query = Record.objects.values('student_id').annotate(dcount=Count('student_id'))
@@ -86,7 +90,7 @@ def login(request):
         "period": get_current_period(),
         "start": start,
         "finish": finish,
-        "student_query": datetime.strptime(getattr(Schedule.objects.get(active=True), 'period_1'), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
+        "student_query": now
     })
 
 
@@ -113,9 +117,13 @@ def select(request):
             return HttpResponseRedirect(reverse("login"))
         else:
             student = Student.objects.get(student_id=student_id)
+            '''
             period = get_current_period()
             start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
             finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
+            '''
+            start = datetime.now()
+            finish = datetime.now() - timedelta(minutes=7)
             records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
             returning = is_returning(records)
             return render(request, 'select.html',{
