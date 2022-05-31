@@ -15,9 +15,10 @@ class BathroomAdmin (ImportExportMixin, admin.ModelAdmin):
 class WaitlistAdmin (admin.ModelAdmin):
     list_display = ("student_id", "id")
 
+'''
 class ScheduleAdmin (admin.ModelAdmin):
     list_display = ("schedule", "active", "period_0", "period_1", "period_2", "period_3", "period_4", "period_5", "period_6", "period_7", "period_8",)
-
+'''
 
 
 admin.site.register(Student, StudentAdmin)
