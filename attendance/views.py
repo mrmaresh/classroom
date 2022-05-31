@@ -77,7 +77,7 @@ def login(request):
     datetime.strptime("11:31AM", '%I:%M%p')
     now = datetime.now()
 
-    then = datetime.strptime(Schedule.objects.get(schedule = "regular").period_1, '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
+    then = datetime.strptime(Schedule.objects.get(schedule_name = "regular").period_1, '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
 
     return render(request, "login.html",{
         "students": students,
@@ -161,7 +161,7 @@ def dashboard(request):
         "startdate":startdate.date,
         "hour": datetime.now().hour,
         "minute": datetime.now().minute,
-        "schedule": "Schedule.objects.get(active=True).schedule",
+        "schedule": "Schedule.objects.get(active=True).schedule_name",
         "recordz": Record.objects.filter(timestamp__range = [start,finish]),
         "period": get_current_period(),
         "start": start,
@@ -176,10 +176,10 @@ def schedule(request):
         active.active = False
         active.save()
         schedule = request.POST["schedule"]
-        change = Schedule.objects.get(schedule = schedule)
+        change = Schedule.objects.get(schedule_name = schedule)
         change.active = True
         change.save()
-        
+
         return HttpResponseRedirect(reverse("dashboard"))
 
 
