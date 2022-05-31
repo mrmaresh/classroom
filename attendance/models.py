@@ -29,7 +29,7 @@ class Waitlist (models.Model):
     id = models.AutoField(primary_key=True)
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name = "student_waitlist")
 
-'''
+
 class Schedule (models.Model):
     id = models.AutoField(primary_key=True)
     schedule = models.CharField(max_length=20)
@@ -43,4 +43,4 @@ class Schedule (models.Model):
     period_6 = models.CharField(max_length=20)
     period_7 = models.CharField(max_length=20)
     period_8 = models.CharField(max_length=20)
-    '''
+    
