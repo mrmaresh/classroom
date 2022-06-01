@@ -20,9 +20,10 @@ from .models import Student, Record, Bathroom, Waitlist, Schedule
 # ISSUE:  what period is detected during passing period?
 # Create a function that sets the default schedule and have it automatically run every morning prior to school
 # Create a function that resets the waitlist every change of period automatically
+# Create a student dashboard which displays the joke of the day, homework, reminders, birthdays
 
 
-
+# This function detects what is the current period
 def get_current_period():
     now = datetime.now()
     period = ['period_0', 'period_1', 'period_2', 'period_3', 'period_4', 'period_5', 'period_6', 'period_7', 'period_8']
@@ -33,21 +34,19 @@ def get_current_period():
     return ['period_0', 'period_1']
 
 
-
+# This displays a default page for all who are not logged in
 def restricted(request):
     return render(request, "restricted.html")
 
 
+# This is the student login page
 @login_required(login_url='restricted')
 def login(request):
     period = get_current_period()
     start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
     finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
     students = []
-
     record_query = Record.objects.values('student_id').annotate(dcount=Count('student_id'))
-
-
     if len(record_query) > 0:
         for record in record_query:
             student = Student.objects.get(pk = record['student_id'])
