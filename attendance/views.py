@@ -24,15 +24,12 @@ from .models import Student, Record, Bathroom, Waitlist, Schedule
 
 
 def get_current_period():
-
     now = datetime.now()
-
     period = ['period_0', 'period_1', 'period_2', 'period_3', 'period_4', 'period_5', 'period_6', 'period_7', 'period_8']
     for i in range(9):
         then = datetime.strptime(getattr(Schedule.objects.get(active = True), period[i]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)  - timedelta(minutes=7)
         if now < then:
             return [period[i-1], period[i]]
-
     return ['period_0', 'period_1']
 
 
@@ -41,15 +38,11 @@ def restricted(request):
     return render(request, "restricted.html")
 
 
-
 @login_required(login_url='restricted')
 def login(request):
-
     period = get_current_period()
     start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
     finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
-
-
     students = []
 
     record_query = Record.objects.values('student_id').annotate(dcount=Count('student_id'))
