@@ -45,6 +45,7 @@ def login(request):
     period = get_current_period()
     start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
     finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
+    # This is a list of all the students currently using the restroom
     students = []
     record_query = Record.objects.values('student_id').annotate(dcount=Count('student_id'))
     if len(record_query) > 0:
