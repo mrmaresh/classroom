@@ -39,7 +39,7 @@ def restricted(request):
     return render(request, "restricted.html")
 
 
-def students_using_restroom()
+def students_using_restroom():
     period = get_current_period()
     start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
     finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
@@ -65,6 +65,7 @@ def login(request):
     period = get_current_period()
     start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
     finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
+
     # This is a list of all the students currently using the restroom
     students = students_using_restroom()
     # This checks if someone is using the restroom
@@ -169,7 +170,8 @@ def dashboard(request):
         "period": get_current_period(),
         "period_number": get_current_period()[0][-1],
         "start": start_time.time,
-        "finish": finish_time.time
+        "finish": finish_time.time,
+        "using_restroom": students_using_restroom()
 
     })
 
