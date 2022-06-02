@@ -56,7 +56,8 @@ def login(request):
                 if records[0].reason == "use_restroom":
                     name = Student.objects.get(pk = record['student_id']).first
                     students.append(name)
-
+                    
+    # This checks if someone is using the restroom
     if len(students) > 0:
         in_use = True
     else:
