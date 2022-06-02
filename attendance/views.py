@@ -70,8 +70,6 @@ def login(request):
     datetime.strptime("11:31AM", '%I:%M%p')
     now = datetime.now()
 
-    then = datetime.strptime(Schedule.objects.get(schedule_name = "regular").period_1, '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
-
     return render(request, "login.html",{
         "students": students,
         "in_use": in_use,
