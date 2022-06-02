@@ -21,6 +21,15 @@
             <td>Time/Date</td>
             <td id = "txt"></td>
         </tr>
+        <tr>
+            <td>Today's Usage</td>
+            <td>
+                {% for record in records %}
+                    <p>{{record.student.first}}: {{record.time_out}}  {{record.minutes}} minutes       </p>
+                {% endfor %}
+            </td>
+        </tr>
+
     </table>
 </div>
 
@@ -53,9 +62,7 @@
 </form>
 
 
-{% for record in records %}
-    <p>{{record.student.first}}: {{record.time_out}}  {{record.minutes}} minutes       </p>
-{% endfor %}
+
 
 <p> start: {{start}} </p>
 <p> finish: {{finish}} </p>
