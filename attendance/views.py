@@ -56,20 +56,19 @@ def login(request):
                 if records[0].reason == "use_restroom":
                     name = Student.objects.get(pk = record['student_id']).first
                     students.append(name)
-                    
+
     # This checks if someone is using the restroom
     if len(students) > 0:
         in_use = True
     else:
         in_use = False
 
+    # This checks if someone is waiting for the restroom
     if len(Waitlist.objects.all()) > 0:
         waiting = True
     else:
         waiting = False
 
-    datetime.strptime("11:31AM", '%I:%M%p')
-    now = datetime.now()
 
     return render(request, "login.html",{
         "students": students,
