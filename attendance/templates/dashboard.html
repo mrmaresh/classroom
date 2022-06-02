@@ -24,9 +24,15 @@
         <tr>
             <td>Today's Usage</td>
             <td>
-                {% for record in records %}
-                    <p>{{record.student.first}}: {{record.time_out}}  {{record.minutes}} minutes       </p>
-                {% endfor %}
+                <table>
+                    {% for record in records %}
+                        <tr>
+                            <td>{{record.student.first}}</td>
+                            <td>{{record.time_out}}</td>
+                            <td>{{record.minutes}} minutes </td>
+                        </tr>
+                    {% endfor %}
+                </table>
             </td>
         </tr>
 
