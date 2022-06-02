@@ -40,10 +40,6 @@ def restricted(request):
 
 
 def students_using_restroom()
-
-# This is the student login page
-@login_required(login_url='restricted')
-def login(request):
     period = get_current_period()
     start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
     finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
@@ -58,7 +54,19 @@ def login(request):
                 if records[0].reason == "use_restroom":
                     name = Student.objects.get(pk = record['student_id']).first
                     students.append(name)
+    return students
 
+
+
+
+# This is the student login page
+@login_required(login_url='restricted')
+def login(request):
+    period = get_current_period()
+    start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
+    finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
+    # This is a list of all the students currently using the restroom
+    students = students_using_restroom()
     # This checks if someone is using the restroom
     if len(students) > 0:
         in_use = True
