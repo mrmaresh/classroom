@@ -156,8 +156,9 @@ def dashboard(request):
         "recordz": Record.objects.filter(timestamp__range = [start,finish]),
         "period": get_current_period(),
         "period_number": get_current_period()[0][-1],
-        "start": start,
-        "finish": finish,
+        "start": start.time,
+        "finish": finish.time,
+
     })
 
 
