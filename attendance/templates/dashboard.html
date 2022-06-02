@@ -24,12 +24,12 @@
         <tr>
             <td>Today's Usage</td>
             <td>
-                <table>
+                <table class = "usage">
                     {% for record in records %}
-                        <tr>
-                            <td><strong>{{record.student.first}}</strong></td>
-                            <td>{{record.minutes}} minutes </td>
-                            <td>{{record.time_out}}</td>
+                        <tr class = "usage">
+                            <td style = "border: 1px solid; padding: 5px;"><strong>{{record.student.first}}</strong></td>
+                            <td style = "border: 1px solid; padding: 5px;">{{record.minutes}} minutes </td>
+                            <td style = "border: 1px solid; padding: 5px;">{{record.time_out}}</td>
                         </tr>
                     {% endfor %}
                 </table>
