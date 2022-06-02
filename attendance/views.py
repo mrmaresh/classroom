@@ -76,7 +76,7 @@ def login(request):
         "waitlist": Waitlist.objects.all(),
         "waiting": waiting,
         "records": Record.objects.filter(timestamp__range = [start,finish]),
-        "period": get_current_period()[0],
+        "period": get_current_period()[0][-1],
         "start": start,
         "finish": finish,
         "schedule": Schedule.objects.get(active = True).schedule_name
