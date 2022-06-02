@@ -7,18 +7,25 @@
 
 
 {% block body %}
-<table>
-    <tr>
-        <td>Schedule</td>
-        <td>{{schedule}}</td>
-    </tr>
-    <tr>
-        <td>Period {{period_number}}</td>
-        <td>{{start}} to {{finish}}</td>
-    </tr>
-</table>
+<div  style ="margin-left:10%; margin-right:65%;" >
+    <table class = "table table-sm">
+        <tr>
+            <td>Schedule</td>
+            <td>{{schedule}}</td>
+        </tr>
+        <tr>
+            <td>Period {{period_number}}</td>
+            <td>{{start}} to {{finish}}</td>
+        </tr>
+        <tr>
+            <td>Time/Date</td>
+            <td id = "txt"></td>
+        </tr>
+    </table>
+</div>
+
 <h5 style = "margin:30px"> Current Schedule: {{schedule}}   <br>  Period {{period_number}} is from {{start}} to {{finish}}  <br>  Time/Date:</h5>
-<h5 id = "txt"></h5>
+<h5 ></h5>
 <h5>Current Usage:  <br> Today's Usage: </h5>
 
 <form action="{% url 'reset'%}" method="post">
