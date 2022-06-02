@@ -144,6 +144,8 @@ def dashboard(request):
     start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)  - timedelta(minutes=7)
     finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
 
+    finish_time = finish - timedelta(minutes=7)
+    start_time = start + timedelta(minutes=7)
     startdate = datetime.today()-timedelta(hours=8)
     records = Bathroom.objects.filter(time_out__gt = startdate).order_by('-time_out')
     return render(request, 'dashboard.html',{
@@ -156,8 +158,8 @@ def dashboard(request):
         "recordz": Record.objects.filter(timestamp__range = [start,finish]),
         "period": get_current_period(),
         "period_number": get_current_period()[0][-1],
-        "start": start.time,
-        "finish": finish.time,
+        "start": start_time.time,
+        "finish": finish_time.time
 
     })
 
