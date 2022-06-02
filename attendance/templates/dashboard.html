@@ -7,7 +7,16 @@
 
 
 {% block body %}
-
+<table>
+    <tr>
+        <td>Current Schedule</td>
+        <td>{{schedule}}</td>
+    </tr>
+    <tr>
+        <td>Period {{period_number}}</td>
+        <td>{{start}} to {{finish}}</td>
+    </tr>
+</table>
 <h5 style = "margin:30px"> Current Schedule: {{schedule}}   <br>  Period {{period_number}} is from {{start}} to {{finish}}  <br>  Time/Date:</h5>
 <h5 id = "txt"></h5>
 <h5>Current Usage:  <br> Today's Usage: </h5>
