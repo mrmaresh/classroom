@@ -1,28 +1,13 @@
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    function startTime() {
-        const today = new Date();
-        let h = today.getHours();
-        let m = today.getMinutes();
-        let s = today.getSeconds();
-        m = checkTime(m);
-        s = checkTime(s);
-        document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
-        setTimeout(startTime, 1000);
-      }
-
-      function checkTime(i) {
-        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-        return i;
-      }
-
-      window.onload = startTime
+    
 
     window.onload = displayClock();
     function displayClock(){
         var display = new Date().toLocaleTimeString();
         document.body.innerHTML = display;
+        document.getElementById('txt').innerHTML = display;
         setTimeout(displayClock, 1000);
     }
 });
