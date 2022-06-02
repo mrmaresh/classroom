@@ -27,8 +27,7 @@
                 <table>
                     {% for record in records %}
                         <tr>
-                            <td>{{record.student.first}}</td>
-                            <td>{{record.time_out}}</td>
+                            <td><strong>{{record.student.first}}</strong></td>
                             <td>{{record.minutes}} minutes </td>
                         </tr>
                     {% endfor %}
