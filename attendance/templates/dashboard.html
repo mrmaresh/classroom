@@ -8,7 +8,7 @@
 
 {% block body %}
 
-<h5 style = "margin:30px"> Current Schedule: {{schedule}}   <br>  Period:  Start:   End:  <br>  Time/Date:  <br>  Current Usage:  <br> Today's Usage: </h5>
+<h5 style = "margin:30px"> Current Schedule: {{schedule}}   <br>  Period: {{period_number}}  Start:   End:  <br>  Time/Date:  <br>  Current Usage:  <br> Today's Usage: </h5>
 
 <form action="{% url 'reset'%}" method="post">
     {% csrf_token %}
