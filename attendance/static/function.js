@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayClock(){
         var time = new Date().toLocaleTimeString();
         var date = new Date().toDateString();
-        document.getElementById('txt').innerHTML = time ;
+        document.getElementById('time').innerHTML = time;
+        document.getElementById('date').innerHTML = date;
         setTimeout(displayClock, 1000);
     }
 
