@@ -7,8 +7,8 @@
 
 
 {% block body %}
-<div  style ="margin-left:10%; margin-right:65%;" >
-    <table class = "table table-sm">
+<div  style ="margin-left:10%; margin-right:35%;" >
+    <table class = "table table-sm" style="font-size: 200%">
         <tr>
             <td>Schedule</td>
             <td>{{schedule}}</td>
@@ -39,9 +39,6 @@
     </table>
 </div>
 
-<h5 style = "margin:30px"> Current Schedule: {{schedule}}   <br>  Period {{period_number}} is from {{start}} to {{finish}}  <br>  Time/Date:</h5>
-<h5 ></h5>
-<h5>Current Usage:  <br> Today's Usage: </h5>
 
 <form action="{% url 'reset'%}" method="post">
     {% csrf_token %}
