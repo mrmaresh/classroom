@@ -8,6 +8,19 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('txt').innerHTML = display;
         setTimeout(displayClock, 1000);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+    
 });
 
 

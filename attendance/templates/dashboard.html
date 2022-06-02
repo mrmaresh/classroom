@@ -8,6 +8,8 @@
 
 {% block body %}
 
+<h5> Current Schedule:   <br>  Period:  Start:   End:  <br>  Time/Date:  <br>  Current Usage:  <br> Today's Usage: </h5>
+
 <form action="{% url 'reset'%}" method="post">
     {% csrf_token %}
     <div  class="text-center "  >
