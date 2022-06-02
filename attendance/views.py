@@ -39,6 +39,8 @@ def restricted(request):
     return render(request, "restricted.html")
 
 
+def students_using_restroom()
+
 # This is the student login page
 @login_required(login_url='restricted')
 def login(request):
