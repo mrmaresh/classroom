@@ -179,7 +179,6 @@ def dashboard(request):
 
 def schedule(request):
     if request.method == "POST":
-
         active = Schedule.objects.get(active = True)
         active.active = False
         active.save()
