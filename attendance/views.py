@@ -183,12 +183,12 @@ def schedule(request):
         active.active = False
         active.save()
         schedule = str(request.POST["schedule"])
-        change = Schedule.objects.get(schedule_name = schedule)
-        change.active = True
-        change.save()
+        #change = Schedule.objects.get(schedule_name = schedule)
+        #change.active = True
+        #change.save()
 
-        return HttpResponseRedirect(reverse("dashboard"))
-
+        #return HttpResponseRedirect(reverse("dashboard"))
+        return HttpResponse("hello")
 
 
 
