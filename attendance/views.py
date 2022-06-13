@@ -171,7 +171,8 @@ def dashboard(request):
         "period_number": get_current_period()[0][-1],
         "start": start_time.time,
         "finish": finish_time.time,
-        "using_restroom": students_using_restroom()
+        "using_restroom": students_using_restroom(),
+        "options": Schedule.objects.all()
 
     })
 

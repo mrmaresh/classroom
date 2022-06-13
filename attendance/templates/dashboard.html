@@ -60,13 +60,9 @@
     <div  class="text-center "  >
         <label for="cars">Schedule:</label>
             <select name="schedule">
-                <option value="Regular">Regular</option>
-                <option value="Even">Even</option>
-                <option value="Odd">Odd</option>
-                <option value="Final B">Final B</option>
-                <option value="Final C">Final C</option>
-                <option value="Minimum Day">Minimum Day</option>
-                <option value="Test Mode">Test Mode</option>
+                {% for schedule in options %}
+                    <option value = {{schedule.schedule_name}}>{{schedule.schedule_name}}</option>
+                {% endfor %}
             </select>
             <input class="bttn choice" type="submit" value="Set Schedule">
     </div>
