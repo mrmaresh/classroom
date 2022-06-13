@@ -182,7 +182,7 @@ def schedule(request):
         active = Schedule.objects.get(active = True)
         active.active = False
         active.save()
-        schedule = request.POST["schedule"]
+        schedule = str(request.POST["schedule"])
         change = Schedule.objects.get(schedule_name = schedule)
         change.active = True
         change.save()
