@@ -1,13 +1,15 @@
 {% extends 'layout.html' %}
 
-
-
 {% block head %}
     <title>Login</title>
+    <link href="{% static 'login/style.css' %}" rel="stylesheet">
 {% endblock %}
 
+
  {% block body %}
- <p style="margin:20px">{{schedule}} Schedule <br> Period {{period}}</p>
+    <div class="schedule-container">
+        <p>{{schedule}} Schedule <br> Period {{period}}</p>
+    </div>
 
     <div  style = "text-align:center; margin-top:100px"  >
         {% for student in students %}
@@ -56,5 +58,5 @@
 <div style="margin:30px"><h1 id = "time" style = "font-size: 700%"></h1></div>
 <div style="margin:30px"><h1 id = "date" style = "font-size: 300%"></h1></div>
 
-
+  <script src="{% static 'login/script.js' %}"></script>
  {% endblock %}
