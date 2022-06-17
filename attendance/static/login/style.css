@@ -44,12 +44,11 @@ body {
 
 .error-message-container {
     position: absolute;
-    background-color: red;
+    color: red;
     text-align: center;
     transform: translateY(-40px);
-    height: auto;
-    width: auto;
-    
+
+
 
 }
 
