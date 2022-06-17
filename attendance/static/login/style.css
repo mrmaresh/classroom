@@ -42,8 +42,8 @@ body {
 .waitlist-container {
     background-color: green;
     position: absolute;
-    right:0;
-    top: 35%;
+    left:0;
+    top: 50%;
     width: 30%;
     height: 15%;
 }
