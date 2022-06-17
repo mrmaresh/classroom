@@ -43,8 +43,12 @@ body {
 }
 
 .error-message-container {
+    position: absolute;
+    top: 0;
     background-color: red;
     text-align: center;
+    border-radius: 20%;
+    padding: 30px;
 }
 
 .waitlist-container {
