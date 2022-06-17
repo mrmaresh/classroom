@@ -46,6 +46,7 @@ body {
     top: 50%;
     width: 30%;
     height: 15%;
+    text-align: center;
 }
 
 .date-time-container {
