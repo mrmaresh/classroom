@@ -29,38 +29,13 @@
             </p>
         </form>
     </div>
-    
+
     <div class="date-time-container">
         <h1 class="time"></h1>
         <h1 class="date"></h1>
     </div>
 
-    <div class="restroom-use-container">
-        {% for student in students %}
-            <div class="restroom-use">{{student}} is using the restroom.</div>
-        {% endfor %}
-    </div>
 
-    <div class="error-message-container">
-        <h2 class="error-message" id="errorMessage">
-            {% if messages %}
-                {% for message in messages %}
-                    {{ message }}
-                {% endfor %}
-            {% endif %}
-        </h2>
-    </div>
-
-    <div class="waitlist-container">
-        {% if waiting == True %}
-            <h4> Wait List </h4>
-            <ol>
-                {% for person in waitlist %}
-                    <li> {{person.student.first}} </li>
-                {% endfor %}
-            </ol>
-        {% endif %}
-    </div>
     <script src="{% static 'login/script.js' %}"></script>
 </body>
 </html>
