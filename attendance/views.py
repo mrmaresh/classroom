@@ -81,7 +81,7 @@ def login(request):
         waiting = False
 
 
-    return render(request, "login.html",{
+    return render(request, "login2.html",{
         "students": students,
         "in_use": in_use,
         "waitlist": Waitlist.objects.all(),
