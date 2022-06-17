@@ -59,8 +59,10 @@
         {% endif %}
     </div>
 
-<div style="margin:30px"><h1 id = "time" style = "font-size: 700%"></h1></div>
-<div style="margin:30px"><h1 id = "date" style = "font-size: 300%"></h1></div>
+    <div class="date-time-container">
+        <h1 class="time"></h1>
+        <h1 class="date"></h1>
+    </div>
 
   <script src="{% static 'login/script.js' %}"></script>
  {% endblock %}
