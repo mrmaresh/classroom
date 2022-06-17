@@ -10,6 +10,9 @@
     --speed: 1000ms;
 }
 
+button {
+    background-color: transparent;
+}
 
 * {
     box-sizing: border-box;
