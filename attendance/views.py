@@ -93,6 +93,8 @@ def login(request):
         "schedule": Schedule.objects.get(active = True).schedule_name
     })
 
+
+@login_required
 def choice(request):
     if request.method == "POST":
         student_id = request.POST["student_id"]
@@ -123,24 +125,20 @@ def select(request):
     if request.method == "POST":
         student_id = request.POST["student_id"]
         in_use = request.POST["in_use"]
-        if len(Student.objects.filter(student_id=student_id)) == 0:
-            messages.add_message(request, messages.INFO, 'Incorrect Student ID.')
-            return HttpResponseRedirect(reverse("login"))
-        else:
-            student = Student.objects.get(student_id=student_id)
+        student = Student.objects.get(student_id=student_id)
 
-            period = get_current_period()
-            start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
-            finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
+        period = get_current_period()
+        start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
+        finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
 
-            records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
-            returning = is_returning(records)
-            return render(request, 'select.html',{
-                "student": student,
-                "returning": returning,
-                "usage": Bathroom.objects.filter(student=student).order_by('-time_out'),
-                "in_use": in_use
-            })
+        records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
+        returning = is_returning(records)
+        return render(request, 'select.html',{
+            "student": student,
+            "returning": returning,
+            "usage": Bathroom.objects.filter(student=student).order_by('-time_out'),
+            "in_use": in_use
+        })
 
 
 def waitlist(request):
@@ -184,7 +182,6 @@ def dashboard(request):
         "finish": finish_time.time,
         "using_restroom": students_using_restroom(),
         "options": Schedule.objects.all()
-
     })
 
 
