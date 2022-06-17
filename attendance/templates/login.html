@@ -37,7 +37,7 @@
             </form>
         </div>
 
-        <div>
+        <div class="error-message-container">
                 <h2 id="errorMessage">
                     {% if messages %}
                         {% for message in messages %}
@@ -48,17 +48,16 @@
         </div>
 
 
-
-    <div style="margin-left:20%" >
-{% if waiting == True %}
-    <h4> Wait List </h4>
-    <ol >
-        {% for person in waitlist %}
-            <li> {{person.student.first}} </li>
-        {% endfor %}
-    </ol>
-{% endif %}
-</div>
+    <div class="waitlist-container" >
+        {% if waiting == True %}
+            <h4> Wait List </h4>
+            <ol >
+                {% for person in waitlist %}
+                    <li> {{person.student.first}} </li>
+                {% endfor %}
+            </ol>
+        {% endif %}
+    </div>
 
 <div style="margin:30px"><h1 id = "time" style = "font-size: 700%"></h1></div>
 <div style="margin:30px"><h1 id = "date" style = "font-size: 300%"></h1></div>
