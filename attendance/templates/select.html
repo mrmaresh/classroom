@@ -10,9 +10,9 @@
 {% block body %}
 
 {% if returning == False and in_use == "True" %}
-    <div class="option-contaner">
+    <div class="option-container">
         <button class="btn">Options</button>
-        
+
         <div class="option-form">
             <form action="{% url 'record' %}" method="post">
                 {% csrf_token %}
@@ -28,7 +28,7 @@
 
 <h1 class="welcome">Hello, {{student.first}} {{student.last}}</h1>
 
-<div class="form container">
+<div class="form-container">
     <form action="{% url 'record' %}" method="post">
         {% csrf_token %}
 
