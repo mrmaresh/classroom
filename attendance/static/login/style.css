@@ -46,9 +46,6 @@ body {
     color: darkred;
     text-align: center;
     transform: translateY(-40px);
-
-
-
 }
 
 .waitlist-container {
@@ -71,7 +68,7 @@ body {
     background-color: rgba(0,0,0,0.1);
     width: 55%;
     line-height: 0;
-    bottom: 15px;
+    bottom: 25px;
     border-radius: 20px;
 }
 
