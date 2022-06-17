@@ -33,10 +33,13 @@ body {
     left: 0;
     width: 30%;
     height:15%;
+    padding-left: 5%;
+    font-size: 20px;
 }
 
 .error-message-container {
     background-color: red;
+    text-align: center;
 }
 
 .waitlist-container {
@@ -46,7 +49,9 @@ body {
     top: 50%;
     width: 30%;
     height: 15%;
-    text-align: center;
+    padding-left: 5%;
+    font-size: 20px;
+
 }
 
 .date-time-container {
