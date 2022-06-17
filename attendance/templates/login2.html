@@ -46,7 +46,17 @@
             {% endif %}
         </h2>
     </div>
-    
+
+    <div class="waitlist-container">
+        {% if waiting == True %}
+            <h4> Wait List </h4>
+            <ol>
+                {% for person in waitlist %}
+                    <li> {{person.student.first}} </li>
+                {% endfor %}
+            </ol>
+        {% endif %}
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
