@@ -33,7 +33,7 @@ body {
 .usage-container {
     background-color: green;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     width: 30%;
     height:15%;
@@ -47,8 +47,7 @@ body {
     top: 0;
     background-color: red;
     text-align: center;
-    border-radius: 20%;
-    padding: 30px;
+
 }
 
 .waitlist-container {
