@@ -15,15 +15,9 @@
             <form action="{% url 'select' %}" method="post">
                 {% csrf_token %}
 
-                {% if in_use == True %}
-                    <input hidden class="form-control" name="in_use" value="True">
-                {% else %}
-                    <input hidden class="form-control" name="in_use" value="False">
-                {% endif %}
-
-                <input hidden class="form-control" name="student_id" value="11">
+                <input hidden class="form-control" name="in_use" value={{in_use}}>
+                <input hidden class="form-control" name="student_id" value={{student_id}}>
                 <button class="btn">Login</button>
-                
             </form>
         </div>
 
