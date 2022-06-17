@@ -17,13 +17,22 @@ body {
     margin: 0;
 }
 
-.container {
+.schedule-container {
+    background-color: green;
     position: absolute;
-    background-color: rgba(0,0,0,0.3);
-    padding: 20px 100px;
-    border-radius: 5px;
-    top:10%;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 15%;
+}
 
+.usage-container {
+    background-color: purple;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    width: 30%;
+    height:15%;
 }
 
 .date-time-container {
@@ -49,6 +58,17 @@ body {
 .date-time-container .date {
     padding-bottom: 30px;
 }
+
+
+.container {
+    position: absolute;
+    background-color: rgba(0,0,0,0.3);
+    padding: 20px 100px;
+    border-radius: 5px;
+    top:10%;
+
+}
+
 
 .btn{
     cursor: pointer;
