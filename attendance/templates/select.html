@@ -10,22 +10,17 @@
 {% block body %}
 
 {% if returning == False and in_use == "True" %}
-    <div class="dropdown text-end">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        options
-        </button>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-        <li>
+    <div class="option-contaner">
+        <button class="btn">Options</button>
+        
+        <div class="option-form">
             <form action="{% url 'record' %}" method="post">
                 {% csrf_token %}
-                <input hidden class="form-control" name="reason" value="use_restroom">
-                <input hidden class="form-control" name="student_id" value={{student.student_id}}>
-                <div  >
-                        <input class="choice" type="submit" value="Use Restroom">
-                </div>
+                <input hidden name="reason" value="use_restroom">
+                <input hidden name="student_id" value={{student.student_id}}>
+                <input  type="submit" value="Use Restroom">
             </form>
-        </li>
-        </ul>
+        </div>
     </div>
 {% endif %}
 
