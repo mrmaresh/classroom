@@ -20,7 +20,7 @@
 
 
         <div class="container" id = "login">
-            <form action="{% url 'select' %}" method="post">
+            <form action="{% url 'choice' %}" method="post">
                 {% csrf_token %}
 
                 {% if in_use == True %}
