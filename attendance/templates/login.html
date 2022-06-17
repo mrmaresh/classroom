@@ -22,13 +22,16 @@
         <div class="container" id = "login">
             <form action="{% url 'select' %}" method="post">
                 {% csrf_token %}
-                <div class="form-group">
-                    {% if in_use == True %}
-                        <input hidden class="form-control" name="in_use" value="True">
-                    {% else %}
-                        <input hidden class="form-control" name="in_use" value="False">
-                    {% endif %}
-                    <input type="password" required autofocus class="form-control" name="student_id" placeholder="Enter ID">
+
+                {% if in_use == True %}
+                    <input hidden class="form-control" name="in_use" value="True">
+                {% else %}
+                    <input hidden class="form-control" name="in_use" value="False">
+                {% endif %}
+
+                <div class="form-control">
+                    <input type="password" required autofocus class="form-control" name="student_id">
+                    <label>Enter ID</label>
                 </div>
                 <input class="btn btn-primary" type="submit" value="Login">
             </form>
