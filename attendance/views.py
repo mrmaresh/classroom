@@ -93,7 +93,8 @@ def login(request):
         "schedule": Schedule.objects.get(active = True).schedule_name
     })
 
-
+def choice(request):
+    return render(request, "choice.html")
 
 
 def is_returning(records):
