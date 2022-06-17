@@ -27,7 +27,6 @@ body {
 }
 
 .usage-container {
-    background-color: purple;
     position: absolute;
     top: 25%;
     left: 0;
@@ -43,7 +42,6 @@ body {
 }
 
 .waitlist-container {
-    background-color: green;
     position: absolute;
     left:0;
     top: 50%;
