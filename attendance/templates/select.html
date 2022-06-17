@@ -48,38 +48,37 @@
             <input class="bttn choice" type="submit" value="Return from Restroom">
         {% endif %}
     </form>
-</div>
 
-<form action="{% url 'waitlist'%}" method="post">
-    {% csrf_token %}
-    <input hidden class="form-control" name="student_id" value={{student.student_id}}>
-    <div  class="text-center "  >
+
+    <form action="{% url 'waitlist'%}" method="post">
+        {% csrf_token %}
+
         {% if in_use == "True" and returning == False and student.exception != True %}
+            <input hidden class="form-control" name="student_id" value={{student.student_id}}>
             <input class="bttn choice" type="submit" value="Waitlist">
             <h1 style="color:red; margin-left:15%; margin-right:15%; text-align:center;"> The bathroom is currently in use.  Click here to be added to the waitlist. </h1>
         {% endif %}
-    </div>
-</form>
+    </form>
+</div>
 
 
-
-<div  class="text-center" style ="margin-left:25%; margin-right:25%;" >
-    <h3 style="margin-top:40px; margin-bottom:20px;"> Past Restroom Usage </h3>
-    <table class = "table table-sm">
-        <thead class="thead-light">
+<div  class="restroom-usage-container" >
+    <h3> Past Restroom Usage </h3>
+    <table class = "table">
+        <thead class="thead">
             <tr>
-                <th scope="col">Date/Time Out</th>
-                <th scope="col">Total Minutes</th>
+                <th>Date/Time Out</th>
+                <th>Total Minutes</th>
             </tr>
         </thead>
         <tbody>
-    {% for use in usage %}
-        <tr>
-            <td>{{use.time_out}}</td>
-            <td>{{use.minutes}}</td>
-        </tr>
-    {% endfor %}
-    </tbody>
+            {% for use in usage %}
+                <tr>
+                    <td>{{use.time_out}}</td>
+                    <td>{{use.minutes}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
     </table>
 </div>
 
