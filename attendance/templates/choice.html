@@ -12,7 +12,7 @@
     <div class="container">
         <div class="split left">
             <h1>Restroom</h1>
-            <form action="{% url 'choice' %}" method="post">
+            <form action="{% url 'select' %}" method="post">
                 {% csrf_token %}
 
                 {% if in_use == True %}
@@ -20,14 +20,14 @@
                 {% else %}
                     <input hidden class="form-control" name="in_use" value="False">
                 {% endif %}
-                    <input hidden class="form-control" name="in_use" value="11">
 
-                  
-                </div>
+                <input hidden class="form-control" name="student_id" value="11">
                 <button class="btn">Login</button>
                 <a href="#" class="btn">Click Here</a>
             </form>
         </div>
+
+
         <div class="split right">
             <h1>Attendance</h1>
             <a href="#" class="btn">Click Here</a>
