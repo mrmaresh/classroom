@@ -37,6 +37,16 @@
         {% endfor %}
     </div>
 
+    <div class="error-message-container">
+        <h2 class="error-message" id="errorMessage">
+            {% if messages %}
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            {% endif %}
+        </h2>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
