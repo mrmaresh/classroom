@@ -30,5 +30,5 @@ body {
 
 .restroom-usage-container {
     background-color: grey;
-    text-align: center;
+    display:flex;
 }
