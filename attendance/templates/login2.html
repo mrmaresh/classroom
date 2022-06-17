@@ -10,7 +10,8 @@
 <body>
     <div class="container">
 
-        <form>
+        <form action="{% url 'select' %}" method="post">
+         {% csrf_token %}
             <div class="form-control">
                 <input type="password" required>
                 <label>Enter ID</label>
