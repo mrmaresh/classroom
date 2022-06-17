@@ -31,7 +31,6 @@ body {
 }
 
 .usage-container {
-    background-color: green;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -44,7 +43,7 @@ body {
 
 .error-message-container {
     position: absolute;
-    color: red;
+    color: darkred;
     text-align: center;
     transform: translateY(-40px);
 
