@@ -13,6 +13,11 @@
         <form action="{% url 'select' %}" method="post">
          {% csrf_token %}
             <div class="form-control">
+                {% if in_use == True %}
+                    <input hidden name="in_use" value="True">
+                {% else %}
+                    <input hidden name="in_use" value="False">
+                {% endif %}
                 <input type="password" required>
                 <label>Enter ID</label>
             </div>
