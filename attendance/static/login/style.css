@@ -35,6 +35,19 @@ body {
     height:15%;
 }
 
+.error-message-container {
+    background-color: red;
+}
+
+.waitlist-container {
+    background-color: green;
+    position: absolute;
+    right:0;
+    top: 35%;
+    width: 30%;
+    height: 15%;
+}
+
 .date-time-container {
     position: absolute;
     display: inline-block;
