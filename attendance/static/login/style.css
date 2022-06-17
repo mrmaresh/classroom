@@ -51,7 +51,10 @@ body {
     height: 15%;
     padding-left: 5%;
     font-size: 20px;
+}
 
+.waitlist-container h4 {
+    line-height: 0;
 }
 
 .date-time-container {
