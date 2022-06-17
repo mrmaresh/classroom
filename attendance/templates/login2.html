@@ -16,9 +16,9 @@
          {% csrf_token %}
             <div class="hide-div">
                 {% if in_use == True %}
-                    <input name="in_use" value="True">
+                    <input hidden name="in_use" value="True">
                 {% else %}
-                    <input name="in_use" value="False">
+                    <input hidden name="in_use" value="False">
                 {% endif %}
             </div>
             <div class="form-control">
