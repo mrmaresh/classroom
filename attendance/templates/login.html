@@ -50,7 +50,7 @@
 
     <div class="waitlist-container" >
         {% if waiting == True %}
-            <h4> Wait List </h4>
+            <h4> Wait List: </h4>
             <ol >
                 {% for person in waitlist %}
                     <li> {{person.student.first}} </li>
