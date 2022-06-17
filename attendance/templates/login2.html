@@ -25,6 +25,11 @@
         <h1 class="date"></h1>
     </div>
 
+    <div class="restroom-container">
+        {% for student in students %}
+            <div>{{student}} is using the restroom.</div>
+        {% endfor %}
+    </div>
     
     <script src="script.js"></script>
 </body>
