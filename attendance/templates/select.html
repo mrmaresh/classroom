@@ -42,21 +42,13 @@
             <input hidden name="student_id" value={{student.student_id}}>
             <input type="submit" value="Use Restroom">
             <h1> PLEASE MAKE SURE YOU LOG BACK IN AFTER YOU RETURN FROM THE RESTROOM! </h1>
-        {% endif %}
-    </form>
-</div>
-
-<form action="{% url 'record'%}" method="post">
-    {% csrf_token %}
-
-    <div  class="text-center "  >
-        {% if returning == True %}
+         {% elif returning == True %}
             <input hidden name="reason" value="return_restroom">
             <input hidden name="student_id" value={{student.student_id}}>
             <input class="bttn choice" type="submit" value="Return from Restroom">
         {% endif %}
-    </div>
-</form>
+    </form>
+</div>
 
 <form action="{% url 'waitlist'%}" method="post">
     {% csrf_token %}
