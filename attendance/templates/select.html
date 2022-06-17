@@ -36,9 +36,10 @@
 <div class="form container">
     <form action="{% url 'record' %}" method="post">
         {% csrf_token %}
-        <input hidden name="reason" value="use_restroom">
-        <input hidden name="student_id" value={{student.student_id}}>
+
         {% if returning == False and in_use == "False" or returning == False and student.exception == True %}
+            <input hidden name="reason" value="use_restroom">
+            <input hidden name="student_id" value={{student.student_id}}>
             <input type="submit" value="Use Restroom">
             <h1> PLEASE MAKE SURE YOU LOG BACK IN AFTER YOU RETURN FROM THE RESTROOM! </h1>
         {% endif %}
@@ -47,10 +48,11 @@
 
 <form action="{% url 'record'%}" method="post">
     {% csrf_token %}
-    <input hidden class="form-control" name="reason" value="return_restroom">
-    <input hidden class="form-control" name="student_id" value={{student.student_id}}>
+
     <div  class="text-center "  >
         {% if returning == True %}
+            <input hidden name="reason" value="return_restroom">
+            <input hidden name="student_id" value={{student.student_id}}>
             <input class="bttn choice" type="submit" value="Return from Restroom">
         {% endif %}
     </div>
