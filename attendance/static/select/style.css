@@ -12,16 +12,23 @@ body {
 
 .option-container {
     background-color: green;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .welcome {
     background-color: purple;
+    text-align: center;
+    font-size: 400%;
 }
 
 .form-container {
     background-color: brown;
+    text-align: center;
 }
 
 .restroom-usage-container {
     background-color: grey;
+    text-align: center;
 }
