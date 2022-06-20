@@ -19,14 +19,14 @@ body {
 
 .option-container {
     background-color: green;
-    grid-column-start: 2;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
 }
 
 .welcome {
     background-color: purple;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
 
 .form-container {
