@@ -25,58 +25,58 @@
 {% endif %}
 
 
+<div class="grid">
+    <h1 class="welcome">Hello, {{student.first}} {{student.last}}</h1>
 
-<h1 class="welcome">Hello, {{student.first}} {{student.last}}</h1>
+    <div class="form-container">
+        <form action="{% url 'record' %}" method="post">
+            {% csrf_token %}
 
-<div class="form-container">
-    <form action="{% url 'record' %}" method="post">
-        {% csrf_token %}
-
-        {% if returning == False and in_use == "False" or returning == False and student.exception == True %}
-            <input hidden name="reason" value="use_restroom">
-            <input hidden name="student_id" value={{student.student_id}}>
-            <input type="submit" value="Use Restroom">
-            <h1> PLEASE MAKE SURE YOU LOG BACK IN AFTER YOU RETURN FROM THE RESTROOM! </h1>
-         {% elif returning == True %}
-            <input hidden name="reason" value="return_restroom">
-            <input hidden name="student_id" value={{student.student_id}}>
-            <input class="bttn choice" type="submit" value="Return from Restroom">
-        {% endif %}
-    </form>
-
-
-    <form action="{% url 'waitlist'%}" method="post">
-        {% csrf_token %}
-
-        {% if in_use == "True" and returning == False and student.exception != True %}
-            <input hidden class="form-control" name="student_id" value={{student.student_id}}>
-            <input class="bttn choice" type="submit" value="Waitlist">
-            <h1 style="color:red; margin-left:15%; margin-right:15%; text-align:center;"> The bathroom is currently in use.  Click here to be added to the waitlist. </h1>
-        {% endif %}
-    </form>
-</div>
+            {% if returning == False and in_use == "False" or returning == False and student.exception == True %}
+                <input hidden name="reason" value="use_restroom">
+                <input hidden name="student_id" value={{student.student_id}}>
+                <input type="submit" value="Use Restroom">
+                <h1> PLEASE MAKE SURE YOU LOG BACK IN AFTER YOU RETURN FROM THE RESTROOM! </h1>
+            {% elif returning == True %}
+                <input hidden name="reason" value="return_restroom">
+                <input hidden name="student_id" value={{student.student_id}}>
+                <input class="bttn choice" type="submit" value="Return from Restroom">
+            {% endif %}
+        </form>
 
 
-<div  class="restroom-usage-container" >
-    <h3> Past Restroom Usage </h3>
-    <table class = "table">
-        <thead class="thead">
-            <tr>
-                <th>Date/Time Out</th>
-                <th>Total Minutes</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for use in usage %}
+        <form action="{% url 'waitlist'%}" method="post">
+            {% csrf_token %}
+
+            {% if in_use == "True" and returning == False and student.exception != True %}
+                <input hidden class="form-control" name="student_id" value={{student.student_id}}>
+                <input class="bttn choice" type="submit" value="Waitlist">
+                <h1 style="color:red; margin-left:15%; margin-right:15%; text-align:center;"> The bathroom is currently in use.  Click here to be added to the waitlist. </h1>
+            {% endif %}
+        </form>
+    </div>
+
+
+    <div  class="restroom-usage-container" >
+        <h3> Past Restroom Usage </h3>
+        <table class = "table">
+            <thead class="thead">
                 <tr>
-                    <td>{{use.time_out}}</td>
-                    <td>{{use.minutes}}</td>
+                    <th>Date/Time Out</th>
+                    <th>Total Minutes</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for use in usage %}
+                    <tr>
+                        <td>{{use.time_out}}</td>
+                        <td>{{use.minutes}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
 
 {% endblock %}
