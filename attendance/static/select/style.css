@@ -5,15 +5,16 @@
 }
 
 body {
-    
+
     color: white;
     font-family: 'Muli', sans-serif;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr, 2fr, 1fr;
+    grid-template-columns: repeat(4,1fr);
     grid-auto-rows: 200px;
+    gap: 20px;
 }
 
 .option-container {
