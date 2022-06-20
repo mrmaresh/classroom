@@ -12,8 +12,8 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-auto-rows: 200px;
+    grid-template-columns: 1fr, 2fr, 1fr;
+    grid-template-rows: 1fr, 2fr, 1fr;
     gap: 20px;
 }
 
@@ -21,8 +21,8 @@ body {
     background-color: green;
     grid-column-start: 2;
     grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
 
 .welcome {
