@@ -12,9 +12,11 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: 20vw 6vw 20vw;
-    grid-template-rows: 20vh 60vh 20vh;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
     gap: 20px;
+    width: 100vw;
+    height: 90vh;
 }
 
 .option-container {
