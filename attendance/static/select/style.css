@@ -21,8 +21,8 @@ body {
     background-color: green;
     grid-column-start: 2;
     grid-column-end: 4;
-    grid-row-start: 3;
-    grid-row-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
 .welcome {
