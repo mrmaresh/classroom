@@ -47,6 +47,10 @@ body {
     grid-row-start: 2;
     grid-row-end: 3;
     font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .form-container .btn{
