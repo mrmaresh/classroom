@@ -64,6 +64,7 @@ body {
     display: inline-block;
     background: lightblue;
     padding: 25px;
+    margin: 15px 0;
     font-family: 'Muli', sans-serif;
     font-size: 30px;
     text-transform: uppercase;
