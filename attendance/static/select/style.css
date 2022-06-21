@@ -85,11 +85,11 @@ table {
 }
 
 td, th {
-    padding: 0 50px;
+    padding: 5px 50px;
 }
 
 th {
-    border-bottom:  solid 5px #000;
+    border-bottom:  solid 3px white;
 }
 
 .btn:focus {
