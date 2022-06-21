@@ -89,7 +89,7 @@ td, th {
 }
 
 tr {
-    border-bottom: 2px solid;
+    border-bottom: solid 2px black;
 }
 
 .btn:focus {
