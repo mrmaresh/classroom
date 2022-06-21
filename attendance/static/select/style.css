@@ -38,8 +38,8 @@ body {
     transition: transform 0.5s linear;
 }
 
-.option-container .btn.option.click {
-    transform: translateY(-400%);
+.option-container .btn.click-options {
+    transform: translateY(400px);
 }
 
 .option-container input {
