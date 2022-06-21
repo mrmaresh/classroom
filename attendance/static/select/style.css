@@ -20,8 +20,7 @@ body {
     height: 95vh;
     align-items: center;
     justify-items: center;
-    
-
+    position: relative;
 }
 
 .option-container {
@@ -31,6 +30,14 @@ body {
     grid-row-start: 1;
     grid-row-end: 2;
 }
+
+.option-container .btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.option-container 
 
 .welcome {
     grid-column-start: 2;
