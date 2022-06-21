@@ -37,7 +37,9 @@ body {
     right: 15px;
 }
 
-.option-container 
+.option-container input {
+    z-index: -1;
+}
 
 .welcome {
     grid-column-start: 2;
