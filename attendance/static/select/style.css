@@ -73,7 +73,7 @@ body {
     grid-column-start: 2;
     grid-column-end: 5;
     grid-row-start: 3;
-    grid-row-end: 6;
+    grid-row-end: 4;
     padding: 20px;
     z-index: -1;
     text-align: left;
