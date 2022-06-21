@@ -74,10 +74,11 @@ body {
     grid-column-end: 5;
     grid-row-start: 3;
     grid-row-end: 6;
-    padding: 20px;
+    padding: 0;
     z-index: -1;
     text-align: left;
     width: 100%;
+    align: start;
 }
 
 table {
