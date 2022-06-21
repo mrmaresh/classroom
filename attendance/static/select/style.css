@@ -8,6 +8,7 @@ body {
     background-color: steelblue;
     color: white;
     font-family: 'Muli', sans-serif;
+    overflow: hidden;
 }
 
 .grid {
