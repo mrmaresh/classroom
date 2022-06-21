@@ -39,8 +39,8 @@ body {
     background-color: rgba(0,0,0,0.3);
     padding: 20px 100px;
     border-radius: 5px;
-    grid-column-start: 3;
-    grid-column-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 5;
     grid-row-start: 3;
     grid-row-end: 4;
 }
