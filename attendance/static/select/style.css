@@ -54,9 +54,10 @@ body {
     width: 100%;
     background: lightblue;
     padding: 25px;
-    color: white;
+    
     font-family: 'Muli', sans-serif;
     font-size: 36px;
+    text-transform: uppercase;
     border: 0;
     border-radius: 5px;
 
