@@ -36,7 +36,9 @@ body {
 }
 
 .form-container {
-    
+    background-color: rgba(0,0,0,0.3);
+    padding: 20px 100px;
+    border-radius: 5px;
     grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 3;
