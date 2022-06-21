@@ -88,6 +88,10 @@ td, th {
     padding: 0 50px;
 }
 
+tr {
+    border-bottom: 2px solid;
+}
+
 .btn:focus {
     outline: 0;
 }
