@@ -31,11 +31,11 @@ body {
 }
 
 .welcome {
-    background-color: purple;
     grid-column-start: 2;
     grid-column-end: 5;
     grid-row-start: 1;
     grid-row-end: 2;
+    font-size: 30;
 }
 
 .form-container {
@@ -54,9 +54,9 @@ body {
     width: 100%;
     background: lightblue;
     padding: 25px;
-    
+
     font-family: 'Muli', sans-serif;
-    font-size: 36px;
+    font-size: 30px;
     text-transform: uppercase;
     border: 0;
     border-radius: 5px;
