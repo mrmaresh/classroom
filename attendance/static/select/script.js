@@ -1,3 +1,5 @@
 optionButton = document.querySelector(".option-button");
 
-optionButton.addEventListener('click', optionButton.classList.add("click"));
+optionButton.addEventListener('click', {
+    console.log("EL");
+});
