@@ -54,7 +54,8 @@ body {
     width: 100%;
     background: lightblue;
     padding: 25px;
-    font-family: inherit;
+    color: white;
+    font-family: 'Muli', sans-serif;
     font-size: 36px;
     border: 0;
     border-radius: 5px;
