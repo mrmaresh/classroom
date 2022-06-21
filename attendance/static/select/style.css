@@ -16,7 +16,7 @@ body {
     grid-template-rows: repeat(5, 1fr);
     gap: 20px;
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     align-items: center;
     justify-items: center;
 
