@@ -85,6 +85,8 @@ body {
     text-align: center;
     font-size: 30px;
     position: sticky;
+    top: 0px;
+    background-color: yellow;
 }
 
 table {
