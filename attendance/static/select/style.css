@@ -76,7 +76,6 @@ body {
     grid-row-end: 6;
     padding: 20px 50px;
     text-align: left;
-
     align: start;
     height: 100%;
     overflow: auto;
@@ -85,6 +84,7 @@ body {
 .restroom-usage-container h3 {
     text-align: center;
     font-size: 30px;
+    position: sticky;
 }
 
 table {
