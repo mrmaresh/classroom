@@ -37,6 +37,10 @@ body {
     right: 15px;
 }
 
+.option-container .btn.option.click {
+    transform: translateY(-400%);
+}
+
 .option-container input {
     z-index: -1;
 }
