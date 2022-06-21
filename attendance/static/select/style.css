@@ -18,6 +18,7 @@ body {
     width: 100vw;
     height: 90vh;
     align-items: center;
+    justify-items: center;
 
 }
 
@@ -50,7 +51,7 @@ body {
 .form-container .btn{
     cursor: pointer;
     display: inline-block;
-    width: 50%;
+    width: 100%;
     background: lightblue;
     padding: 15px;
     padding-top: 40px;
