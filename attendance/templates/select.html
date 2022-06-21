@@ -42,7 +42,7 @@
             {% elif returning == True %}
                 <input hidden name="reason" value="return_restroom">
                 <input hidden name="student_id" value={{student.student_id}}>
-                <input class="bttn choice" type="submit" value="Return from Restroom">
+                <input class="btn" type="submit" value="Return from Restroom">
             {% endif %}
         </form>
 
@@ -52,7 +52,7 @@
 
             {% if in_use == "True" and returning == False and student.exception != True %}
                 <input hidden class="form-control" name="student_id" value={{student.student_id}}>
-                <input class="bttn choice" type="submit" value="Waitlist">
+                <input class="btn" type="submit" value="Waitlist">
                 <h1 style="color:red; margin-left:15%; margin-right:15%; text-align:center;"> The bathroom is currently in use.  Click here to be added to the waitlist. </h1>
             {% endif %}
         </form>

@@ -50,3 +50,27 @@ body {
     grid-row-start: 4;
     grid-row-end: 6;
 }
+
+.btn{
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    background: lightblue;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 16px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:hover{
+    background: rgba(173,216,230,0.7);
+}
+
+.btn:active {
+    transform: scale(.98);
+}
