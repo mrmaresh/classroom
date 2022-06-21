@@ -36,10 +36,10 @@ body {
     top: 15px;
     right: 15px;
     transform: translateY(0px);
-    transition: transform 20s ease;
+    transition: transform 2s;
 }
 
-.option-container .btn.click-options {
+.option-container .btn:hover {
     transform: translateY(100px);
 }
 
