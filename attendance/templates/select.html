@@ -13,14 +13,14 @@
 <div class="grid">
     {% if returning == False and in_use == "True" %}
         <div class="option-container">
-            <button class="btn">Options</button>
+            <button class="btn options click">Options</button>
 
             <div class="option-form">
                 <form action="{% url 'record' %}" method="post">
                     {% csrf_token %}
                     <input hidden name="reason" value="use_restroom">
                     <input hidden name="student_id" value={{student.student_id}}>
-                    <input  class="btn" type="submit" value="Use Restroom">
+                    <input  class="btn restroom click" type="submit" value="Use Restroom">
                 </form>
             </div>
         </div>
