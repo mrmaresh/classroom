@@ -35,7 +35,7 @@ body {
     position: absolute;
     top: 15px;
     right: 15px;
-    transition: transform 0.5s linear;
+    transition: transform 1s ease;
 }
 
 .option-container .btn.click-options {
