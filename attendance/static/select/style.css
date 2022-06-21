@@ -50,7 +50,8 @@ body {
 
 .form-container .btn{
     cursor: pointer;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     width: 100%;
     background: lightblue;
     padding: 15px;
