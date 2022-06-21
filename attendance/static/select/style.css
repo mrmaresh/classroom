@@ -76,7 +76,7 @@ body {
     grid-row-end: 6;
     padding: 20px;
     z-index: -1;
-    text-align: center;
+    text-align: left;
     width: 100%;
 }
 
@@ -84,6 +84,9 @@ table {
     margin: 0 auto;
 }
 
+td, th {
+    padding: 0 50px;
+}
 
 .btn:focus {
     outline: 0;
