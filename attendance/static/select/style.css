@@ -82,7 +82,10 @@ body {
     overflow: auto;
 }
 
-
+.restroom-usage-container h3 {
+    text-align: center;
+    font-size: 30px;
+}
 
 table {
     margin: 0 auto;
