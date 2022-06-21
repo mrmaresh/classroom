@@ -69,7 +69,7 @@ body {
 }
 
 .restroom-usage-container {
-    background-color: grey;
+    background-color: rgba(210,215,211,.3);
     grid-column-start: 2;
     grid-column-end: 5;
     grid-row-start: 3;
@@ -81,6 +81,8 @@ body {
     height: 100%;
     overflow: auto;
 }
+
+
 
 table {
     margin: 0 auto;
