@@ -19,6 +19,7 @@ body {
     height: 90vh;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .option-container {
