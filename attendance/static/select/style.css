@@ -35,11 +35,12 @@ body {
     position: absolute;
     top: 15px;
     right: 15px;
-    transition: transform 1s ease;
+    transform: translateY(0px);
+    transition: transform 20s ease;
 }
 
 .option-container .btn.click-options {
-    transform: translateY(400px);
+    transform: translateY(100px);
 }
 
 .option-container input {
