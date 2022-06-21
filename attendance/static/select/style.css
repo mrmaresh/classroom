@@ -5,7 +5,7 @@
 }
 
 body {
-
+    background-color: steelblue;
     color: white;
     font-family: 'Muli', sans-serif;
 }
@@ -36,7 +36,7 @@ body {
 }
 
 .form-container {
-    background-color: blue;
+    
     grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 3;
