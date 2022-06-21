@@ -50,12 +50,11 @@ body {
 
 .form-container .btn{
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    width: 100%;
+    display: inline-block;
+    width: auto;
+    margin: 20%;
     background: lightblue;
     padding: 15px;
-    padding-top: 40px;
     font-family: inherit;
     font-size: 16px;
     border: 0;
