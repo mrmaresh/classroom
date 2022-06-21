@@ -88,8 +88,8 @@ td, th {
     padding: 0 50px;
 }
 
-tr {
-    border-bottom: solid 2px black;
+th {
+    border-bottom:  solid 5px #000;
 }
 
 .btn:focus {
