@@ -39,7 +39,7 @@ body {
     transition: transform 2s;
 }
 
-.option-container .btn:hover {
+.option-container .option-button.click {
     transform: translateY(-100px);
 }
 
