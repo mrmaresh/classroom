@@ -56,10 +56,10 @@ body {
 .form-container .btn{
     cursor: pointer;
     display: inline-block;
-    width: 100%;
+   
     background: lightblue;
     padding: 25px;
-    
+
     font-family: 'Muli', sans-serif;
     font-size: 30px;
     text-transform: uppercase;
