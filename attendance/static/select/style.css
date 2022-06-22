@@ -72,6 +72,7 @@ body {
     grid-row-end: 2;
     font-size: 25px;
     transition: font-size 5s;
+    position: absolute;
 }
 
 .welcome.grow {
