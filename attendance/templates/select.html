@@ -9,9 +9,76 @@
 
 {% block body %}
 
-<button class="hello" >hello</button>
+
+<div class="grid">
+    {% if returning == False and in_use == "True" %}
+        <div class="option-container">
+            <button class="btn option-button click" id="option-button">Options</button>
+
+            <div class="option-form">
+                <form action="{% url 'record' %}" method="post">
+                    {% csrf_token %}
+                    <input hidden name="reason" value="use_restroom">
+                    <input hidden name="student_id" value={{student.student_id}}>
+                    <input  class="btn restroom click" type="submit" value="Use Restroom">
+                </form>
+            </div>
+        </div>
+    {% endif %}
 
 
+
+    <h1 class="welcome">Hello, {{student.first}} {{student.last}}</h1>
+
+    <div class="form-container">
+        <form action="{% url 'record' %}" method="post">
+            {% csrf_token %}
+
+            {% if returning == False and in_use == "False" or returning == False and student.exception == True %}
+                <input hidden name="reason" value="use_restroom">
+                <input hidden name="student_id" value={{student.student_id}}>
+                <input class="btn" type="submit" value="Use Restroom">
+                <h1> PLEASE MAKE SURE YOU LOG BACK IN AFTER YOU RETURN FROM THE RESTROOM! </h1>
+            {% elif returning == True %}
+                <input hidden name="reason" value="return_restroom">
+                <input hidden name="student_id" value={{student.student_id}}>
+                <input class="btn" type="submit" value="Return from Restroom">
+            {% endif %}
+        </form>
+
+
+        <form action="{% url 'waitlist'%}" method="post">
+            {% csrf_token %}
+
+            {% if in_use == "True" and returning == False and student.exception != True %}
+                <input hidden class="form-control" name="student_id" value={{student.student_id}}>
+                <input class="btn" type="submit" value="Waitlist">
+                <h1> The bathroom is currently in use.  Click here to be added to the waitlist. </h1>
+            {% endif %}
+        </form>
+    </div>
+
+
+    <div  class="restroom-usage-container" >
+        <h3> Past Restroom Usage </h3>
+        <table class = "table">
+            <thead class="thead">
+                <tr>
+                    <th>Date/Time Out</th>
+                    <th>Total Minutes</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for use in usage %}
+                    <tr>
+                        <td>{{use.time_out}}</td>
+                        <td>{{use.minutes}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 
 <script src="{% static 'select/script.js' %}"></script>
 {% endblock %}
