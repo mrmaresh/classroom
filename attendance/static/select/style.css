@@ -45,8 +45,8 @@ body {
 
 
 
-.option-container input {
-
+.option-container .option-button {
+    z-index: 2;
 }
 
 .welcome {
