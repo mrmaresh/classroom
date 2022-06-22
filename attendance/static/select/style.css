@@ -38,8 +38,8 @@ body {
     transition: transform 2s;
 }
 
-.option-container .option-button {
-    z-index: 2;
+.option-container .option-restroom {
+    transform: translateX(200px);
 }
 
 .option-container .option-button.click {
