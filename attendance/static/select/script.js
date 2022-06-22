@@ -1,5 +1,3 @@
 const optionButton = document.getElementById('option-button');
 
-optionButton.addEventListener('click', {
-    console.log("EL");
-});
+optionButton.addEventListener('click', console.log("HELLO"));
