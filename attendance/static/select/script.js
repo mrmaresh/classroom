@@ -1,3 +1,3 @@
-const optionButton = document.querySelector('.restroom-usage-container');
+const optionButton = document.querySelector('.option-button');
 
-optionButton.addEventListener('mouseover', console.log("HLO"));
+optionButton.addEventListener('click', console.log("HLO"));
