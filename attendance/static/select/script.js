@@ -9,7 +9,10 @@ optionButton.addEventListener('click', () => {
     homeButton.classList.add('click');
 });
 
-fontSize();
+document.addEventListener("DOMContentLoaded", function(){
+    fontSize();
+});
+
 
 function fontSize(){
     welcome.classList.add('grow');
