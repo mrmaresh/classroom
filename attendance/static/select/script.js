@@ -1,3 +1,3 @@
 const optionButton = document.getElementById('option-button');
 
-optionButton.addEventListener('mouseover', console.log("HELLO"));
+optionButton.addEventListener('click', console.log("HELLO"));
