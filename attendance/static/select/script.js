@@ -1,4 +1,4 @@
-const optionButton = getElementById("option-button");
+const optionButton = document.getElementById("option-button");
 
 optionButton.addEventListener('click', {
     console.log("EL");
