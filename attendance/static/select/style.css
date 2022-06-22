@@ -40,7 +40,7 @@ body {
 }
 
 .option-container .option-button.click {
-    transform: translateY(-100px);
+    transform: translateY(100px);
 }
 
 
