@@ -70,12 +70,12 @@ body {
     grid-column-end: 5;
     grid-row-start: 1;
     grid-row-end: 2;
-    font-size: 20px;
-    transition: font-size 15s;
+    font-size: 25px;
+    transition: font-size 5s;
 }
 
 .welcome.grow {
-    font-size: 40px;
+    font-size: 35px;
 }
 
 .form-container {
@@ -107,7 +107,7 @@ body {
     background-color: rgba(210,215,211,.3);
     grid-column-start: 2;
     grid-column-end: 5;
-    grid-row-start: 4;
+    grid-row-start: 3;
     grid-row-end: 6;
     padding: 20px 50px;
     text-align: left;
