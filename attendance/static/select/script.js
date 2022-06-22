@@ -1,3 +1,3 @@
-const optionButton = document.querySelector('.option-button');
+const optionButton = document.querySelector('.hello');
 
 optionButton.addEventListener('click', console.log("HLO"));
