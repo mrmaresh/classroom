@@ -13,8 +13,8 @@
 <div class="grid">
     {% if returning == False and in_use == "True" %}
         <div class="option-container">
-            <button class="btn option-button" id="option-button">Options</button>
-
+            <button class="btn option-button">Options</button>
+            <button class="btn option-home">Return Home</button>
             <div class="option-form">
                 <form action="{% url 'record' %}" method="post">
                     {% csrf_token %}
@@ -23,6 +23,8 @@
                     <input  class="btn option-restroom" type="submit" value="Use Restroom">
                 </form>
             </div>
+
+
         </div>
     {% endif %}
 
