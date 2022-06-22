@@ -51,6 +51,7 @@ body {
 }
 .option-container .option-restroom.click {
     transform: translateX(0px);
+    transition: transform 2s;
 }
 
 
