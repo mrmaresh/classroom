@@ -7,3 +7,7 @@ optionButton.addEventListener('click', () => {
     restroomButton.classList.add('click');
     homeButton.classList.add('click');
 });
+
+function fontSize(){
+    
+}
