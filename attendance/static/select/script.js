@@ -1,3 +1,6 @@
-const optionButton = document.querySelector('.hello');
+const optionButton = document.querySelector('.option-button');
 
-optionButton.addEventListener('click', () => console.log("HLO"));
+optionButton.addEventListener('click', () => {
+    console.log("hello");
+    optionButton.classList.add('click');
+});
