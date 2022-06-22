@@ -42,8 +42,9 @@ body {
 .option-container .option-button.click {
     transform: translateY(100px);
 }
-
-
+.option-container .option-button.click {
+    transform: translateY(100px);
+}
 
 .option-container .option-button {
     z-index: 2;
