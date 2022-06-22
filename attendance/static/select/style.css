@@ -71,11 +71,11 @@ body {
     grid-row-start: 1;
     grid-row-end: 2;
     font-size: 20px;
-    transition: font-size 5s;
+    transition: font-size 15s;
 }
 
 .welcome.grow {
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .form-container {
