@@ -48,19 +48,22 @@ body {
 
 .option-container .option-home {
     transform: translateY(30px);
-    transform: translateX(200px);
+    transform: translateX(-200px);
 }
 
 .option-container .option-button.click {
     transform: translateY(-100px);
 }
 
-.option-container .option-restroom.click,
-.option-container .option-home.click {
+.option-container .option-restroom.click {
     transform: translateX(0px);
     transition: transform 2s;
 }
 
+.option-container .option-home.click {
+    transform: translateX(0px);
+    transition: transform 2s;
+}
 
 
 .welcome {
