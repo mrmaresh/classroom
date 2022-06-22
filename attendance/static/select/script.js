@@ -1,3 +1,3 @@
-const optionButton = document.querySelector('.option-button');
+const optionButton = document.querySelector('.welcome');
 
-optionButton.addEventListener('click', console.log("HLO"));
+optionButton.addEventListener('mouseover', console.log("HLO"));
