@@ -1,3 +1,7 @@
+if (document.querySelector()){
+
+}
+
 const optionButton = document.querySelector('.option-button');
 const restroomButton = document.querySelector('.option-restroom');
 const homeButton = document.querySelector('.option-home');
