@@ -42,13 +42,13 @@ body {
     transition: transform 2s;
 }
 
-.option-container .option-restroom,
-.option-container .option-home {
+.option-container .option-restroom {
     transform: translateX(200px);
 }
 
 .option-container .option-home {
     transform: translateY(30px);
+    transform: translateX(200px);
 }
 
 .option-container .option-button.click {
