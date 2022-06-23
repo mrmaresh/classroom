@@ -32,7 +32,8 @@ def get_current_period():
         then = datetime.strptime(getattr(Schedule.objects.get(active = True), period[i]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)  - timedelta(minutes=7)
         max = datetime.strptime(getattr(Schedule.objects.get(active = True), period[8]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)  - timedelta(minutes=7)
         if now < then:
-            
+            if then == max:
+                is_max = True
             return [period[i-1], period[i], is_max]
     return ['period_0', 'period_1', is_max]
 
@@ -169,6 +170,7 @@ def dashboard(request):
 
     finish_time = finish - timedelta(minutes=7)
     start_time = start + timedelta(minutes=7)
+    
     startdate = datetime.today()-timedelta(hours=8)
     records = Bathroom.objects.filter(time_out__gt = startdate).order_by('-time_out')
     return render(request, 'dashboard.html',{
