@@ -69,7 +69,10 @@ def login(request):
     period = get_current_period()
     start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
     finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
-
+    finish_time = finish - timedelta(minutes=7)
+    if period[2] == True:
+        finish_time = finish
+    start_time = start + timedelta(minutes=7)
     # This is a list of all the students currently using the restroom
     students = students_using_restroom()
     # This checks if someone is using the restroom
@@ -94,7 +97,9 @@ def login(request):
         "period": get_current_period()[0][-1],
         "start": start,
         "finish": finish,
-        "schedule": Schedule.objects.get(active = True).schedule_name
+        "schedule": Schedule.objects.get(active = True).schedule_name,
+        "start_time": start_time,
+        "finish_time": finish_time
     })
 
 
