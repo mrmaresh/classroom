@@ -14,8 +14,11 @@
     {% if returning == False and in_use == "True" %}
         <div class="option-container">
             <button class="btn option-button">Options</button>
-            <button class="btn option-home">Return Home</button>
-            <input  class="btn option-home" type="submit" value="Use Restroom">
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <input  class="btn option-home" type="submit" value="Return Home">
+            </form>
+
             <div class="option-form">
                 <form action="{% url 'record' %}" method="post">
                     {% csrf_token %}
