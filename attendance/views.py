@@ -98,8 +98,8 @@ def login(request):
         "start": start,
         "finish": finish,
         "schedule": Schedule.objects.get(active = True).schedule_name,
-        "start_time": start_time,
-        "finish_time": finish_time
+        "start_time": start_time.time,
+        "finish_time": finish_time.time
     })
 
 
