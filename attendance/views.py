@@ -26,13 +26,15 @@ from .models import Student, Record, Bathroom, Waitlist, Schedule
 # This function detects what is the current period
 def get_current_period():
     now = datetime.now()
+    is_max = False
     period = ['period_0', 'period_1', 'period_2', 'period_3', 'period_4', 'period_5', 'period_6', 'period_7', 'period_8']
     for i in range(9):
         then = datetime.strptime(getattr(Schedule.objects.get(active = True), period[i]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)  - timedelta(minutes=7)
         max = datetime.strptime(getattr(Schedule.objects.get(active = True), period[8]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)  - timedelta(minutes=7)
         if now < then:
-            return [period[i-1], period[i]]
-    return ['period_0', 'period_1']
+            
+            return [period[i-1], period[i], is_max]
+    return ['period_0', 'period_1', is_max]
 
 
 # This displays a default page for all who are not logged in
