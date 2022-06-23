@@ -169,8 +169,9 @@ def dashboard(request):
     finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
 
     finish_time = finish - timedelta(minutes=7)
+    if period[2] == True:
+        finish_time = finish
     start_time = start + timedelta(minutes=7)
-    
     startdate = datetime.today()-timedelta(hours=8)
     records = Bathroom.objects.filter(time_out__gt = startdate).order_by('-time_out')
     return render(request, 'dashboard.html',{
