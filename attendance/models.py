@@ -47,3 +47,5 @@ class Schedule (models.Model):
 
 
 class BathroomPass (models.Model):
+    id = models.AutoField(primary_key=True)
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name = "student_bathroom")
