@@ -9,6 +9,16 @@ class Student (models.Model):
     student_id = models.CharField(max_length=10)
     period = models.CharField(max_length=1)
     exception = models.BooleanField()
+    augPass = models.BooleanField(default=True)
+    sepPass = models.BooleanField(default=True)
+    octPass = models.BooleanField(default=True)
+    novPass = models.BooleanField(default=True)
+    decPass = models.BooleanField(default=True)
+    janPass = models.BooleanField(default=True)
+    febPass = models.BooleanField(default=True)
+    marPass = models.BooleanField(default=True)
+    aprPass = models.BooleanField(default=True)
+    mayPass = models.BooleanField(default=True)
 
 
 class Record (models.Model):
@@ -45,17 +55,3 @@ class Schedule (models.Model):
     period_7 = models.CharField(max_length=20)
     period_8 = models.CharField(max_length=20)
 
-
-class BathroomPass (models.Model):
-    id = models.AutoField(primary_key=True)
-    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name = "student_bathroom")
-    augPass = models.BooleanField(default=True)
-    sepPass = models.BooleanField(default=True)
-    octPass = models.BooleanField(default=True)
-    novPass = models.BooleanField(default=True)
-    decPass = models.BooleanField(default=True)
-    janPass = models.BooleanField(default=True)
-    febPass = models.BooleanField(default=True)
-    marPass = models.BooleanField(default=True)
-    aprPass = models.BooleanField(default=True)
-    mayPass = models.BooleanField(default=True)
