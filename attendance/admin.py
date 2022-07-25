@@ -4,7 +4,7 @@ from import_export.admin import ImportExportMixin
 from .models import Student, Record, Bathroom, Waitlist, Schedule
 
 class StudentAdmin (ImportExportMixin, admin.ModelAdmin):
-    list_display = ("first", "last", "student_id", "period", "exception", "id")
+    list_display = ("first", "last", "student_id", "period", "exception", "augPass", "sepPass", "octPass", "novPass", "decPass", "janPass", "febPass", "marPass", "aprPass", "mayPass", "id")
 
 class RecordAdmin (ImportExportMixin, admin.ModelAdmin):
     list_display = ("student_id", "timestamp", "reason", "id")
