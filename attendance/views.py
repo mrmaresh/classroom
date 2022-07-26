@@ -148,10 +148,22 @@ def usePass(student):
         student.marPass = False
     if value == "aprPass":
         student.aprPass = False
+    if value == "mayPass":
+        student.mayPass = False
+    if value == "junPass":
+        student.junPass = False
     if value == "julPass":
         student.julPass = False
-    if value == "julPass":
-        student.julPass = False
+    if value == "augPass":
+        student.augPass = False
+    if value == "sepPass":
+        student.sepPass = False
+    if value == "octPass":
+        student.octPass = False
+    if value == "novPass":
+        student.novPass = False
+    if value == "decPass":
+        student.decPass = False
 
     student.save()
 
