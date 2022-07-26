@@ -149,8 +149,6 @@ def select(request):
         records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
         returning = is_returning(records)
         return render(request, 'select.html',{
-            "test": getattr(student, "janPass"),
-            "month": datetime.now().month,
             "numPass": numPass(student),
             "student": student,
             "returning": returning,
