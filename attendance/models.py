@@ -19,6 +19,9 @@ class Student (models.Model):
     marPass = models.BooleanField(default=True)
     aprPass = models.BooleanField(default=True)
     mayPass = models.BooleanField(default=True)
+    junPass = models.BooleanField(default=True)
+    julPass = models.BooleanField(default=True)
+
 
 
 class Record (models.Model):
