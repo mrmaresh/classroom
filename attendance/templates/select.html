@@ -56,6 +56,11 @@
                     <input hidden name="student_id" value={{student.student_id}}>
                     <input class="btn" type="submit" value="Return from Restroom">
                 {% else %}
+                    {% if moreThanHour == True %}
+                        <input hidden name="reason" value="use_restroom">
+                        <input hidden name="student_id" value={{student.student_id}}>
+                        <input class="btn" type="submit" value="Use Restroom">
+                    {% endif %}
                     <h1> You have no passes remaining for this month. </h1>
                 {% endif %}
             {% endif%}
