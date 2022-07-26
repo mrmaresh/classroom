@@ -51,7 +51,13 @@
                     <input class="btn" type="submit" value="Return from Restroom">
                 {% endif %}
             {% else %}
-                <h1> You have no passes remaining for this month. </h1>
+                {%if returning == True %}
+                    <input hidden name="reason" value="return_restroom">
+                    <input hidden name="student_id" value={{student.student_id}}>
+                    <input class="btn" type="submit" value="Return from Restroom">
+                {% else %}
+                    <h1> You have no passes remaining for this month. </h1>
+                {% endif %}
             {% endif%}
         </form>
 
