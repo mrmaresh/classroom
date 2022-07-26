@@ -180,12 +180,12 @@ def select(request):
         start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
         finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
         start_time = start + timedelta(minutes=7)
-        timeSpent = datetime.now() - start_time > timedelta(minutes = 60)
+        moreThanHour = datetime.now() - start_time > timedelta(minutes = 60)
 
         records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
         returning = is_returning(records)
         return render(request, 'select.html',{
-            "timeSpent": timeSpent,
+            "moreThanHour": moreThanHour,
             "numPass": numPass(student),
             "student": student,
             "returning": returning,
