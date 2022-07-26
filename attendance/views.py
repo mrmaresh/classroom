@@ -262,7 +262,14 @@ def record(request):
         reason = request.POST["reason"]
         student = Student.objects.get(student_id=student_id)
         record = Record.objects.create(student=student, reason=reason)
-        if numPass(student) == 1 and student.exception == False:
+
+        period = get_current_period()
+        start = datetime.strptime(getattr(Schedule.objects.get(active = True), period[0]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year) - timedelta(minutes=7)
+        finish = datetime.strptime(getattr(Schedule.objects.get(active = True), period[1]), '%H:%M:%S').replace(month = datetime.now().month, day = datetime.now().day, year=datetime.now().year)
+        start_time = start + timedelta(minutes=7)
+        moreThanHour = datetime.now() - start_time > timedelta(minutes = 60)
+
+        if numPass(student) == 1 and student.exception == False and moreThanHour == False:
             usePass(student)
         record.save()
         if reason == "use_restroom":
