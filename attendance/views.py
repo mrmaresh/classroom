@@ -128,6 +128,8 @@ def is_returning(records):
         return False
 
 def numPass(student):
+    month = datetime.now().month
+    list = ["janPass", "febPass", "marPass", "aprPass", "mayPass", "junPass", "julPass", "augPass", "sepPass", "octPass", "novPass", "decPass"]
     return 1
 
 @login_required
