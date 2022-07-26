@@ -127,7 +127,8 @@ def is_returning(records):
     else:
         return False
 
-
+def numPass(student):
+    return 1
 
 @login_required
 def select(request):
@@ -143,6 +144,7 @@ def select(request):
         records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
         returning = is_returning(records)
         return render(request, 'select.html',{
+            "numPass": numPass(student),
             "student": student,
             "returning": returning,
             "usage": Bathroom.objects.filter(student=student).order_by('-time_out'),
