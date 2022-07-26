@@ -139,7 +139,7 @@ def numPass(student):
 def usePass(student):
     month = datetime.now().month
     list = ["janPass", "febPass", "marPass", "aprPass", "mayPass", "junPass", "julPass", "augPass", "sepPass", "octPass", "novPass", "decPass"]
-    getattr(student, list[month - 1]) = False
+    student.julPass = False
     student.save()
 
 
