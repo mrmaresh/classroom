@@ -258,7 +258,7 @@ def record(request):
         reason = request.POST["reason"]
         student = Student.objects.get(student_id=student_id)
         record = Record.objects.create(student=student, reason=reason)
-        if numPass(student) == 1:
+        if numPass(student) == 1 and student.exception == False:
             usePass(student)
         record.save()
         if reason == "use_restroom":
