@@ -140,6 +140,16 @@ def usePass(student):
     month = datetime.now().month
     list = ["janPass", "febPass", "marPass", "aprPass", "mayPass", "junPass", "julPass", "augPass", "sepPass", "octPass", "novPass", "decPass"]
     value = list[month - 1]
+    if value == "janPass":
+        student.janPass = False
+    if value == "febPass":
+        student.febPass = False
+    if value == "marPass":
+        student.marPass = False
+    if value == "aprPass":
+        student.aprPass = False
+    if value == "julPass":
+        student.julPass = False
     if value == "julPass":
         student.julPass = False
 
