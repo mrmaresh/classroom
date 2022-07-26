@@ -130,8 +130,10 @@ def is_returning(records):
 def numPass(student):
     month = datetime.now().month
     list = ["janPass", "febPass", "marPass", "aprPass", "mayPass", "junPass", "julPass", "augPass", "sepPass", "octPass", "novPass", "decPass"]
-    
-    return 1
+    if getattr(student, list[month - 1]) == True:
+        return 1
+    else:
+        return 0
 
 @login_required
 def select(request):
