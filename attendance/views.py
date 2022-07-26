@@ -130,6 +130,7 @@ def is_returning(records):
 def numPass(student):
     month = datetime.now().month
     list = ["janPass", "febPass", "marPass", "aprPass", "mayPass", "junPass", "julPass", "augPass", "sepPass", "octPass", "novPass", "decPass"]
+    
     return 1
 
 @login_required
@@ -146,7 +147,7 @@ def select(request):
         records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
         returning = is_returning(records)
         return render(request, 'select.html',{
-            "test": getattr(student, janPass),
+            "test": getattr(student, "janPass"),
             "month": datetime.now().month,
             "numPass": numPass(student),
             "student": student,
