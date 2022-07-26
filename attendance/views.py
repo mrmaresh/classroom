@@ -224,6 +224,8 @@ def record(request):
         reason = request.POST["reason"]
         student = Student.objects.get(student_id=student_id)
         record = Record.objects.create(student=student, reason=reason)
+        if numPass(student) == 1:
+            
         record.save()
         if reason == "use_restroom":
             if len(Waitlist.objects.filter(student=student)) == 1:
