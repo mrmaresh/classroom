@@ -135,6 +135,15 @@ def numPass(student):
     else:
         return 0
 
+
+def usePass(student):
+    month = datetime.now().month
+    list = ["janPass", "febPass", "marPass", "aprPass", "mayPass", "junPass", "julPass", "augPass", "sepPass", "octPass", "novPass", "decPass"]
+    getattr(student, list[month - 1]) = False
+    student.save()
+
+
+
 @login_required
 def select(request):
     if request.method == "POST":
@@ -225,7 +234,7 @@ def record(request):
         student = Student.objects.get(student_id=student_id)
         record = Record.objects.create(student=student, reason=reason)
         if numPass(student) == 1:
-            
+            usePass(student)
         record.save()
         if reason == "use_restroom":
             if len(Waitlist.objects.filter(student=student)) == 1:
