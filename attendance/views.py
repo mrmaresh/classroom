@@ -221,7 +221,7 @@ def dashboard(request):
     startdate = datetime.today()-timedelta(hours=8)
     records = Bathroom.objects.filter(time_out__gt = startdate).order_by('-time_out')
     return render(request, 'dashboard.html',{
-        "timeSpent":datetime(datetime.now().year, datetime.now().month, datetime.now().)
+        "timeSpent":datetime.now() - start > datetime(0,0,0,0,30,0),
         "waitlist": Waitlist.objects.all(),
         "records": records,
         "startdate":startdate.date,
