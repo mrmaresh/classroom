@@ -39,7 +39,7 @@
     <div class="form-container">
         <form action="{% url 'record' %}" method="post">
             {% csrf_token %}
-            {% if numPass == 1 %}
+            {% if numPass == 1 and in_use == "False" %}
                 {% if returning == False and in_use == "False" or returning == False and student.exception == True %}
                     <input hidden name="reason" value="use_restroom">
                     <input hidden name="student_id" value={{student.student_id}}>
