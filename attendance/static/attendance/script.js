@@ -16,7 +16,6 @@ const message = document.querySelector('.return-excused-message');
 let excused;
 let description;
 let numTardies = unexcusedTardies();
-console.log(numTardies);
 
 descriptionBtn.disabled = true;
 
@@ -52,6 +51,7 @@ descriptionEl.addEventListener('keyup', () => {
     }
 })
 
+
 descriptionBtn.addEventListener('click', () => {
     descriptionPage.style.display = 'none';
     if (excused === true) {
@@ -64,12 +64,15 @@ descriptionBtn.addEventListener('click', () => {
     recordTardy();
 })
 
+
 policyBtn.addEventListener('click', () => {
     policyPage.style.display = 'none';
     consequencePage.style.display = 'block';
     returnPage.style.display = 'block';
     message.style.display = 'none';
 })
+
+
 
 
 
