@@ -58,7 +58,7 @@ descriptionBtn.addEventListener('click', () => {
         policyPage.style.display = 'block';
     }
     description = descriptionEl.value;
-    console.log(excused, description);
+    recordTardy();
 })
 
 policyBtn.addEventListener('click', () => {
@@ -69,8 +69,6 @@ policyBtn.addEventListener('click', () => {
 })
 
 
-test3();
-test4();
 
 
 async function test3() {
@@ -79,14 +77,15 @@ async function test3() {
     console.log('test3', data['message']);
 }
 
-async function test4(){
+async function recordTardy(){
     const response = await fetch('attendance',{
         method: 'POST',
         body: JSON.stringify({
-            student_id: studentID.innerText
+            excused: excused,
+            description: description
         })
     })
     const data = await response.json();
-    console.log('test4', data['message']);
+    console.log('recordTardy', data['message']);
 }
 
