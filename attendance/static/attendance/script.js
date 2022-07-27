@@ -45,7 +45,12 @@ descriptionEl.addEventListener('keyup', () => {
 
 descriptionBtn.addEventListener('click', () => {
     descriptionPage.style.display = 'none';
-    
+    if (excused = true) {
+
+    }
+    else{
+        
+    }
 })
 
 
