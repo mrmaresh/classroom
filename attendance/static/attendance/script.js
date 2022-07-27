@@ -4,8 +4,8 @@ const noBtn = document.querySelector('.excused-no');
 const previousBtn = document.querySelector('.previous');
 const excusedPage = document.querySelector('.excused-container');
 const descriptionPage = document.querySelector('.description-container');
-const descriptionElement = document.querySelector('.description');
-
+const descriptionEl = document.querySelector('.description');
+const descriptionBtn = document.querySelector('.description-button');
 
 
 let excused;
