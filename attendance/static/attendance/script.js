@@ -2,7 +2,8 @@ const studentID = document.querySelector('.student_id');
 const yesBtn = document.querySelector('.excused-yes');
 const noBtn = document.querySelector('.excused-no');
 const previousBtn = document.querySelector('.previous');
-const excusedContainer = document.querySelector('.excused-container');
+const excusedPage = document.querySelector('.excused-container');
+const descriptionPage = document.querySelector('.description-container');
 
 
 let excused;
