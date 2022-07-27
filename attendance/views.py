@@ -32,7 +32,9 @@ def attendance(request):
         record = AttendanceRecord.objects.create(student=student, reason=reason, excused=excused)
         record.save()
         return JsonResponse({"message": reason, "excused": excused, "student_id": student_id})
+
     elif request.method == "GET":
+        
         return JsonResponse({
             "message": "Hello",
             "number": 5,
