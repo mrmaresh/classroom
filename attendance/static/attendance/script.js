@@ -15,8 +15,11 @@ const message = document.querySelector('.return-excused-message');
 
 let excused;
 let description;
+let numTardies = unexcusedTardies();
+console.log(numTardies);
 
 descriptionBtn.disabled = true;
+
 
 yesBtn.addEventListener('click', () => {
     excused = true;
@@ -69,14 +72,13 @@ policyBtn.addEventListener('click', () => {
 })
 
 
-test3();
 
 
 
-async function test3() {
+async function unexcusedTardies() {
     const response = await fetch('unexcused/'.concat(studentID.innerText));
     const data = await response.json();
-    console.log('test3', data);
+    return data['numTardies']
 }
 
 async function recordTardy(){

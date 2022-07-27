@@ -40,10 +40,7 @@ def unexcused(request, student_id):
     if request.method == "GET":
         student = Student.objects.get(student_id=student_id)
         records = AttendanceRecord.objects.filter(student=student, excused=False)
-        return JsonResponse({
-            "numTardies": len(records),
-            "student_id": student_id
-        })
+        return JsonResponse({"numTardies": len(records)})
 
 
 # This function detects what is the current period
