@@ -5,7 +5,9 @@ const noBtn = document.querySelector('.excused-no');
 let excused;
 
 
-yesBtn.addEventListener
+yesBtn.addEventListener('click', () => {
+    excused = True
+})
 
 
 test3();
