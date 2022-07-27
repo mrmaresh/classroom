@@ -83,10 +83,11 @@ async function test4(){
     const response = await fetch('attendance',{
         method: 'POST',
         body: JSON.stringify({
-            desc: "HELLO MY NAME IS JASON"
+            description: description,
+            excused: excused
         })
     })
     const data = await response.json();
-    console.log('test4', data['message']);
+    console.log('test4', data);
 }
 

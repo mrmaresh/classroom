@@ -25,9 +25,10 @@ from .models import Student, Record, Bathroom, Waitlist, Schedule
 def attendance(request):
     if request.method == "POST":
         data = json.loads(request.body)
-        description = data.get("desc")
+        description = data.get("description")
+        excused = data.get("excused")
 
-        return JsonResponse({"message": description})
+        return JsonResponse({"message": description, "excused": excused})
     elif request.method == "GET":
         return JsonResponse({
             "message": "Hello",
