@@ -84,7 +84,7 @@ async function recordTardy(){
         method: 'POST',
         body: JSON.stringify({
             student_id: studentID.innerText,
-            description: description,
+            reason: description,
             excused: excused
         })
     })
