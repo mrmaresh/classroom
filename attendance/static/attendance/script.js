@@ -1,4 +1,5 @@
 const studentID = document.querySelector('.student_id');
+const yesBtn = document.querySelector('.')
 
 
 test3();
