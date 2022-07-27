@@ -11,7 +11,19 @@ let excused;
 
 yesBtn.addEventListener('click', () => {
     excused = true;
-    console.log(excused);
+    excusedPage.style.display = 'none';
+    descriptionPage.style.display = 'block';
+})
+
+noBtn.addEventListener('click', () => {
+    excused = false;
+    excusedPage.style.display = 'none';
+    descriptionPage.style.display = 'block';
+})
+
+previousBtn.addEventListener('click', () => {
+    excusedPage.style.display = 'block';
+    descriptionPage.style.display = 'none';
 })
 
 
