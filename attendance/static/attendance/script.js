@@ -10,6 +10,7 @@ const policyPage = document.querySelector('.policy-container');
 const returnPage = document.querySelector('.return-container');
 const consequencePage = document.querySelector('.consequence-container');
 const policyBtn = document.querySelector('.policy-button');
+const message = document.querySelector('.return-excused-message');
 
 
 let excused;
