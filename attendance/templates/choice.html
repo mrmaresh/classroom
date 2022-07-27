@@ -24,7 +24,12 @@
 
         <div class="split right">
             <h1>Attendance</h1>
-            <a href="#" class="btn">Click Here</a>
+            <form action="{% url 'attendancePage' %}" method="post">
+                {% csrf_token %}
+
+                <input hidden class="form-control" name="student_id" value={{student_id}}>
+                <button class="btn">Click Here</button>
+            </form>
         </div>
     </div>
 

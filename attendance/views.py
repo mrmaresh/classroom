@@ -10,9 +10,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.db.models import Count
 
 
-
-
-
 # Create your views here.
 
 from .models import Student, Record, Bathroom, Waitlist, Schedule
@@ -21,6 +18,21 @@ from .models import Student, Record, Bathroom, Waitlist, Schedule
 # Create a function that sets the default schedule and have it automatically run every morning prior to school
 # Create a function that resets the waitlist every change of period automatically
 # Create a student dashboard which displays the joke of the day, homework, reminders, birthdays
+
+
+@csrf_exempt
+@login_required
+def attendance(request):
+    if request.method == "POST":
+        return JsonResponse({"message": "You are posting!"})
+    elif request.method == "GET":
+        return JsonResponse({
+            "message": "Hello",
+            "number": 5,
+            "is": False
+        })
+   
+
 
 
 # This function detects what is the current period
@@ -191,6 +203,17 @@ def select(request):
             "returning": returning,
             "usage": Bathroom.objects.filter(student=student).order_by('-time_out'),
             "in_use": in_use
+        })
+
+
+@login_required
+def attendancePage(request):
+    if request.method == "POST":
+        student_id = request.POST["student_id"]
+        student = Student.objects.get(student_id=student_id)
+
+        return render(request, 'attendance.html',{
+            "student": student
         })
 
 

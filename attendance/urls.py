@@ -12,8 +12,10 @@ path("reset", views.reset, name="reset"),
 path("schedule", views.schedule, name="schedule"),
 path("restricted", views.restricted, name="restricted"),
 path("choice", views.choice, name="choice"),
+path("select", views.select, name="select"),
+path("attendancePage", views.attendancePage, name="attendancePage"),
 
 
 # API Routes
-path("select", views.select, name="select")
+path("attendance", views.attendance, name="attendance")
 ]
