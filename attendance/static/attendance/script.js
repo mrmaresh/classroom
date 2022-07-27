@@ -14,6 +14,7 @@ const message = document.querySelector('.return-excused-message');
 
 
 let excused;
+let description;
 
 descriptionBtn.disabled = true;
 
@@ -56,6 +57,8 @@ descriptionBtn.addEventListener('click', () => {
     else{
         policyPage.style.display = 'block';
     }
+    description = descriptionEl.value;
+    console.log(excused, description);
 })
 
 policyBtn.addEventListener('click', () => {
