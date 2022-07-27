@@ -26,7 +26,7 @@ def attendance(request):
     if request.method == "POST":
         data = json.loads(request.body)
         excused = data.get("ex")
-        return JsonResponse({"ex": excused})
+        return JsonResponse({"ex": "LKLD"})
     elif request.method == "GET":
         return JsonResponse({
             "message": "Hello",
