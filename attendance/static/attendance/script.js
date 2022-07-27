@@ -43,6 +43,14 @@ descriptionEl.addEventListener('keyup', () => {
     }
 })
 
+descriptionBtn.addEventListener('click', () => {
+    descriptionPage.style.display = 'none';
+    
+})
+
+
+
+
 test3();
 test4();
 
