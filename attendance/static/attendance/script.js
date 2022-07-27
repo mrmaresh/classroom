@@ -2,6 +2,7 @@ const studentID = document.querySelector('.student_id');
 const yesBtn = document.querySelector('.excused-yes');
 const noBtn = document.querySelector('.excused-no');
 
+let excused;
 
 test3();
 test4();
