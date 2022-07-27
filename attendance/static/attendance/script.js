@@ -16,12 +16,14 @@ yesBtn.addEventListener('click', () => {
     excused = true;
     excusedPage.style.display = 'none';
     descriptionPage.style.display = 'block';
+    descriptionEl.focus();
 })
 
 noBtn.addEventListener('click', () => {
     excused = false;
     excusedPage.style.display = 'none';
     descriptionPage.style.display = 'block';
+    descriptionEl.focus();
 })
 
 previousBtn.addEventListener('click', () => {
@@ -29,6 +31,9 @@ previousBtn.addEventListener('click', () => {
     descriptionPage.style.display = 'none';
 })
 
+descriptionEl.addEventListener('keyup', () => {
+    
+})
 
 test3();
 test4();
