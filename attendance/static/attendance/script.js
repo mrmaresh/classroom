@@ -9,6 +9,7 @@ const descriptionBtn = document.querySelector('.description-button');
 const policyPage = document.querySelector('.policy-container');
 const returnPage = document.querySelector('.return-container');
 const consequencePage = document.querySelector('.consequence-container');
+const policyBtn = document.querySelector('.policy-button');
 
 
 let excused;
@@ -56,7 +57,11 @@ descriptionBtn.addEventListener('click', () => {
     }
 })
 
-
+policyBtn.addEventListener('click', () => {
+    policyPage.style.display = 'none';
+    consequencePage.style.display = 'block';
+    returnPage.style.display = 'block';
+})
 
 
 test3();
