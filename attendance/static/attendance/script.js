@@ -58,7 +58,7 @@ descriptionBtn.addEventListener('click', () => {
         policyPage.style.display = 'block';
     }
     description = descriptionEl.value;
-    test4();
+    recordTardy();
 })
 
 policyBtn.addEventListener('click', () => {
@@ -79,10 +79,11 @@ async function test3() {
     console.log('test3', data['message']);
 }
 
-async function test4(){
+async function recordTardy(){
     const response = await fetch('attendance',{
         method: 'POST',
         body: JSON.stringify({
+            student_id: studentID.innerText,
             description: description,
             excused: excused
         })

@@ -27,8 +27,8 @@ def attendance(request):
         data = json.loads(request.body)
         description = data.get("description")
         excused = data.get("excused")
-
-        return JsonResponse({"message": description, "excused": excused})
+        student_id = data.get("student_id")
+        return JsonResponse({"message": description, "excused": excused, "student_id": student_id})
     elif request.method == "GET":
         return JsonResponse({
             "message": "Hello",
