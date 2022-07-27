@@ -39,12 +39,10 @@ def attendance(request):
 def unexcused(request, student_id):
     if request.method == "GET":
         student = Student.objects.get(student_id=student_id)
-        records = AttendanceRecord.objects.filter(student=student, )
-        records = Record.objects.filter(student=student, timestamp__range = [start,finish]).order_by('-timestamp')
+        records = AttendanceRecord.objects.filter(student=student, excused=False)
         return JsonResponse({
-            "message": "Hello",
-            "student_id": student_id,
-            "is": False
+            "numTardies": len(records),
+            "student_id": student_id
         })
 
 
