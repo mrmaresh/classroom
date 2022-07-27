@@ -33,15 +33,14 @@ def attendance(request):
         record.save()
         return JsonResponse({"message": reason, "excused": excused, "student_id": student_id})
 
-    elif request.method == "GET":
 
+def unexcused(request):
+    if request.method == "GET":
         return JsonResponse({
             "message": "Hello",
             "number": 5,
             "is": False
         })
-
-def 
 
 
 # This function detects what is the current period

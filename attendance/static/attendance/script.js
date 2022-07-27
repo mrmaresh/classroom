@@ -74,7 +74,7 @@ test3();
 
 
 async function test3() {
-    const response = await fetch('attendance');
+    const response = await fetch('unexcused');
     const data = await response.json();
     console.log('test3', data['message']);
 }
