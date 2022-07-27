@@ -62,6 +62,7 @@ policyBtn.addEventListener('click', () => {
     policyPage.style.display = 'none';
     consequencePage.style.display = 'block';
     returnPage.style.display = 'block';
+    message.style.display = 'none';
 })
 
 
