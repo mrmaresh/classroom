@@ -10,6 +10,7 @@ const descriptionBtn = document.querySelector('.description-button');
 
 let excused;
 
+descriptionBtn.disabled = true;
 
 yesBtn.addEventListener('click', () => {
     excused = true;
