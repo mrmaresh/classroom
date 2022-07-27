@@ -8,6 +8,7 @@ const descriptionEl = document.querySelector('.description');
 const descriptionBtn = document.querySelector('.description-button');
 const policyPage = document.querySelector('.policy-container');
 const returnPage = document.querySelector('.return-container');
+const consequencePage = document.querySelector('.consequence-container');
 
 
 let excused;
@@ -47,7 +48,7 @@ descriptionEl.addEventListener('keyup', () => {
 
 descriptionBtn.addEventListener('click', () => {
     descriptionPage.style.display = 'none';
-    if (excused = true) {
+    if (excused === true) {
         returnPage.style.display = 'block';
     }
     else{
