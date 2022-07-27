@@ -50,7 +50,7 @@ descriptionBtn.addEventListener('click', () => {
 
     }
     else{
-
+        policyPage.style.display = 'block';
     }
 })
 
