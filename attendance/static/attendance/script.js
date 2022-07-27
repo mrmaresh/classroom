@@ -32,7 +32,12 @@ previousBtn.addEventListener('click', () => {
 })
 
 descriptionEl.addEventListener('keyup', () => {
-    console.log("JJJ");
+    if (descriptionEl.value === ''){
+        descriptionBtn.disabled = true;
+    }
+    else{
+        descriptionBtn.disabled = false;
+    }
 })
 
 test3();
