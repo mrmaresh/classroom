@@ -6,7 +6,7 @@ let excused;
 
 
 yesBtn.addEventListener('click', () => {
-    excused = True
+    excused = true
 })
 
 
