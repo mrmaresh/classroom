@@ -19,6 +19,7 @@ yesBtn.addEventListener('click', () => {
     descriptionEl.focus();
 })
 
+
 noBtn.addEventListener('click', () => {
     excused = false;
     excusedPage.style.display = 'none';
@@ -26,10 +27,12 @@ noBtn.addEventListener('click', () => {
     descriptionEl.focus();
 })
 
+
 previousBtn.addEventListener('click', () => {
     excusedPage.style.display = 'block';
     descriptionPage.style.display = 'none';
 })
+
 
 descriptionEl.addEventListener('keyup', () => {
     if (descriptionEl.value === ''){
