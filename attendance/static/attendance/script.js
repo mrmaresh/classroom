@@ -4,6 +4,10 @@ const noBtn = document.querySelector('.excused-no');
 
 let excused;
 
+
+yesBtn.addEventListener
+
+
 test3();
 test4();
 
