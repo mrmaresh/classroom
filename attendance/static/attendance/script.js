@@ -81,8 +81,7 @@ async function recordTardy(){
     const response = await fetch('attendance',{
         method: 'POST',
         body: JSON.stringify({
-            excused: excused,
-            description: description
+            ex: "testing me"
         })
     })
     const data = await response.json();
