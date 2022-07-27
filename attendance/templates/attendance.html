@@ -25,14 +25,6 @@
     <button class="description-button">Submit</button>
 </div>
 
-<div class="return-container">
-    <h1 class="return-excused-message">Make sure you give Mr. Maresh your tardy pass.  Thank you!!!</h1>
-    <form action="{% url 'login' %}" method="post">
-        {% csrf_token %}
-        <input class="return-button" type="submit" value="Return Home">
-    </form>
-</div>
-
 <div class="policy-container">
     <h1>Tardy Policy</h1>
     <ul>
@@ -45,7 +37,16 @@
 </div>
 
 <div class="consequence-container">
-    <h1 class="consequence-1"> This is your first tardy this semester and so consider this your official warning.</h1>
+    <h1 class="consequence-warning"> This is your first tardy this semester and so consider this your official warning.</h1>
+    <h1 class="consequence-lunch-detention"> This is your</h1>
+</div>
+
+<div class="return-container">
+    <h1 class="return-excused-message">Make sure you give Mr. Maresh your tardy pass.  Thank you!!!</h1>
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <input class="return-button" type="submit" value="Return Home">
+    </form>
 </div>
 <script src="{% static 'attendance/script.js' %}"></script>
 {% endblock %}
