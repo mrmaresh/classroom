@@ -40,7 +40,7 @@ def unexcused(request, student_id):
     if request.method == "GET":
         return JsonResponse({
             "message": "Hello",
-            "number": 5,
+            "student_id": student_id,
             "is": False
         })
 
