@@ -18,5 +18,5 @@ path("attendancePage", views.attendancePage, name="attendancePage"),
 
 # API Routes
 path("attendance", views.attendance, name="attendance"),
-path("unexcused/<int:email_id>", views.unexcused, name="unexcused")
+path("unexcused/<int:student_id>", views.unexcused, name="unexcused")
 ]
