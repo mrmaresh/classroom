@@ -6,7 +6,8 @@ let excused;
 
 
 yesBtn.addEventListener('click', () => {
-    console.log("yes");
+    excused = true;
+    console.log(excused);
 })
 
 
