@@ -26,7 +26,8 @@ def attendance(request):
     if request.method == "POST":
         data = json.loads(request.body)
         student_id = data.get("student_id")
-        return JsonResponse({"message": student_id})
+        student = Student.objects.get(student_id=student_id)
+        return JsonResponse({"message": student.first})
     elif request.method == "GET":
         return JsonResponse({
             "message": "Hello",
