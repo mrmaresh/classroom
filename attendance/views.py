@@ -12,7 +12,7 @@ from django.db.models import Count
 
 # Create your views here.
 
-from .models import Student, Record, Bathroom, Waitlist, Schedule
+from .models import Student, Record, Bathroom, Waitlist, Schedule, AttendanceRecord
 
 # ISSUE:  what period is detected during passing period?
 # Create a function that sets the default schedule and have it automatically run every morning prior to school
@@ -28,6 +28,8 @@ def attendance(request):
         description = data.get("description")
         excused = data.get("excused")
         student_id = data.get("student_id")
+        student = Student.objects.get(student_id=student_id)
+        
         return JsonResponse({"message": description, "excused": excused, "student_id": student_id})
     elif request.method == "GET":
         return JsonResponse({
