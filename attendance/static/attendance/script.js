@@ -83,7 +83,7 @@ async function test4(){
     const response = await fetch('attendance',{
         method: 'POST',
         body: JSON.stringify({
-            student_id: studentID.innerText
+            desc: "HELLO MY NAME IS JASON"
         })
     })
     const data = await response.json();
