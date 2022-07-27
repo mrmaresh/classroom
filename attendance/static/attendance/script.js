@@ -7,6 +7,7 @@ const descriptionPage = document.querySelector('.description-container');
 const descriptionEl = document.querySelector('.description');
 const descriptionBtn = document.querySelector('.description-button');
 const policyPage = document.querySelector('.policy-container');
+const returnPage = document.querySelector('.return-container');
 
 
 let excused;
