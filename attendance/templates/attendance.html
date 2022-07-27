@@ -26,7 +26,12 @@
 
 <div class="return-container">
     <h1 class="return-excused-message">Make sure you give Mr. Maresh your tardy pass.  Thank you!!!</h1>
-
+    <form action="{% url 'record' %}" method="post">
+        {% csrf_token %}
+        <input hidden name="reason" value="use_restroom">
+        <input hidden name="student_id" value={{student.student_id}}>
+        <input  class="btn option-restroom" type="submit" value="Use Restroom">
+    </form>
 </div>
 
 <script src="{% static 'attendance/script.js' %}"></script>
