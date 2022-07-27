@@ -74,9 +74,9 @@ test3();
 
 
 async function test3() {
-    const response = await fetch('unexcused/'.concat("12345"));
+    const response = await fetch('unexcused/'.concat(studentID.innerText));
     const data = await response.json();
-    console.log('test3', data['message']);
+    console.log('test3', data);
 }
 
 async function recordTardy(){

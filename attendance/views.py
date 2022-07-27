@@ -38,6 +38,8 @@ def attendance(request):
 @login_required
 def unexcused(request, student_id):
     if request.method == "GET":
+        student = Student.objects.get(student_id=student_id)
+        
         return JsonResponse({
             "message": "Hello",
             "student_id": student_id,
