@@ -24,6 +24,7 @@ from .models import Student, Record, Bathroom, Waitlist, Schedule
 @login_required
 def attendance(request):
     if request.method == "POST":
+        data = json.loads(request.body)
         return JsonResponse({"message": "You are posting!"})
     elif request.method == "GET":
         return JsonResponse({
@@ -31,7 +32,7 @@ def attendance(request):
             "number": 5,
             "is": False
         })
-   
+
 
 
 
