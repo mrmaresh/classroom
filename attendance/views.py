@@ -34,7 +34,9 @@ def attendance(request):
         return JsonResponse({"message": reason, "excused": excused, "student_id": student_id})
 
 
-def unexcused(request):
+@csrf_exempt
+@login_required
+def unexcused(request, student_id):
     if request.method == "GET":
         return JsonResponse({
             "message": "Hello",
