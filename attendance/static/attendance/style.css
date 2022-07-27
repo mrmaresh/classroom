@@ -19,3 +19,18 @@
 .consequence-container{
     display: none;
 }
+
+.consequence-warning{
+    display: none;
+}
+
+.consequence-lunch-detention{
+    display: none;
+}
+
+
+
+="consequence-warning"> This is your first tardy this semester. Consider this your <span>official warning</span>.</h1>
+    <h1 class="consequence-lunch-detention"> This is your second tardy this semester.  Mr. Maresh will be notified and he will assign you <span>lunch detention</span>.  Expect to hear further details from him.</h1>
+    <h1 class="consequence-after-school-detention">This is your third tardy this semester.  Mr. Maresh will be notified and he will assign you <span>after-school detention</span>.  Expect to hear further details from him.</h1>
+    <h1 class="consequence-referral">Th

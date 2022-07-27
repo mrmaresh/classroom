@@ -11,6 +11,12 @@ const returnPage = document.querySelector('.return-container');
 const consequencePage = document.querySelector('.consequence-container');
 const policyBtn = document.querySelector('.policy-button');
 const message = document.querySelector('.return-excused-message');
+const consequence1 = document.querySelector('.consequence-warning');
+const consequence2 = document.querySelector('.consequence-lunch-detention');
+const consequence3 = document.querySelector('.consequence-after-school-detention');
+const consequence4 = document.querySelector('.consequence-referral');
+
+
 
 
 let excused;
@@ -70,6 +76,18 @@ policyBtn.addEventListener('click', () => {
     consequencePage.style.display = 'block';
     returnPage.style.display = 'block';
     message.style.display = 'none';
+    if (numTardies === 0){
+
+    }
+    if (numTardies === 1){
+
+    }
+    if (numTardies === 2){
+
+    }
+    if (numTardies > 2){
+
+    }
 })
 
 
