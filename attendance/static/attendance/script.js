@@ -16,7 +16,7 @@ const consequence2 = document.querySelector('.consequence-lunch-detention');
 const consequence3 = document.querySelector('.consequence-after-school-detention');
 const consequence4 = document.querySelector('.consequence-referral');
 
-
+consequence1.style.display = 'none';
 
 
 let excused;
