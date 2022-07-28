@@ -117,6 +117,10 @@ button:active, input:active {
     padding: 0px 50px 30px;
 }
 
+.consequence-container div{
+    background-color: yellow;
+}
+
 .consequence-warning{
     display: none;
 }

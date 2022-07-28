@@ -46,8 +46,7 @@
         <h3>Past Unexcused Tardies:</h3>
         {% for record in records %}
             <div class="record">
-                <p> {{record.timestamp}} </p>
-                <p> {{record.reason}} </p>
+                <p> Date: {{record.timestamp}} <span> Reason: {{record.reason}}</span></p>
             </div>
         {% endfor %}
     {% endif %}
