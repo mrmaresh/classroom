@@ -18,6 +18,7 @@ body {
 }
 
 .excused-container {
+    display: none;
     background-color: #DBF1FF;
     border: 4mm ridge #BFD1FD;
     margin: 5% 10%;
@@ -46,7 +47,7 @@ button {
 }
 
 .description-container{
-    display: none;
+    
 }
 
 .policy-container{
