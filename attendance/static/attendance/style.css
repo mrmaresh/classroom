@@ -19,8 +19,9 @@ body {
 
 .excused-container {
     background-color: #DBF1FF;
-    border
-    margin-left: 10%;
+    border: 4mm ridge #BFD1FD;
+    margin: 10%;
+    padding: 30px;
 }
 
 .description-container{
