@@ -219,7 +219,7 @@ def attendancePage(request):
     if request.method == "POST":
         student_id = request.POST["student_id"]
         student = Student.objects.get(student_id=student_id)
-
+        records = AttendanceRecord.objects.filter(student=student, excused=False)
         return render(request, 'attendance.html',{
             "student": student
         })
