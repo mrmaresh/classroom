@@ -118,7 +118,8 @@ button:active, input:active {
 }
 
 .consequence-container div{
-    background-color: yellow;
+    background-color: #7575FF;
+    color: white;
 }
 
 .consequence-warning{
