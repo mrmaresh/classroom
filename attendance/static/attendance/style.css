@@ -36,7 +36,7 @@ body {
     font-weight: bold;
 }
 
-button {
+button, input {
     background-color: #BFD1FD;
     padding: 10px 30px;
     font-size: 1.5em;
@@ -45,11 +45,11 @@ button {
     border-color: rgb(151,169,213);
 }
 
-button:hover{
+button:hover, input:hover{
     background-color: rgb(171,189,233);
 }
 
-button:active {
+button:active, input:active {
     transform: scale(0.98);
 }
 
@@ -103,7 +103,7 @@ button:active {
 }
 
 .return-container{
-    
+
     background-color: #DBF1FF;
     border: 4mm ridge #BFD1FD;
     margin: 5% 10%;
