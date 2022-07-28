@@ -15,7 +15,9 @@ const consequence1 = document.querySelector('.consequence-warning');
 const consequence2 = document.querySelector('.consequence-lunch-detention');
 const consequence3 = document.querySelector('.consequence-after-school-detention');
 const consequence4 = document.querySelector('.consequence-referral');
+const consequenceNum = document.querySelector('.consequence-number');
 
+console.log(consequenceNum.innerText);
 
 let excused;
 let description;
@@ -103,7 +105,6 @@ policyBtn.addEventListener('click', () => {
 async function unexcusedTardies() {
     const response = await fetch('unexcused/'.concat(studentID.innerText));
     const data = await response.json();
-    console.log(data['numTardies']);
     numTardies = data['numTardies'];
 }
 
