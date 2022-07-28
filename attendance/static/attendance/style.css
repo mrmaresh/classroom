@@ -92,6 +92,14 @@ button:active {
     padding: 0px 50px 30px;
 }
 
+.policy-container li{
+    font-size: 1.3em;
+}
+
+.policy-container span{
+    color: #80FF80;
+}
+
 .return-container{
     display: none;
 }
