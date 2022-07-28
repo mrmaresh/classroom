@@ -92,6 +92,7 @@ policyBtn.addEventListener('click', () => {
     }
     else if (numTardies > 2){
         console.log(4);
+        consequenceNum.innerText = numTardies + 1;
         consequence4.style.display = 'block';
     }
 })
