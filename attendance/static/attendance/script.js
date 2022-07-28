@@ -74,16 +74,21 @@ policyBtn.addEventListener('click', () => {
     consequencePage.style.display = 'block';
     returnPage.style.display = 'block';
     message.style.display = 'none';
+    console.log("numTardies =", numTardies);
     if (numTardies === 0){
+        console.log(1);
         consequence1.style.display = 'none';
     }
     else if (numTardies === 1){
+        console.log(2);
         consequence2.style.display = 'none';
     }
     else if (numTardies === 2){
+        console.log(3);
         consequence3.style.display = 'none';
     }
     else if (numTardies > 2){
+        console.log(4);
         consequence4.style.display = 'none';
     }
 })
@@ -97,7 +102,6 @@ policyBtn.addEventListener('click', () => {
 async function unexcusedTardies() {
     const response = await fetch('unexcused/'.concat(studentID.innerText));
     const data = await response.json();
-    console.log(data['numTardies'] > 2)
     return data['numTardies']
 }
 
@@ -111,6 +115,5 @@ async function recordTardy(){
         })
     })
     const data = await response.json();
-    console.log('recordTardy', data);
 }
 
