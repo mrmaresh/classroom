@@ -74,7 +74,7 @@ policyBtn.addEventListener('click', () => {
     consequencePage.style.display = 'block';
     returnPage.style.display = 'block';
     message.style.display = 'none';
-    console.log("numTardies =", numTardies);
+    console.log("numTardies =", numTardies > 2);
     if (numTardies === 0){
         console.log(1);
         consequence1.style.display = 'none';
