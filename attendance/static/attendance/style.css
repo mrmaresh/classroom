@@ -24,6 +24,10 @@ body {
     padding: 0px 50px 30px;
 }
 
+.excused-container h1 {
+    font-size: ;
+}
+
 .description-container{
     display: none;
 }
