@@ -108,6 +108,13 @@ button:active, input:active {
     padding: 0px 50px 30px;
 }
 
+.return-container input{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .consequence-container{
     display: none;
     background-color: #DBF1FF;
