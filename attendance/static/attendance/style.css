@@ -97,7 +97,8 @@ button:active {
 }
 
 .policy-container span{
-    color: #80FF80;
+    color: #7575FF;
+    font-weight: bold;
 }
 
 .return-container{
