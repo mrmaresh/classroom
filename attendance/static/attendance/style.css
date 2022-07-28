@@ -18,6 +18,8 @@ body {
 }
 
 .excused-container {
+    display: none;
+
 
     background-color: #DBF1FF;
     border: 4mm ridge #BFD1FD;
@@ -84,7 +86,7 @@ button:active {
 }
 
 .policy-container{
-    display: none;
+    
 }
 
 .return-container{
