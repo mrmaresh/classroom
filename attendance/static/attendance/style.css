@@ -135,6 +135,11 @@ button:active, input:active {
     font-size: 1.2em;
 }
 
+.consequence-container span {
+    color: #7575FF;
+    font-weight: bold;
+}
+
 .consequence-container div span{
     margin-left: 30px;
 }
