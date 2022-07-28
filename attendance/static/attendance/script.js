@@ -74,7 +74,7 @@ policyBtn.addEventListener('click', () => {
     consequencePage.style.display = 'block';
     returnPage.style.display = 'block';
     message.style.display = 'none';
-    if (0 === 0){
+    if (numTardies === 0){
         consequence1.style.display = 'none';
     }
     else if (numTardies === 1){
