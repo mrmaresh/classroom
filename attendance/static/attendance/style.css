@@ -47,6 +47,10 @@ button:hover{
     background-color: rgb(171,189,233);
 }
 
+button:active {
+    transform: scale(0.98);
+}
+
 .excused-no{
     margin: 0 20px;
 }
