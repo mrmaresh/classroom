@@ -16,8 +16,6 @@ const consequence2 = document.querySelector('.consequence-lunch-detention');
 const consequence3 = document.querySelector('.consequence-after-school-detention');
 const consequence4 = document.querySelector('.consequence-referral');
 
-consequence1.style.display = 'none';
-
 
 let excused;
 let description;
@@ -76,7 +74,7 @@ policyBtn.addEventListener('click', () => {
     consequencePage.style.display = 'block';
     returnPage.style.display = 'block';
     message.style.display = 'none';
-    if (numTardies === 0){
+    if (0 === 0){
         consequence1.style.display = 'none';
     }
     else if (numTardies === 1){
