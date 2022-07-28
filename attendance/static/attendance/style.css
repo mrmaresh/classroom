@@ -20,5 +20,19 @@
     display: none;
 }
 
+.consequence-warning{
+    display: none;
+}
 
+.consequence-lunch-detention{
+    display: none;
+}
+
+.consequence-after-school-detention{
+    display: none;
+}
+
+.consequence-referral{
+    display: none;
+}
 

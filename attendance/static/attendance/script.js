@@ -74,22 +74,22 @@ policyBtn.addEventListener('click', () => {
     consequencePage.style.display = 'block';
     returnPage.style.display = 'block';
     message.style.display = 'none';
-    console.log("numTardies =", numTardies > 2);
+    console.log(numTardies, numTardies < 2, numTardies == 10, numTardies === 10, numTardies > 2);
     if (numTardies === 0){
         console.log(1);
-        consequence1.style.display = 'none';
+        consequence1.style.display = 'block';
     }
     else if (numTardies === 1){
         console.log(2);
-        consequence2.style.display = 'none';
+        consequence2.style.display = 'block';
     }
     else if (numTardies === 2){
         console.log(3);
-        consequence3.style.display = 'none';
+        consequence3.style.display = 'block';
     }
     else if (numTardies > 2){
         console.log(4);
-        consequence4.style.display = 'none';
+        consequence4.style.display = 'block';
     }
 })
 
