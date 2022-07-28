@@ -20,12 +20,12 @@ body {
 .excused-container {
     background-color: #DBF1FF;
     border: 4mm ridge #BFD1FD;
-    margin: 10%;
+    margin: 5%;
     padding: 0px 50px 30px;
 }
 
 .excused-container h1 {
-    font-size: ;
+    font-size: 3em;
 }
 
 .description-container{
