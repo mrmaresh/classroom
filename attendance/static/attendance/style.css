@@ -123,6 +123,7 @@ button:active, input:active {
     padding: 10px 20px;
     margin-top: 20px;
     border-radius: 10px;
+    font-size: 1.3em;
 }
 
 .consequence-container div span{
