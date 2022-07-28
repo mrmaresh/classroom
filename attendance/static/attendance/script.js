@@ -78,7 +78,7 @@ policyBtn.addEventListener('click', () => {
     returnPage.style.display = 'block';
     message.style.display = 'none';
     returnPage.style.borderStyle = 'none';
-    returnPage.style.backgroundColor = 'white';
+    returnPage.style.backgroundColor = '#f5f5f5';
 
     console.log(numTardies, numTardies < 2, numTardies == 10, numTardies === 10, numTardies > 2);
     if (numTardies === 0){
