@@ -62,6 +62,13 @@ button {
 }
 
 
+.previous {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .policy-container{
     display: none;
 }
