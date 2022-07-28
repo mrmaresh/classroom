@@ -28,8 +28,21 @@ body {
     font-size: 3em;
 }
 
+.excused-container p {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
 button {
-    background-color: 
+    background-color: #BFD1FD;
+    padding: 10px 30px;
+    font-size: 1.5em;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.excused-no{
+    margin: 0 20px;
 }
 
 .description-container{
