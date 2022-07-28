@@ -18,9 +18,7 @@ body {
 }
 
 .excused-container {
-    display: none;
-
-
+    
     background-color: #DBF1FF;
     border: 4mm ridge #BFD1FD;
     margin: 5% 10%;
@@ -111,6 +109,7 @@ button:active, input:active {
 }
 
 .consequence-container{
+    display: none;
     background-color: #DBF1FF;
     border: 4mm ridge #BFD1FD;
     margin: 5% 10%;
@@ -123,7 +122,11 @@ button:active, input:active {
     padding: 10px 20px;
     margin-top: 20px;
     border-radius: 10px;
-    font-size: 1.3em;
+    font-size: 1.2em;
+}
+
+.consequence-container h3{
+    font-size: 1.2em;
 }
 
 .consequence-container div span{
