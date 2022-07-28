@@ -109,9 +109,9 @@ button:active, input:active {
 }
 
 .return-container input{
-    position: relative;
-    bottom: 0%;
-    left: 0%;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
     transform: translateX(-50%);
 }
 
