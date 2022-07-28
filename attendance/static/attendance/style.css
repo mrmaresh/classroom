@@ -109,10 +109,7 @@ button:active, input:active {
 }
 
 .return-container input{
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
+
 }
 
 .consequence-container{
