@@ -143,6 +143,7 @@ button:active, input:active {
 .consequence-container div span{
     margin-left: 30px;
     color: white;
+    font-weight: normal;
 }
 
 .consequence-warning{
