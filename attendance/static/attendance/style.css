@@ -103,7 +103,7 @@ button:active, input:active {
 }
 
 .return-container{
-
+    display: none;
     background-color: #DBF1FF;
     border: 4mm ridge #BFD1FD;
     margin: 5% 10%;
