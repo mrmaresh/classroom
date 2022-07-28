@@ -102,7 +102,7 @@ policyBtn.addEventListener('click', () => {
 async function unexcusedTardies() {
     const response = await fetch('unexcused/'.concat(studentID.innerText));
     const data = await response.json();
-    console.log(data)
+    console.log(data['numTardies'])
     return data['numTardies']
 }
 
