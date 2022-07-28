@@ -120,6 +120,13 @@ button:active, input:active {
 .consequence-container div{
     background-color: #7575FF;
     color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.consequence-container div span{
+    margin-left: 30px;
 }
 
 .consequence-warning{
