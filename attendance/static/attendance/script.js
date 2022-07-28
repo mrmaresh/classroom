@@ -19,7 +19,8 @@ const consequence4 = document.querySelector('.consequence-referral');
 
 let excused;
 let description;
-let numTardies = unexcusedTardies();
+let numTardies;
+unexcusedTardies();
 
 descriptionBtn.disabled = true;
 
@@ -102,8 +103,8 @@ policyBtn.addEventListener('click', () => {
 async function unexcusedTardies() {
     const response = await fetch('unexcused/'.concat(studentID.innerText));
     const data = await response.json();
-    console.log(data['numTardies'])
-    return data['numTardies']
+    console.log(data['numTardies']);
+    numTardies = data['numTardies'];
 }
 
 async function recordTardy(){
