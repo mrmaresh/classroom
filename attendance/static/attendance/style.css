@@ -86,7 +86,10 @@ button:active {
 }
 
 .policy-container{
-    
+    background-color: #DBF1FF;
+    border: 4mm ridge #BFD1FD;
+    margin: 5% 10%;
+    padding: 0px 50px 30px;
 }
 
 .return-container{
