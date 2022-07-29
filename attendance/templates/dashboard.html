@@ -53,6 +53,20 @@
                 </table>
             </td>
         </tr>
+        <tr>
+            <td>Today's Tardies</td>
+            <td>
+                <table class = "usage">
+                    {% for record in tardyRecords %}
+                        <tr class = "usage">
+                            <td style = "border: 1px solid; padding: 5px;"><strong>{{record.student.first}}</strong></td>
+                            <td style = "border: 1px solid; padding: 5px;">{{record.excused}} minutes </td>
+                            <td style = "border: 1px solid; padding: 5px;">{{record.reason}}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </td>
+        </tr>
 
     </table>
 </div>
