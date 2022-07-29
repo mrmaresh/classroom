@@ -17,10 +17,6 @@ function setTime() {
 
     const ampm = hours < 12 ? 'AM' : 'PM';
 
-    hourEl.style.transform = `translate(-50%, -100%) rotate(${(360/12)*hours}deg)`;
-    minuteEl.style.transform = `translate(-50%, -100%) rotate(${(360/60)*minutes}deg)`;
-    secondEl.style.transform = `translate(-50%, -100%) rotate(${(360/60)*seconds}deg)`;
-
     timeEl.innerHTML = `${hoursForClock}:${minutes < 10 ? `0${minutes}` : minutes} ${ampm}`;
     dateEl.innerHTML = `${days[day]}, ${months[month]} <span class="circle">${date}</span>`;
 }
