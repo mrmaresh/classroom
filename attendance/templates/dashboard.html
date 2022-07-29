@@ -7,7 +7,7 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
     <script>
         $(document).ready( function () {
-        $('#table_id').DataTable();
+        $('#restroom-usage').DataTable();
         } );
     </script>
 {% endblock %}
@@ -16,11 +16,14 @@
 
 {% block body %}
 
-<table id="table_id" class="display">
+<table id="restroom-usage" class="display">
     <thead>
         <tr>
-            <th>Column 1</th>
-            <th>Column 2</th>
+            <th>Period</th>
+            <th>First</th>
+            <th>Last</th>
+            <th>ID</th>
+            <th>Date</th>
         </tr>
     </thead>
     <tbody>
