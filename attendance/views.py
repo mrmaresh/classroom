@@ -256,6 +256,9 @@ def dashboard(request):
     start_time = start + timedelta(minutes=7)
     startdate = datetime.today()-timedelta(hours=8)
     records = Bathroom.objects.filter(time_out__gt = startdate).order_by('-time_out')
+    for student in Student.objects.all():
+        
+
     return render(request, 'dashboard.html',{
         "tardies": AttendanceRecord.objects.all(),
         "bathroom": Bathroom.objects.all(),
