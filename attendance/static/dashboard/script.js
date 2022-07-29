@@ -20,7 +20,7 @@ function setTime() {
 
     const ampm = hours < 12 ? 'AM' : 'PM';
 
-    timeEl.innerHTML = `${hoursForClock}:${minutes < 10 ? `0${minutes}` : minutes} ${ampm}`;
+    timeEl.innerHTML = `${hoursForClock}:${minutes < 10 ? `0${minutes}` : minutes}:${minutes < 10 ? `0${seconds}` : seconds} ${ampm}`;
     dateEl.innerHTML = `${days[day]}, ${months[month]} <span class="circle">${date}</span>`;
 }
 
