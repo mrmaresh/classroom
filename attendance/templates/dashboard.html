@@ -17,50 +17,6 @@
 
 {% block body %}
 
-<table id="filter-table" class="display">
-    <thead>
-        <tr>
-            <th>Period</th>
-            <th>First</th>
-            <th>Last</th>
-            <th>ID</th>
-            <th>Date</th>
-            <th>minutes</th>
-            <th>reason</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for record in bathroom %}
-        <tr>
-            <td>{{record.student.period}}</td>
-            <td>{{record.student.first}}</td>
-            <td>{{record.student.last}}</td>
-            <td>{{record.student.student_id}}</td>
-            <td>{{record.time_out.date}}</td>
-            <td> {{record.minutes}}</td>
-            <td></td>
-        </tr>
-        {% endfor %}
-        {% for record in tardies %}
-        <tr>
-            <td>{{record.student.period}}</td>
-            <td>{{record.student.first}}</td>
-            <td>{{record.student.last}}</td>
-            <td>{{record.student.student_id}}</td>
-            <td>{{record.timestamp.date}}</td>
-            <td></td>
-            <td> {{record.reason}}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-
-
-
-
-
-
-
 <h1>Time Spent: {{timeSpent}}</h1>
 <div  style ="margin-left:10%; margin-right:35%;" >
     <table class = "table table-sm" style="font-size: 200%">
@@ -124,7 +80,43 @@
 </form>
 
 
-
+<table id="filter-table" class="display">
+    <thead>
+        <tr>
+            <th>Period</th>
+            <th>First</th>
+            <th>Last</th>
+            <th>ID</th>
+            <th>Date</th>
+            <th>minutes</th>
+            <th>reason</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for record in bathroom %}
+        <tr>
+            <td>{{record.student.period}}</td>
+            <td>{{record.student.first}}</td>
+            <td>{{record.student.last}}</td>
+            <td>{{record.student.student_id}}</td>
+            <td>{{record.time_out.date}}</td>
+            <td> {{record.minutes}}</td>
+            <td></td>
+        </tr>
+        {% endfor %}
+        {% for record in tardies %}
+        <tr>
+            <td>{{record.student.period}}</td>
+            <td>{{record.student.first}}</td>
+            <td>{{record.student.last}}</td>
+            <td>{{record.student.student_id}}</td>
+            <td>{{record.timestamp.date}}</td>
+            <td></td>
+            <td> {{record.reason}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 Debug Info:
 Waitlist: {{waitlist}}
 Records: {{records}}
