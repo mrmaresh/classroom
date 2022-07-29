@@ -268,7 +268,9 @@ def dashboard(request):
     numBath = sorted(numBath, key=lambda i:i[3], reverse=True)
 
     return render(request, 'dashboard.html',{
-        "numBath": numBath,
+        "numUnexTardies": numUnexTardies[0:5],
+        "numTardies": numTardies[0:5],
+        "numBath": numBath[0:5],
         "tardies": AttendanceRecord.objects.all(),
         "bathroom": Bathroom.objects.all(),
         "timeSpent":datetime.now() - start_time > timedelta(minutes = 60),
