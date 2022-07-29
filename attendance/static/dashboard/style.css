@@ -29,6 +29,15 @@ input {
     border-radius: 15px;
 }
 
+input:hover {
+    background-color: rgba(64,86,161,0.9);
+}
+
+input:active {
+    transform: scale(.98);
+}
+
+
 .reset-container{
     position: absolute;
     left: 10%;
