@@ -81,6 +81,7 @@
 <table id="filter-table" class="display">
     <thead>
         <tr>
+            <th>Type</th>
             <th>Period</th>
             <th>First</th>
             <th>Last</th>
@@ -93,6 +94,7 @@
     <tbody>
         {% for record in bathroom %}
         <tr>
+            <td>Restroom</td>
             <td>{{record.student.period}}</td>
             <td>{{record.student.first}}</td>
             <td>{{record.student.last}}</td>
@@ -104,6 +106,7 @@
         {% endfor %}
         {% for record in tardies %}
         <tr>
+            <td>Tardy</td>
             <td>{{record.student.period}}</td>
             <td>{{record.student.first}}</td>
             <td>{{record.student.last}}</td>
