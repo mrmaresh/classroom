@@ -45,9 +45,9 @@
                 <table class = "usage">
                     {% for record in records %}
                         <tr class = "usage">
-                            <td style = "border: 1px solid; padding: 5px;"><strong>{{record.student.first}}</strong></td>
-                            <td style = "border: 1px solid; padding: 5px;">{{record.minutes}} minutes </td>
-                            <td style = "border: 1px solid; padding: 5px;">{{record.time_out}}</td>
+                            <td><strong>{{record.student.first}}</strong></td>
+                            <td>{{record.minutes}} minutes </td>
+                            <td>{{record.time_out}}</td>
                         </tr>
                     {% endfor %}
                 </table>
@@ -59,16 +59,16 @@
                 <table class = "usage">
                     {% for record in tardyRecords %}
                         <tr class = "usage">
-                            <td style = "border: 1px solid; padding: 5px;"><strong>{{record.student.first}}</strong></td>
-                            <td style = "border: 1px solid; padding: 5px;">
+                            <td><strong>{{record.student.first}}</strong></td>
+                            <td>
                                 {% if record.excused == True %}
                                     Excused
                                 {% else %}
                                     Unexcused
                                 {% endif %}
-
                             </td>
-                            <td style = "border: 1px solid; padding: 5px;">{{record.reason}}</td>
+                            <td> </td>
+                            <td>{{record.reason}}</td>
                         </tr>
                     {% endfor %}
                 </table>
