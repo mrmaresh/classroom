@@ -33,9 +33,11 @@ body{
 }
 
 .filter-table-container{
-    background-color: #EFE2BA;
+    background-color: #4056A1;
+    color: white;
     margin: 20px;
     padding: 20px;
+    border-radius: 10px;
 }
 
 .top5-container{
