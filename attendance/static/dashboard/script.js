@@ -5,6 +5,9 @@ $(document).ready( function () {
 timeEl = document.querySelector('#time');
 dateEl = document.querySelector('#date');
 
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
 function setTime() {
     const time = new Date();
     const month = time.getMonth();
