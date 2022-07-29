@@ -1,7 +1,7 @@
 
 
 body{
-    background-color: blue;
+
 }
 
 
@@ -14,5 +14,13 @@ body{
 }
 
 .schedule-container{
+    background-color: pink;
+}
+
+.filter-table-container{
+    background-color: yellow;
+}
+
+.top5-container{
     background-color: pink;
 }
