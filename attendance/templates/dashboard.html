@@ -7,21 +7,17 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
     <script>
         $(document).ready( function () {
-        $('#restroom-usage-table').DataTable();
+        $('#filter-table').DataTable();
         } );
     </script>
-        <script>
-            $(document).ready( function () {
-            $('#tardy-table').DataTable();
-            } );
-        </script>
+
 {% endblock %}
 
 
 
 {% block body %}
 
-<table id="restroom-usage" class="display">
+<table id="filter-table" class="display">
     <thead>
         <tr>
             <th>Period</th>
@@ -47,7 +43,7 @@
 </table>
 
 
-<table id="tardy-table" class="display">
+<table id="filter-table" class="display">
     <thead>
         <tr>
             <th>Period</th>
