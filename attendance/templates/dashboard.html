@@ -15,9 +15,7 @@
 
 {% block body %}
 
-{% for i in numBath%}
-    <p>{{i}}</p>
-{% endfor %}
+
 <h1>Time Spent: {{timeSpent}}</h1>
 <div  style ="margin-left:10%; margin-right:35%;" >
     <table class = "table table-sm" style="font-size: 200%">
@@ -121,6 +119,24 @@
         {% endfor %}
     </tbody>
 </table>
+
+<div>
+    <table>
+        <thead>
+            <th> Top 5 Restroom Users </th>
+            <th> Top 5 Most Unexcused Tardies</th>
+            <th> Top 5 Most Tardies </th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 Debug Info:
 Waitlist: {{waitlist}}
 Records: {{records}}
