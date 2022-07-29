@@ -2,7 +2,7 @@
 
 body{
     background-color: #C5CBE3;
-    font-size: 1.3em;
+    font-size: 1.2em;
 }
 
 
@@ -25,6 +25,7 @@ body{
 
 input {
     background-color: #4056A1;
+    font-size: 1em;
     color: white;
     padding: 10px 30px;
     border-radius: 15px;
