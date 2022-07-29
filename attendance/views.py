@@ -256,12 +256,16 @@ def dashboard(request):
     start_time = start + timedelta(minutes=7)
     startdate = datetime.today()-timedelta(hours=8)
     records = Bathroom.objects.filter(time_out__gt = startdate).order_by('-time_out')
+    numUnexTardies = []
     numTardies = []
     numBath = []
     for student in Student.objects.all():
-        numTardies.append((student.student_id, ))
+        numUnexTardies.append((student.student_id, len(AttendanceRecord.objects.filter(student=student, excused=False))))
+        numUnexTardies.append((student.student_id, len(AttendanceRecord.objects.filter(student=student))))
+        numBath.append((student.student_id, len(Bathroom.objects.filter(student=student))))
 
     return render(request, 'dashboard.html',{
+        "numBath": numBath,
         "tardies": AttendanceRecord.objects.all(),
         "bathroom": Bathroom.objects.all(),
         "timeSpent":datetime.now() - start_time > timedelta(minutes = 60),
