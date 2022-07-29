@@ -22,6 +22,11 @@ body{
     height: 50px;
 }
 
+input {
+    background-color: #4056A1;
+    color: white;
+}
+
 .reset-container{
     position: absolute;
     left: 10%;
