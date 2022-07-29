@@ -101,3 +101,7 @@ input:active {
 .top5-table th{
     text-align: left;
 }
+
+.example{
+    border-bottom: none;
+}
