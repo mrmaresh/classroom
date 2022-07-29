@@ -261,7 +261,7 @@ def dashboard(request):
     numBath = []
     for student in Student.objects.all():
         numUnexTardies.append((student.first, student.last, student.student_id, len(AttendanceRecord.objects.filter(student=student, excused=False))))
-        numUnexTardies.append((student.first, student.last, student.student_id, len(AttendanceRecord.objects.filter(student=student))))
+        numTardies.append((student.first, student.last, student.student_id, len(AttendanceRecord.objects.filter(student=student))))
         numBath.append((student.first, student.last, student.student_id, len(Bathroom.objects.filter(student=student))))
     numUnexTardies = sorted(numUnexTardies, key=lambda i:i[3], reverse=True)
     numTardies = sorted(numTardies, key=lambda i:i[3], reverse=True)
