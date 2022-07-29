@@ -13,18 +13,23 @@ body{
 }
 
 .select{
+    position: relative;
+    background-color: #D79922;
     display: flex;
     margin: 20px;
     padding: 20px;
     border-radius: 10px;
+    height: 50px;
 }
 
 .reset-container{
-    background-color: green;
+    position: absolute;
+    left: 10%;
 }
 
 .schedule-container{
-    background-color: pink;
+    position: absolute;
+    right: 10%;
 }
 
 .filter-table-container{
