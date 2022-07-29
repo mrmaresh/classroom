@@ -77,26 +77,29 @@
 </div>
 
 
-<div class="reset-container"
-    <form action="{% url 'reset'%}" method="post">
-        {% csrf_token %}
-        <input class="bttn choice" type="submit" value="Reset Waitlist">
-    </form>
-</div>
+<div class="select">
+    <div class="reset-container"
+        <form action="{% url 'reset'%}" method="post">
+            {% csrf_token %}
+            <input class="bttn choice" type="submit" value="Reset Waitlist">
+        </form>
+    </div>
 
 
-<div class="schedule-container">
-    <form action="{% url 'schedule'%}" method="post">
-        {% csrf_token %}
-        <label for="cars">Schedule:</label>
-        <select name="schedule">
-            {% for schedule in options %}
-                <option value = {{schedule.schedule_name}}>{{schedule.schedule_name}}</option>
-            {% endfor %}
-        </select>
-        <input class="bttn choice" type="submit" value="Set Schedule">
-    </form>
+    <div class="schedule-container">
+        <form action="{% url 'schedule'%}" method="post">
+            {% csrf_token %}
+            <label for="cars">Schedule:</label>
+            <select name="schedule">
+                {% for schedule in options %}
+                    <option value = {{schedule.schedule_name}}>{{schedule.schedule_name}}</option>
+                {% endfor %}
+            </select>
+            <input class="bttn choice" type="submit" value="Set Schedule">
+        </form>
+    </div>
 </div>
+
 
 <div class="filter-table-container">
     <table id="filter-table" class="display">

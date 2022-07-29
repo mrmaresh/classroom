@@ -12,6 +12,13 @@ body{
     border-radius: 10px;
 }
 
+.select{
+    display: flex;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
 .reset-container{
     background-color: green;
 }
