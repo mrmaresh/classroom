@@ -31,6 +31,10 @@ input {
     border-radius: 15px;
 }
 
+select{
+    padding: 10px;
+}
+
 input:hover {
     background-color: rgba(64,86,161,0.9);
 }
