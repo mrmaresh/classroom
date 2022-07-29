@@ -63,9 +63,10 @@
                             <td style = "border: 1px solid; padding: 5px;">
                                 {% if record.excused == True %}
                                     Excused
-                                {% elif %}
+                                {% else %}
                                     Unexcused
                                 {% endif %}
+
                             </td>
                             <td style = "border: 1px solid; padding: 5px;">{{record.reason}}</td>
                         </tr>
