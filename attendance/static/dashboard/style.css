@@ -1,12 +1,15 @@
 
 
 body{
-
+    background-color: #EFE2BA;
 }
 
 
 .info-container{
-    background-color: yellow;
+    background-color: #C5CBE3;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .reset-container{
