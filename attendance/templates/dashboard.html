@@ -38,7 +38,7 @@
             <td>{{record.student.student_id}}</td>
             <td>{{record.time_out.date}}</td>
             <td> {{record.minutes}}</td>
-            <td>N/A</td>
+            <td></td>
         </tr>
         {% endfor %}
         {% for record in tardies %}
@@ -48,7 +48,7 @@
             <td>{{record.student.last}}</td>
             <td>{{record.student.student_id}}</td>
             <td>{{record.timestamp.date}}</td>
-            <td>N/A</td>
+            <td></td>
             <td> {{record.reason}}</td>
         </tr>
         {% endfor %}
