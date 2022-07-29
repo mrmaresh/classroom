@@ -15,7 +15,9 @@
 
 {% block body %}
 
-{{numBath[0]}}
+{% for i in numBath%}
+    <p>{{i}}</p>
+{% endfor %}
 <h1>Time Spent: {{timeSpent}}</h1>
 <div  style ="margin-left:10%; margin-right:35%;" >
     <table class = "table table-sm" style="font-size: 200%">

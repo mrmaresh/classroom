@@ -262,7 +262,7 @@ def dashboard(request):
     for student in Student.objects.all():
         numUnexTardies.append((student.student_id, len(AttendanceRecord.objects.filter(student=student, excused=False))))
         numUnexTardies.append((student.student_id, len(AttendanceRecord.objects.filter(student=student))))
-        numBath.append((student.student_id, len(Bathroom.objects.filter(student=student))))
+        numBath.append((student, len(Bathroom.objects.filter(student=student))))
 
     return render(request, 'dashboard.html',{
         "numBath": numBath,
