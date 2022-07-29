@@ -10,6 +10,11 @@
         $('#restroom-usage-table').DataTable();
         } );
     </script>
+        <script>
+            $(document).ready( function () {
+            $('#tardy-table').DataTable();
+            } );
+        </script>
 {% endblock %}
 
 
@@ -60,8 +65,8 @@
             <td>{{record.student.first}}</td>
             <td>{{record.student.last}}</td>
             <td>{{record.student.student_id}}</td>
-            <td>{{record.time_out.date}}</td>
-            <td> {{record.minutes}}</td>
+            <td>{{record.timestamp.date}}</td>
+            <td> {{record.reason}}</td>
         </tr>
         {% endfor %}
     </tbody>
