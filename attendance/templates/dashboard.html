@@ -153,6 +153,11 @@
         </thead>
         <tbody>
             <tr>
+                <td>(First, Last, ID, #Tardies)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
                 <td>
                     {% for i in numBath%}
                         <p>{{i}}</p>
@@ -174,14 +179,6 @@
 </div>
 
 
-<h1>Time Spent: {{timeSpent}}</h1>
-Debug Info:
-Waitlist: {{waitlist}}
-Records: {{records}}
-Startdate: {{startdate}}
-Hour: {{hour}}
-Minute: {{minute}}
-Schedule: {{schedule}}
 
 <script src="{% static 'dashboard/script.js' %}"></script>
 {% endblock %}
