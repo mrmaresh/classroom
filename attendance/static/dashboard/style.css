@@ -25,6 +25,8 @@ body{
 input {
     background-color: #4056A1;
     color: white;
+    padding: 10px 30px;
+    border-radius: 15px;
 }
 
 .reset-container{
