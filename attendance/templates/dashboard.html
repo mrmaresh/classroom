@@ -30,11 +30,11 @@
     <tbody>
         {% for record in bathroom %}
         <tr>
-            <td>1</td>
+            <td>{{record.student.student_id}}</td>
             <td>Jason</td>
             <td>Maresh</td>
             <td>11</td>
-            <td>{{record.time_out}}</td>
+            <td>{{record.time_out.date}}</td>
             <td> {{record.minutes}}</td>
         </tr>
         {% endfor %}
