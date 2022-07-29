@@ -130,7 +130,19 @@
         <tbody>
             <tr>
                 <td>
-                    
+                    {% for i in numBath%}
+                        <p>{{i}}</p>
+                    {% endfor %}
+                </td>
+                <td>
+                    {% for i in numUnexTardies%}
+                        <p>{{i}}</p>
+                    {% endfor %}
+                </td>
+                <td>
+                    {% for i in numTardies%}
+                        <p>{{i}}</p>
+                    {% endfor %}
                 </td>
             </tr>
         </tbody>
