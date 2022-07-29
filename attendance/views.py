@@ -256,7 +256,7 @@ def dashboard(request):
     start_time = start + timedelta(minutes=7)
     startdate = datetime.today()-timedelta(hours=8)
     records = Bathroom.objects.filter(time_out__gt = startdate).order_by('-time_out')
-    tardyRecords = AttendanceRecord.objects.filter(time_out__gt = startdate).order_by('-time_out')
+    tardyRecords = AttendanceRecord.objects.filter(timestamp__gt = startdate).order_by('-timestamp')
     numUnexTardies = []
     numTardies = []
     numBath = []
