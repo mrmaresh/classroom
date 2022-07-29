@@ -14,13 +14,13 @@ body{
 }
 
 .info-table{
-    border: solid thin;
+    border: solid;
     border-collapse: collapse;
     width: 100%;
 }
 
 .info-table td{
-    border: solid thin;
+    border: solid;
     padding: 10px 20px;
 
 }
