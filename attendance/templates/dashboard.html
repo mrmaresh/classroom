@@ -7,7 +7,7 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
     <script>
         $(document).ready( function () {
-        $('#restroom-usage').DataTable();
+        $('#restroom-usage-table').DataTable();
         } );
     </script>
 {% endblock %}
@@ -42,6 +42,30 @@
 </table>
 
 
+<table id="tardy-table" class="display">
+    <thead>
+        <tr>
+            <th>Period</th>
+            <th>First</th>
+            <th>Last</th>
+            <th>ID</th>
+            <th>Date</th>
+            <th>reason</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for record in tardies %}
+        <tr>
+            <td>{{record.student.period}}</td>
+            <td>{{record.student.first}}</td>
+            <td>{{record.student.last}}</td>
+            <td>{{record.student.student_id}}</td>
+            <td>{{record.time_out.date}}</td>
+            <td> {{record.minutes}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 
 <h1>Time Spent: {{timeSpent}}</h1>
