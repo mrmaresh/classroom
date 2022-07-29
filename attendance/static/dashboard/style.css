@@ -86,3 +86,13 @@ input:active {
     border-radius: 10px;
     display: flex;
 }
+
+.top5-table{
+    border: solid;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.top5-table td, .top5-table th{
+    border: solid;
+    padding: 10px 20px;
