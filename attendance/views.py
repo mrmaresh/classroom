@@ -268,6 +268,11 @@ def dashboard(request):
     numTardies = sorted(numTardies, key=lambda i:i[3], reverse=True)
     numBath = sorted(numBath, key=lambda i:i[3], reverse=True)
 
+    currentWaitlist = []
+    for record in Waitlist.objects.all():
+        currentWaitlist.append(record.student.first)
+
+
     return render(request, 'dashboard.html',{
         "tardyRecords": tardyRecords,
         "numUnexTardies": numUnexTardies[0:5],
@@ -276,7 +281,7 @@ def dashboard(request):
         "tardies": AttendanceRecord.objects.all(),
         "bathroom": Bathroom.objects.all(),
         "timeSpent":datetime.now() - start_time > timedelta(minutes = 60),
-        "waitlist": Waitlist.objects.all(),
+        "waitlist": currentWaitlist,
         "records": records,
         "startdate":startdate.date,
         "hour": datetime.now().hour,
