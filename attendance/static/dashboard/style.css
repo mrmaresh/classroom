@@ -102,6 +102,13 @@ input:active {
     text-align: left;
 }
 
-.example{
+.no-bottom-border{
     border-bottom: none;
+    background-color: yellow;
 }
+
+.no-top-border{
+    border-top: none;
+    background-color: pink;
+}
+
