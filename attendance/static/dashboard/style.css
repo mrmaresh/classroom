@@ -33,9 +33,11 @@ body{
 }
 
 .filter-table-container{
-    background-color: yellow;
+    background-color: #EFE2BA;
+    margin: 20px;
+    padding: 20px;
 }
 
 .top5-container{
-    background-color: pink;
+    background-color: #EFE2BA;
 }
