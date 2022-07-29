@@ -1,0 +1,18 @@
+
+
+body{
+    background-color: blue;
+}
+
+
+.info-container{
+    background-color: yellow;
+}
+
+.reset-container{
+    background-color: green;
+}
+
+.schedule-container{
+    background-color: pink;
+}
