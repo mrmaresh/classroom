@@ -16,10 +16,12 @@ body{
 .info-table{
     border: solid thin;
     border-collapse: collapse;
+    width: 100%;
 }
 
 .info-table td{
     border: solid thin;
+    padding: 10px 20px;
 
 }
 
