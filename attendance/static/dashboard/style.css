@@ -1,12 +1,12 @@
 
 
 body{
-    background-color: #EFE2BA;
+    background-color: #C5CBE3;
 }
 
 
 .info-container{
-    background-color: #C5CBE3;
+    background-color: #EFE2BA;
     margin: 20px;
     padding: 20px;
     border-radius: 10px;
@@ -14,7 +14,7 @@ body{
 
 .select{
     position: relative;
-    background-color: #D79922;
+    background-color: #EFE2BA;
     display: flex;
     margin: 20px;
     padding: 20px;
