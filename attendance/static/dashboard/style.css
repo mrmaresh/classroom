@@ -96,3 +96,8 @@ input:active {
 .top5-table td, .top5-table th{
     border: solid;
     padding: 10px 20px;
+}
+
+.top5-table th{
+    text-align: left;
+}
