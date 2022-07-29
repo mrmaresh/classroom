@@ -14,7 +14,12 @@ body{
 }
 
 .info-table{
-    border: solid;
+    border: solid thin;
+    border-collapse: collapse;
+}
+
+.info-table td{
+    border: solid thin;
 }
 
 .select{
