@@ -15,10 +15,8 @@
 
 {% block body %}
 
-
-<h1>Time Spent: {{timeSpent}}</h1>
-<div  style ="margin-left:10%; margin-right:35%;" >
-    <table class = "table table-sm" style="font-size: 200%">
+<div  class="info-container" >
+    <table class="info-table">
         <tr>
             <td>Schedule</td>
             <td>{{schedule}}</td>
@@ -42,9 +40,9 @@
         <tr>
             <td>Today's Restroom Usage</td>
             <td>
-                <table class = "usage">
+                <table>
                     {% for record in records %}
-                        <tr class = "usage">
+                        <tr>
                             <td><strong>{{record.student.first}}</strong></td>
                             <td>{{record.minutes}} minutes </td>
                             <td>{{record.time_out}}</td>
@@ -56,9 +54,9 @@
         <tr>
             <td>Today's Tardies</td>
             <td>
-                <table class = "usage">
+                <table>
                     {% for record in tardyRecords %}
-                        <tr class = "usage">
+                        <tr>
                             <td><strong>{{record.student.first}}</strong></td>
                             <td>
                                 {% if record.excused == True %}
@@ -79,69 +77,71 @@
 </div>
 
 
-<form action="{% url 'reset'%}" method="post">
-    {% csrf_token %}
-    <div  class="text-center "  >
-            <input class="bttn choice" type="submit" value="Reset Waitlist">
-    </div>
-</form>
+<div class="reset-container"
+    <form action="{% url 'reset'%}" method="post">
+        {% csrf_token %}
+        <input class="bttn choice" type="submit" value="Reset Waitlist">
+    </form>
+</div>
 
-<form action="{% url 'schedule'%}" method="post">
-    {% csrf_token %}
-    <div  class="text-center "  >
+
+<div class="schedule-container">
+    <form action="{% url 'schedule'%}" method="post">
+        {% csrf_token %}
         <label for="cars">Schedule:</label>
-            <select name="schedule">
-                {% for schedule in options %}
-                    <option value = {{schedule.schedule_name}}>{{schedule.schedule_name}}</option>
-                {% endfor %}
-            </select>
-            <input class="bttn choice" type="submit" value="Set Schedule">
-    </div>
-</form>
+        <select name="schedule">
+            {% for schedule in options %}
+                <option value = {{schedule.schedule_name}}>{{schedule.schedule_name}}</option>
+            {% endfor %}
+        </select>
+        <input class="bttn choice" type="submit" value="Set Schedule">
+    </form>
+</div>
 
+<div class="filter-table-container">
+    <table id="filter-table" class="display">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Period</th>
+                <th>First</th>
+                <th>Last</th>
+                <th>ID</th>
+                <th>Date</th>
+                <th>minutes</th>
+                <th>reason</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in bathroom %}
+            <tr>
+                <td>Restroom</td>
+                <td>{{record.student.period}}</td>
+                <td>{{record.student.first}}</td>
+                <td>{{record.student.last}}</td>
+                <td>{{record.student.student_id}}</td>
+                <td>{{record.time_out.date}}</td>
+                <td> {{record.minutes}}</td>
+                <td></td>
+            </tr>
+            {% endfor %}
+            {% for record in tardies %}
+            <tr>
+                <td>Tardy</td>
+                <td>{{record.student.period}}</td>
+                <td>{{record.student.first}}</td>
+                <td>{{record.student.last}}</td>
+                <td>{{record.student.student_id}}</td>
+                <td>{{record.timestamp.date}}</td>
+                <td></td>
+                <td> {{record.reason}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 
-<table id="filter-table" class="display">
-    <thead>
-        <tr>
-            <th>Type</th>
-            <th>Period</th>
-            <th>First</th>
-            <th>Last</th>
-            <th>ID</th>
-            <th>Date</th>
-            <th>minutes</th>
-            <th>reason</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for record in bathroom %}
-        <tr>
-            <td>Restroom</td>
-            <td>{{record.student.period}}</td>
-            <td>{{record.student.first}}</td>
-            <td>{{record.student.last}}</td>
-            <td>{{record.student.student_id}}</td>
-            <td>{{record.time_out.date}}</td>
-            <td> {{record.minutes}}</td>
-            <td></td>
-        </tr>
-        {% endfor %}
-        {% for record in tardies %}
-        <tr>
-            <td>Tardy</td>
-            <td>{{record.student.period}}</td>
-            <td>{{record.student.first}}</td>
-            <td>{{record.student.last}}</td>
-            <td>{{record.student.student_id}}</td>
-            <td>{{record.timestamp.date}}</td>
-            <td></td>
-            <td> {{record.reason}}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-
-<div>
+<div class = "top5-container">
     <table>
         <thead>
             <th> Top 5 Restroom Users </th>
@@ -170,6 +170,8 @@
     </table>
 </div>
 
+
+<h1>Time Spent: {{timeSpent}}</h1>
 Debug Info:
 Waitlist: {{waitlist}}
 Records: {{records}}
