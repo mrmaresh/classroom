@@ -260,10 +260,13 @@ def dashboard(request):
     numTardies = []
     numBath = []
     for student in Student.objects.all():
-        numUnexTardies.append((student.student_id, len(AttendanceRecord.objects.filter(student=student, excused=False))))
-        numUnexTardies.append((student.student_id, len(AttendanceRecord.objects.filter(student=student))))
+        numUnexTardies.append((student.first, student.last, student.student_id, len(AttendanceRecord.objects.filter(student=student, excused=False))))
+        numUnexTardies.append((student.first, student.last, student.student_id, len(AttendanceRecord.objects.filter(student=student))))
         numBath.append((student.first, student.last, student.student_id, len(Bathroom.objects.filter(student=student))))
-    numBath.sort(reverse=True)
+    numUnexTardies = sorted(numUnexTardies, key=lambda i:i[3], reverse=True)
+    numTardies = sorted(numTardies, key=lambda i:i[3], reverse=True)
+    numBath = sorted(numBath, key=lambda i:i[3], reverse=True)
+
     return render(request, 'dashboard.html',{
         "numBath": numBath,
         "tardies": AttendanceRecord.objects.all(),
