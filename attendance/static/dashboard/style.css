@@ -111,3 +111,7 @@ input:active {
 #time{
     background-color: yellow;
 }
+
+#date{
+    background-color: red;
+}
