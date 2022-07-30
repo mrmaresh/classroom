@@ -19,7 +19,7 @@
                 </form>
             </div>
 
-                <div class="option-form">
+                <div class="option-container">
                     <form action="{% url 'record' %}" method="post">
                         {% csrf_token %}
                         <input hidden name="reason" value="use_restroom">
