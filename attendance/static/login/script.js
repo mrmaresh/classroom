@@ -21,13 +21,14 @@ labels.forEach(label => {
     async function checkNewPeriod() {
         const response = await fetch('checkNewPeriod');
         const data = await response.json();
+        currentPeriod = data['currentPeriod'];
         console.log(data);
         if (period === "start"){
-            period = data['currentPeriod'];
+            period = currentPeriod;
             console.log('period:', period)
         }
         else {
-            if (period === data['currentPeriod']){
+            if (period === currentPeriod){
                 console.log("No change detected");
             }
             else{
