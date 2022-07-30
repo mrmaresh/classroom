@@ -46,7 +46,8 @@ body {
 }
 
 .option-container .option-restroom {
-    transform: translate(200px, 30px);
+    top: 35px;
+    right: 25px;
 }
 
 .option-container .option-button.click {
