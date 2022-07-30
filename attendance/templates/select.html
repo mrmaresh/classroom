@@ -100,3 +100,18 @@
 
 <script src="{% static 'select/script.js' %}"></script>
 {% endblock %}
+
+
+{% if returning == True%}
+    RETURN BUTTON
+{% else %}
+    {% if student.exception == True %}
+        USE RESTROOM BUTTON
+    {% else %}
+        {% if in_use == "True" %}
+
+        {% else %}
+
+        {% endif %}
+    {% endif %}
+{% endif %}
