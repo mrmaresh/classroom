@@ -25,3 +25,4 @@ labels.forEach(label => {
     }
 
     checkNewPeriod();
+    console.log("IML");
