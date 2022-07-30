@@ -17,11 +17,15 @@ labels.forEach(label => {
         setTimeout(displayClock, 1000);
     }
 
-
+    let period = "start";
     async function checkNewPeriod() {
         const response = await fetch('checkNewPeriod');
         const data = await response.json();
         console.log(data);
+        if (period === "start"){
+            period = data['currentPeriod'];
+            console.log('period:', period)
+        }
     }
 
     checkNewPeriod();
