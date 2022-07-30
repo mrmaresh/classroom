@@ -79,12 +79,15 @@ body {
 
 
 .restroom-usage-container {
+    position: absolute;
     background-color: rgba(210,215,211,.3);
     padding: 20px 50px;
     margin: 0 20%;
     height: 50vh;
     text-align: left;
     overflow: auto;
+    border-radius: 5px;
+    bottom: 0;
 }
 
 
