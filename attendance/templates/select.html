@@ -41,11 +41,13 @@
         <form action="{% url 'record' %}" method="post">
             {% csrf_token %}
             {% if numPass == 1%}
-                {% if returning == False and in_use == "False" or returning == False and student.exception == True %}
+                {% if returning == False and (student.exception == Truein_use == "False" or returning == False and student.exception == True %}
                     <input hidden name="reason" value="use_restroom">
                     <input hidden name="student_id" value={{student.student_id}}>
                     <input class="btn" type="submit" value="Use Restroom">
                     <h1> You have 1 pass left worth extra credit if you don't use. </h1>
+
+
                 {% elif returning == True %}
                     <input hidden name="reason" value="return_restroom">
                     <input hidden name="student_id" value={{student.student_id}}>
