@@ -38,6 +38,7 @@
 
     <div class="form-container">
         {% if returning == True %}
+            <h1>RETURNING BUTTON SHOULD SHOW</h1>
             <form action="{% url 'record' %}" method="post">
                 {% csrf_token %}
                 <input hidden name="reason" value="return_restroom">
