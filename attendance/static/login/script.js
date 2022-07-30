@@ -27,9 +27,11 @@ labels.forEach(label => {
             console.log('period:', period)
         }
         else {
-            
+            if (period === data['currentPeriod']){
+                console.log("new period detected");
+            }
         }
     }
 
     checkNewPeriod();
-    console.log("IML");
+    
