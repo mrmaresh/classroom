@@ -10,7 +10,7 @@
 {% block body %}
 
 <class="grid">
-
+    {% if returning == False %}
             <div class="option-container">
                 <button class="btn option-button">Options</button>
                 <form action="{% url 'login' %}" method="post">
@@ -18,7 +18,7 @@
                     <input  class="btn option-home" type="submit" value="Return Home">
                 </form>
             </div>
-    {% if returning == False %}
+
                 <div class="option-form">
                     <form action="{% url 'record' %}" method="post">
                         {% csrf_token %}
