@@ -272,6 +272,10 @@ def dashboard(request):
     for record in Waitlist.objects.all():
         currentWaitlist.append(record.student.first)
 
+    bathTime = {}
+    for record in Bathroom.objects.all():
+
+
 
     return render(request, 'dashboard.html',{
         "tardyRecords": tardyRecords,
