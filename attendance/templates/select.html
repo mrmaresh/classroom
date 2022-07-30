@@ -74,60 +74,22 @@
                             <input class="btn" type="submit" value="Use Restroom">
                             <h2> At this time you may use the restroom without needing a pass!!! </h2>
                         </form>
-                        NO PASS REQUIRED MESSAGE
                     {% else %}
                         {% if numPass == 1%}
-                            USE RESTROOM BUTTON
-                            1 PASS LEFT MESSAGE
+                            <form action="{% url 'record' %}" method="post">
+                                {% csrf_token %}
+                                <input hidden name="reason" value="use_restroom">
+                                <input hidden name="student_id" value={{student.student_id}}>
+                                <input class="btn" type="submit" value="Use Restroom">
+                                <h1> You have 1 pass left worth extra credit if you don't use. </h1>
+                            </form>
                         {% else %}
-                            NO PASSES LEFT MESSAGE
+                            <h1> You have no passes remaining for this month. </h1>
                         {% endif %}
                     {% endif %}
                 {% endif %}
             {% endif %}
         {% endif %}
-
-
-
-
-
-
-        <form action="{% url 'record' %}" method="post">
-            {% csrf_token %}
-
-            {% if returning == False and not ((student.exception == False and in_use == "True") or (moreThanHour == False and numPass < 1)) %}
-                <input hidden name="reason" value="use_restroom">
-                <input hidden name="student_id" value={{student.student_id}}>
-                <input class="btn" type="submit" value="Use Restroom">
-            {% endif %}
-
-            {%if returning == True %}
-                <input hidden name="reason" value="return_restroom">
-                <input hidden name="student_id" value={{student.student_id}}>
-                <input class="btn" type="submit" value="Return from Restroom">
-            {% endif %}
-
-
-
-            <h1> You have 1 pass left worth extra credit if you don't use. </h1>
-
-            <h1> You have no passes remaining for this month. </h1>
-
-            <h2> At this time you may use the restroom without needing a pass!!! </h2>
-
-
-        </form>
-
-
-        <form action="{% url 'waitlist'%}" method="post">
-            {% csrf_token %}
-
-            {% if in_use == "True" and returning == False and student.exception != True and not (moreThanHour == False and numPass < 1) %}
-                <input hidden class="form-control" name="student_id" value={{student.student_id}}>
-                <input class="btn" type="submit" value="Waitlist">
-                <h1> The bathroom is currently in use.  Click here to be added to the waitlist. </h1>
-            {% endif %}
-        </form>
     </div>
 
 
