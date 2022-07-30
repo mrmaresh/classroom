@@ -42,6 +42,14 @@ def unexcused(request, student_id):
         records = AttendanceRecord.objects.filter(student=student, excused=False)
         return JsonResponse({"numTardies": len(records)})
 
+@csrf_exempt
+@login_required
+def checkNewPeriod(request):
+    if request.method == "GET":
+        
+        records = AttendanceRecord.objects.filter(student=student, excused=False)
+        return JsonResponse({"numTardies": len(records)})
+
 
 # This function detects what is the current period
 def get_current_period():
