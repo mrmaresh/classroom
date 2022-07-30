@@ -39,10 +39,20 @@
 
     <div class="form-container">
         {% if returning == True%}
-            RETURN BUTTON
+            <form action="{% url 'record' %}" method="post">
+                {% csrf_token %}
+                <input hidden name="reason" value="return_restroom">
+                <input hidden name="student_id" value={{student.student_id}}>
+                <input class="btn" type="submit" value="Return from Restroom">
+            </form>
         {% else %}
             {% if student.exception == True %}
-                USE RESTROOM BUTTON
+                <form action="{% url 'record' %}" method="post">
+                    {% csrf_token %}
+                    <input hidden name="reason" value="use_restroom">
+                    <input hidden name="student_id" value={{student.student_id}}>
+                    <input class="btn" type="submit" value="Use Restroom">
+                </form>
             {% else %}
                 {% if in_use == "True" %}
                     {% if moreThanHour == False and numPass < 1 %}
