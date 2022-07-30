@@ -36,7 +36,7 @@ labels.forEach(label => {
                 console.log("new period detected");
                 period = currentPeriod;
                 clearWaitlist();
-                waitlistEl.innerHTML = "";
+                location.reload();
             }
         }
     }
