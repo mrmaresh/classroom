@@ -36,7 +36,7 @@
     <h1 class="welcome">Hello, {{student.first}} {{student.last}}</h1>
 
     <div class="form-container">
-        {% if returning == True%}
+        {% if returning == True %}
             <form action="{% url 'record' %}" method="post">
                 {% csrf_token %}
                 <input hidden name="reason" value="return_restroom">
