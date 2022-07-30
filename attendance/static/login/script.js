@@ -19,7 +19,7 @@ labels.forEach(label => {
 
 
     async function checkNewPeriod() {
-        const response = await fetch('unexcused/'.concat(studentID.innerText));
+        const response = await fetch('checkNewPeriod');
         const data = await response.json();
         console.log(data);
     }
