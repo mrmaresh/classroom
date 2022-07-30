@@ -28,6 +28,7 @@ function setTime() {
 resetButton.addEventListener('click', () => {
     console.log('clicked')
     clearWaitlist();
+    location.reload();
 })
 setInterval(setTime, 1000);
 
