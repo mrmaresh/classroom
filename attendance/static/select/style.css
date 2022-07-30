@@ -48,8 +48,10 @@ body {
 
 
 .welcome {
+    position: relative;
     font-size: 25px;
     transition: font-size 5s;
+    text-align: center;
 }
 
 .welcome.grow {
