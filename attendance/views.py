@@ -293,7 +293,8 @@ def dashboard(request):
         "start": start_time.time,
         "finish": finish_time.time,
         "using_restroom": students_using_restroom(),
-        "options": Schedule.objects.all()
+        "options": Schedule.objects.all(),
+        "test": datetime.now()
     })
 
 
