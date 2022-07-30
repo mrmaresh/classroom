@@ -12,7 +12,6 @@
 <p>returning:{{returning}}</p>
 
 <div class="grid">
-{% if returning == False %}
         <div class="option-container">
             <button class="btn option-button">Options</button>
             <form action="{% url 'login' %}" method="post">
@@ -28,7 +27,6 @@
                         <input  class="btn option-restroom" type="submit" value="Use Restroom">
                 </form>
             </div>
-{% endif %}
 </div>
 
 
