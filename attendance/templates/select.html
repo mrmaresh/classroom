@@ -109,12 +109,21 @@
         USE RESTROOM BUTTON
     {% else %}
         {% if in_use == "True" %}
-
-        {% else %}
-            {% if moreThanOneHour == True %}
-
+            {% if moreThanHour == False and numPass < 1 %}
+                NO PASSES LEFT MESSAGE
             {% else %}
+                WAITLIST BUTTON
+            {% endif %}
+        {% else %}
+            {% if moreThanHour == True %}
+                USE RESTROOM BUTTON
+                NO PASS REQUIRED MESSAGE
+            {% else %}
+                {% if numPass == 1%}
 
+                {% else %}
+
+                {% endif %}
             {% endif %}
         {% endif %}
     {% endif %}
