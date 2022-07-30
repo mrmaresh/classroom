@@ -37,10 +37,10 @@ labels.forEach(label => {
                 const response2 = await fetch('resetWaitlist',{
                     method: 'POST',
                     body: JSON.stringify({
-                        mes: ,
+                        mes: "delete stuff",
                     })
                 })
-                const data = await response.json();
+                const data2 = await response.json();
             }
         }
     }
