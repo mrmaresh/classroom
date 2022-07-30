@@ -59,6 +59,7 @@ body {
 .form-container {
     background-color: rgba(0,0,0,0.3);
     padding: 20px 100px;
+    margin: 3% 20%;
     border-radius: 5px;
     font-size: 10px;
     display: flex;
@@ -80,6 +81,7 @@ body {
 .restroom-usage-container {
     background-color: rgba(210,215,211,.3);
     padding: 20px 50px;
+    margin: 0 20%;
     text-align: left;
     align: start;
     height: 100%;
