@@ -34,15 +34,13 @@ labels.forEach(label => {
             else{
                 console.log("new period detected");
                 period = currentPeriod;
-                const response2 = await fetch('resetWaitlist',{
-                    method: 'POST',
-                    body: JSON.stringify({
-                        mes: "delete stuff",
-                    })
-                })
-                const data2 = await response.json();
+                
             }
         }
+    }
+
+    async function clearWaitlist{
+
     }
 
     checkNewPeriod();
