@@ -128,20 +128,20 @@
                 <td>{{record.student.first}}</td>
                 <td>{{record.student.last}}</td>
                 <td>{{record.student.student_id}}</td>
-                <td>{{record.time_out.date}}</td>
+                <td>{{date}}</td>
                 <td>{{record.time_out.time}}</td>
                 <td> {{record.minutes}}</td>
                 <td></td>
             </tr>
             {% endfor %}
-            {% for record in tardies %}
+            {% for record, date in tardyDate.items %}
             <tr>
                 <td>Tardy</td>
                 <td>{{record.student.period}}</td>
                 <td>{{record.student.first}}</td>
                 <td>{{record.student.last}}</td>
                 <td>{{record.student.student_id}}</td>
-                <td>{{record.timestamp.date}}</td>
+                <td>{{date}}</td>
                 <td>{{record.timestamp.time}}</td>
                 <td></td>
                 <td> {{record.reason}}</td>
@@ -181,6 +181,6 @@
 </div>
 
 
-{{bathDate}}
+
 <script src="{% static 'dashboard/script.js' %}"></script>
 {% endblock %}
