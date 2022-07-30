@@ -47,7 +47,7 @@ def unexcused(request, student_id):
 def checkNewPeriod(request):
     if request.method == "GET":
         period = get_current_period()
-        return JsonResponse({"currentPeriod": period[0])})
+        return JsonResponse({"currentPeriod": period[0]})
 
 
 # This function detects what is the current period
