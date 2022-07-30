@@ -35,7 +35,7 @@
 
     <h1 class="welcome">Hello, {{student.first}} {{student.last}}</h1>
 
-    <div class="form-container">
+    <div >
         {% if returning == True %}
             <form action="{% url 'record' %}" method="post">
                 {% csrf_token %}
@@ -74,7 +74,7 @@
                         </form>
                     {% else %}
                         {% if numPass == 1%}
-                            <form action="{% url 'record' %}" method="post">
+                            <form action="{% url 'record' %}" method="post" class="form-container">
                                 {% csrf_token %}
                                 <input hidden name="reason" value="use_restroom">
                                 <input hidden name="student_id" value={{student.student_id}}>
