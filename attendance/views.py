@@ -33,6 +33,13 @@ def attendance(request):
         record.save()
         return JsonResponse({"message": reason, "excused": excused, "student_id": student_id})
 
+@csrf_exempt
+@login_required
+def resetWaitlist(request):
+    if request.method == "POST":
+
+        return JsonResponse({"message": reason, "excused": excused, "student_id": student_id})
+
 
 @csrf_exempt
 @login_required
