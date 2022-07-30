@@ -252,12 +252,6 @@ def waitlist(request):
         return HttpResponseRedirect(reverse("login"))
 
 
-def reset(request):
-    if request.method == "POST":
-        Waitlist.objects.all().delete()
-        return HttpResponseRedirect(reverse("dashboard"))
-
-
 @login_required
 def dashboard(request):
 
