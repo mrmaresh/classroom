@@ -294,7 +294,7 @@ def dashboard(request):
         "finish": finish_time.time,
         "using_restroom": students_using_restroom(),
         "options": Schedule.objects.all(),
-        "test": datetime.now()
+        "test": datetime.now().strftime("%m-%d-%Y")
     })
 
 
