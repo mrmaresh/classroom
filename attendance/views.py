@@ -274,7 +274,7 @@ def dashboard(request):
 
     bathTime = {}
     for record in Bathroom.objects.all():
-
+        bathTime[record] = record.time_out.strftime("%m-%d-%Y")
 
 
     return render(request, 'dashboard.html',{
@@ -298,7 +298,8 @@ def dashboard(request):
         "finish": finish_time.time,
         "using_restroom": students_using_restroom(),
         "options": Schedule.objects.all(),
-        "test": datetime.now().strftime("%m-%d-%Y")
+        "test": datetime.now().strftime("%m-%d-%Y"),
+        "bathTime": bathTime
     })
 
 
