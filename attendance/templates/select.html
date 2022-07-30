@@ -8,16 +8,16 @@
 
 
 {% block body %}
-<p>records: {{records}}</p>
-<p>returning:{{returning}}</p>
 
 <div class="grid">
+{% if returning == False %}
         <div class="option-container">
             <button class="btn option-button">Options</button>
             <form action="{% url 'login' %}" method="post">
                 {% csrf_token %}
                 <input  class="btn option-home" type="submit" value="Return Home">
             </form>
+        </div>
 
             <div class="option-form">
                 <form action="{% url 'record' %}" method="post">
@@ -27,6 +27,7 @@
                         <input  class="btn option-restroom" type="submit" value="Use Restroom">
                 </form>
             </div>
+{% endif %}
 </div>
 
 
