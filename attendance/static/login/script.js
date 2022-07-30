@@ -26,6 +26,9 @@ labels.forEach(label => {
             period = data['currentPeriod'];
             console.log('period:', period)
         }
+        else {
+            
+        }
     }
 
     checkNewPeriod();
