@@ -34,12 +34,10 @@ labels.forEach(label => {
             else{
                 console.log("new period detected");
                 period = currentPeriod;
-                const response2 = await fetch('attendance',{
+                const response2 = await fetch('resetWaitlist',{
                     method: 'POST',
                     body: JSON.stringify({
-                        student_id: studentID.innerText,
-                        reason: description,
-                        excused: excused
+                        mes: ,
                     })
                 })
                 const data = await response.json();
