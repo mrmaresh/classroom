@@ -121,7 +121,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for record in bathTime %}
+            {% for record, date in bathDate.items %}
             <tr>
                 <td>Restroom</td>
                 <td>{{record.student.period}}</td>

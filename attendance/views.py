@@ -272,9 +272,9 @@ def dashboard(request):
     for record in Waitlist.objects.all():
         currentWaitlist.append(record.student.first)
 
-    bathTime = {}
+    bathDate = {}
     for record in Bathroom.objects.all():
-        bathTime[record] = record.time_out.strftime("%m-%d-%Y")
+        bathDate[record] = record.time_out.strftime("%m-%d-%Y")
 
 
     return render(request, 'dashboard.html',{
@@ -299,7 +299,7 @@ def dashboard(request):
         "using_restroom": students_using_restroom(),
         "options": Schedule.objects.all(),
         "test": datetime.now().strftime("%m-%d-%Y"),
-        "bathTime": bathTime
+        "bathDate": bathDate
     })
 
 
