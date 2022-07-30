@@ -41,7 +41,7 @@
         <form action="{% url 'record' %}" method="post">
             {% csrf_token %}
 
-            {% if returning == False and  ((student.exception == False and in_use == "True") or (moreThanHour == False and numPass < 1)) %}
+            {% if returning == False and not ((in_use == "True") or (moreThanHour == False and numPass < 1)) %}
                 <input hidden name="reason" value="use_restroom">
                 <input hidden name="student_id" value={{student.student_id}}>
                 <input class="btn" type="submit" value="Use Restroom">
