@@ -21,5 +21,7 @@ labels.forEach(label => {
     async function checkNewPeriod() {
         const response = await fetch('unexcused/'.concat(studentID.innerText));
         const data = await response.json();
-        numTardies = data['numTardies'];
+        console.log(data);
     }
+
+    checkNewPeriod();
