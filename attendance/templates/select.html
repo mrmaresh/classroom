@@ -58,11 +58,22 @@
                     {% if moreThanHour == False and numPass < 1 %}
                         <h1> You have no passes remaining for this month. </h1>
                     {% else %}
-                        WAITLIST BUTTON
+                        <form action="{% url 'waitlist'%}" method="post">
+                            {% csrf_token %}
+                            <input hidden class="form-control" name="student_id" value={{student.student_id}}>
+                            <input class="btn" type="submit" value="Waitlist">
+                            <h1> The bathroom is currently in use.  Click here to be added to the waitlist. </h1>
+                        </form>
                     {% endif %}
                 {% else %}
                     {% if moreThanHour == True %}
-                        USE RESTROOM BUTTON
+                        <form action="{% url 'record' %}" method="post">
+                            {% csrf_token %}
+                            <input hidden name="reason" value="use_restroom">
+                            <input hidden name="student_id" value={{student.student_id}}>
+                            <input class="btn" type="submit" value="Use Restroom">
+                            <h2> At this time you may use the restroom without needing a pass!!! </h2>
+                        </form>
                         NO PASS REQUIRED MESSAGE
                     {% else %}
                         {% if numPass == 1%}
