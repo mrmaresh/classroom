@@ -102,30 +102,3 @@
 {% endblock %}
 
 
-{% if returning == True%}
-    RETURN BUTTON
-{% else %}
-    {% if student.exception == True %}
-        USE RESTROOM BUTTON
-    {% else %}
-        {% if in_use == "True" %}
-            {% if moreThanHour == False and numPass < 1 %}
-                NO PASSES LEFT MESSAGE
-            {% else %}
-                WAITLIST BUTTON
-            {% endif %}
-        {% else %}
-            {% if moreThanHour == True %}
-                USE RESTROOM BUTTON
-                NO PASS REQUIRED MESSAGE
-            {% else %}
-                {% if numPass == 1%}
-                    USE RESTROOM BUTTON
-                    1 PASS LEFT MESSAGE
-                {% else %}
-                    NO PASSES LEFT MESSAGE
-                {% endif %}
-            {% endif %}
-        {% endif %}
-    {% endif %}
-{% endif %}
