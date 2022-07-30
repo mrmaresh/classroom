@@ -60,8 +60,8 @@
                             {% csrf_token %}
                             <input hidden class="form-control" name="student_id" value={{student.student_id}}>
                             <input class="btn" type="submit" value="Waitlist">
-                            <h3> The bathroom is currently in use.  Click here to be added to the waitlist. </h3>
                         </form>
+                        <h3> The bathroom is currently in use.  Click here to be added to the waitlist. </h3>
                     {% endif %}
                 {% else %}
                     {% if moreThanHour == True %}
@@ -70,7 +70,6 @@
                             <input hidden name="reason" value="use_restroom">
                             <input hidden name="student_id" value={{student.student_id}}>
                             <input class="btn" type="submit" value="Use Restroom">
-                            <h3> At this time you may use the restroom without needing a pass!!! </h3>
                         </form>
                     {% else %}
                         {% if numPass == 1%}
