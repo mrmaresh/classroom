@@ -37,8 +37,8 @@ def attendance(request):
 @login_required
 def resetWaitlist(request):
     if request.method == "POST":
-
-        return JsonResponse({"message": reason, "excused": excused, "student_id": student_id})
+        Waitlist.objects.all().delete()
+        return JsonResponse({"message": "Waitlist has been reset"})
 
 
 @csrf_exempt
