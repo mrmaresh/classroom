@@ -16,3 +16,5 @@ labels.forEach(label => {
         document.querySelector('.date').innerHTML = date;
         setTimeout(displayClock, 1000);
     }
+
+    
