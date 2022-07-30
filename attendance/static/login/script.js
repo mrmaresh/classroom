@@ -28,6 +28,9 @@ labels.forEach(label => {
         }
         else {
             if (period === data['currentPeriod']){
+                console.log("No change detected");
+            }
+            else{
                 console.log("new period detected");
             }
         }
