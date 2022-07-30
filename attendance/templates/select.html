@@ -65,22 +65,22 @@
                     {% endif %}
                 {% else %}
                     {% if moreThanHour == True %}
+                        <h3> At this time you may use the restroom without needing a pass!!! </h3>
                         <form action="{% url 'record' %}" method="post" class="form-container">
                             {% csrf_token %}
                             <input hidden name="reason" value="use_restroom">
                             <input hidden name="student_id" value={{student.student_id}}>
                             <input class="btn" type="submit" value="Use Restroom">
                         </form>
-                        <h3> At this time you may use the restroom without needing a pass!!! </h3>
                     {% else %}
                         {% if numPass == 1%}
+                            <h3> You have 1 pass left worth extra credit if you don't use. </h3>
                             <form action="{% url 'record' %}" method="post" class="form-container">
                                 {% csrf_token %}
                                 <input hidden name="reason" value="use_restroom">
                                 <input hidden name="student_id" value={{student.student_id}}>
                                 <input class="btn" type="submit" value="Use Restroom">
                             </form>
-                            <h3> You have 1 pass left worth extra credit if you don't use. </h3>
                         {% else %}
                             <h1> You have no passes remaining for this month. </h1>
                         {% endif %}

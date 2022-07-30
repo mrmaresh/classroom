@@ -75,6 +75,10 @@ body {
     padding: 0;
 }
 
+.container h1, .container h3{
+    color: rgb(256,256,200);
+}
+
 .form-container {
     background-color: rgba(0,0,0,0.3);
     border-radius: 5px;
