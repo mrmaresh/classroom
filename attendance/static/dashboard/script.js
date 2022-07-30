@@ -2,6 +2,7 @@ $(document).ready( function () {
     $('#filter-table').DataTable();
 } );
 
+resetButton = document.querySelector('#reset-button');
 timeEl = document.querySelector('#time');
 dateEl = document.querySelector('#date');
 
@@ -24,6 +25,9 @@ function setTime() {
     dateEl.innerHTML = `${days[day]}, ${months[month]} <span class="circle">${date}</span>`;
 }
 
+resetButton.addEventListener('click', () => {
+    console.log('clicked')
+})
 setInterval(setTime, 1000);
 
 
