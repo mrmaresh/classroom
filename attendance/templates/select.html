@@ -61,14 +61,14 @@
 
             <h2> At this time you may use the restroom without needing a pass!!! </h2>
 
-            
+
         </form>
 
 
         <form action="{% url 'waitlist'%}" method="post">
             {% csrf_token %}
 
-            {% if in_use == "True" and returning == False and student.exception != True %}
+            {% if in_use == "True" and returning == False and student.exception != True and () %}
                 <input hidden class="form-control" name="student_id" value={{student.student_id}}>
                 <input class="btn" type="submit" value="Waitlist">
                 <h1> The bathroom is currently in use.  Click here to be added to the waitlist. </h1>
