@@ -40,7 +40,7 @@ labels.forEach(label => {
     }
 
 
-    async function clearWaitlist{
+    async function clearWaitlist(){
         const response = await fetch('resetWaitlist',{
             method: 'POST',
             body: JSON.stringify({
