@@ -22,7 +22,7 @@ labels.forEach(label => {
         const response = await fetch('checkNewPeriod');
         const data = await response.json();
         currentPeriod = data['currentPeriod'];
-        console.log(data);
+        console.log("period = ", period, ", currentPeriod = ", currentPeriod);
         if (period === "start"){
             period = currentPeriod;
             console.log('period:', period)
