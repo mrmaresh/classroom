@@ -82,8 +82,8 @@ body {
     background-color: rgba(210,215,211,.3);
     padding: 20px 50px;
     margin: 0 20%;
+    height: 50vh;
     text-align: left;
-    align: start;
     overflow: auto;
 }
 
