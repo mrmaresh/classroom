@@ -71,6 +71,7 @@
                             <input hidden name="student_id" value={{student.student_id}}>
                             <input class="btn" type="submit" value="Use Restroom">
                         </form>
+                        <h3> At this time you may use the restroom without needing a pass!!! </h3>
                     {% else %}
                         {% if numPass == 1%}
                             <form action="{% url 'record' %}" method="post" class="form-container">
