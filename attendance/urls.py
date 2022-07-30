@@ -18,6 +18,6 @@ path("attendancePage", views.attendancePage, name="attendancePage"),
 
 # API Routes
 path("attendance", views.attendance, name="attendance"),
-path("checkNewPeriod"), views.checkNewPeriod, name="checkNewPeriod"),
+path("checkNewPeriod", views.checkNewPeriod, name="checkNewPeriod"),
 path("unexcused/<int:student_id>", views.unexcused, name="unexcused")
 ]
