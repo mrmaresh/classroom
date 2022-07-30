@@ -18,7 +18,7 @@
                 {% csrf_token %}
                 <input  class="btn option-home" type="submit" value="Return Home">
             </form>
-
+    {% if %}
             <div class="option-form">
                 <form action="{% url 'record' %}" method="post">
                     {% csrf_token %}
