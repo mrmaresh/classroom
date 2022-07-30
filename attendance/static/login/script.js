@@ -17,4 +17,9 @@ labels.forEach(label => {
         setTimeout(displayClock, 1000);
     }
 
-    
+
+    async function unexcusedTardies() {
+        const response = await fetch('unexcused/'.concat(studentID.innerText));
+        const data = await response.json();
+        numTardies = data['numTardies'];
+    }
