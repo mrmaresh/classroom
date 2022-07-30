@@ -32,36 +32,31 @@ body {
 }
 
 .option-container .btn {
-    position: absolute;
-    top: 15px;
-    right: 25px;
+
 }
 
 .option-container .option-button {
-    transition: transform 2s;
+
 }
 
 .option-container .option-home {
-    transform: translateX(200px);
+
 }
 
 .option-container .option-restroom {
-    top: 35px;
-    right: 25px;
+
 }
 
 .option-container .option-button.click {
-    transform: translateY(-100px);
+
 }
 
 .option-container .option-home.click {
-    transform: translateX(0px);
-    transition: transform 2s;
+
 }
 
 .option-container .option-restroom.click {
-    transform: translate(0px, 30px);
-    transition: transform 2s;
+   
 }
 
 
