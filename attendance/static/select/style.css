@@ -66,9 +66,10 @@ body {
 .form-container {
     background-color: rgba(0,0,0,0.3);
     padding: 0.5% ;
-    margin: 3% 20%;
+    
     border-radius: 5px;
     font-size: 10px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
