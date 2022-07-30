@@ -56,12 +56,12 @@
                     {% if moreThanHour == False and numPass < 1 %}
                         <h1> You have no passes remaining for this month. </h1>
                     {% else %}
+                        <h3> The bathroom is currently in use.  Click here to be added to the waitlist. </h3>
                         <form action="{% url 'waitlist'%}" method="post" class="form-container">
                             {% csrf_token %}
                             <input hidden class="form-control" name="student_id" value={{student.student_id}}>
                             <input class="btn" type="submit" value="Waitlist">
                         </form>
-                        <h3> The bathroom is currently in use.  Click here to be added to the waitlist. </h3>
                     {% endif %}
                 {% else %}
                     {% if moreThanHour == True %}
