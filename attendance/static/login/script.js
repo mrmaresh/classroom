@@ -1,4 +1,5 @@
 const labels = document.querySelectorAll('.form-control label');
+const waitlistEl = document.querySelector('.waitlist-container');
 
 labels.forEach(label => {
     label.innerHTML = label.innerText
@@ -35,6 +36,7 @@ labels.forEach(label => {
                 console.log("new period detected");
                 period = currentPeriod;
                 clearWaitlist();
+                waitlistEl.innerHTML = "";
             }
         }
     }
