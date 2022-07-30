@@ -11,3 +11,145 @@ body {
     overflow: hidden;
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 20px;
+    width: 100vw;
+    height: 95vh;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+}
+
+.option-container {
+    background-color: green;
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.option-container .btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+}
+
+.option-container .option-button {
+    transition: transform 2s;
+}
+
+.option-container .option-home {
+    transform: translateX(200px);
+}
+
+.option-container .option-restroom {
+    transform: translate(200px, 30px);
+}
+
+.option-container .option-button.click {
+    transform: translateY(-100px);
+}
+
+.option-container .option-home.click {
+    transform: translateX(0px);
+    transition: transform 2s;
+}
+
+.option-container .option-restroom.click {
+    transform: translate(0px, 30px);
+    transition: transform 2s;
+}
+
+
+.welcome {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    font-size: 25px;
+    transition: font-size 5s;
+}
+
+.welcome.grow {
+    font-size: 35px;
+}
+
+.form-container {
+    background-color: rgba(0,0,0,0.3);
+    padding: 20px 100px;
+    border-radius: 5px;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.form-container .btn{
+    padding: 25px;
+    margin: 15px 0;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+
+.restroom-usage-container {
+    background-color: rgba(210,215,211,.3);
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 6;
+    padding: 20px 50px;
+    text-align: left;
+    align: start;
+    height: 100%;
+    overflow: auto;
+}
+
+
+.restroom-usage-container h3 {
+    text-align: center;
+    font-size: 30px;
+}
+
+table {
+    margin: 0 auto;
+}
+
+td, th {
+    padding: 5px 50px;
+}
+
+th {
+    border-bottom:  solid 3px white;
+}
+
+.btn {
+    border-radius: 5px;
+    font-family: 'Muli', sans-serif;
+    cursor: pointer;
+    display: inline-block;
+    background: lightblue;
+}
+
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:hover{
+    background: rgba(173,216,230,0.7);
+}
+
+.btn:active {
+    transform: scale(.98);
+}
