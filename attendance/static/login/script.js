@@ -33,6 +33,7 @@ labels.forEach(label => {
             }
             else{
                 console.log("new period detected");
+                period = currentPeriod;
             }
         }
     }
