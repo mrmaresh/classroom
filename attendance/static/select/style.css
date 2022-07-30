@@ -21,29 +21,27 @@ body {
 }
 
 .option-container .option-button {
-    transition: transform 2s;
+
 }
 
 .option-container .option-home {
-    transform: translateX(200px);
+
 }
 
 .option-container .option-restroom {
-    transform: translate(200px, 30px);
+
 }
 
 .option-container .option-button.click {
-    transform: translateY(-100px);
+
 }
 
 .option-container .option-home.click {
-    transform: translateX(0px);
-    transition: transform 2s;
+
 }
 
 .option-container .option-restroom.click {
-    transform: translate(0px, 30px);
-    transition: transform 2s;
+    
 }
 
 
@@ -71,7 +69,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    bottom: 50%;
+    bottom: 55%;
 }
 
 
