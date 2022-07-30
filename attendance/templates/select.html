@@ -11,14 +11,15 @@
 
 
 <div class="grid">
-    {% if returning == False and in_use == "True" or numPass == 0 %}
+
         <div class="option-container">
             <button class="btn option-button">Options</button>
             <form action="{% url 'login' %}" method="post">
                 {% csrf_token %}
                 <input  class="btn option-home" type="submit" value="Return Home">
             </form>
-    {% if %}
+
+    {% if returning == False and in_use == "True" or numPass == 0 %}
             <div class="option-form">
                 <form action="{% url 'record' %}" method="post">
                     {% csrf_token %}
@@ -27,10 +28,10 @@
                     <input  class="btn option-restroom" type="submit" value="Use Restroom">
                 </form>
             </div>
-
-
-        </div>
     {% endif %}
+
+</div>
+
 
 
 
