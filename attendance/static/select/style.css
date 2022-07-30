@@ -32,10 +32,12 @@ body {
 }
 
 .option-container .option-home {
+    display: none;
     transform: translateX(200px);
 }
 
 .option-container .option-restroom {
+    display: none;
     transform: translate(200px, 30px);
 }
 

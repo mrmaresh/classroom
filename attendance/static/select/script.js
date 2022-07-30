@@ -8,7 +8,9 @@ if (document.querySelector('.option-button') != null){
     optionButton.addEventListener('click', () => {
         optionButton.classList.add('click');
         restroomButton.classList.add('click');
+        restroomButton.style.display = 'block';
         homeButton.classList.add('click');
+        homeButton.style.display = 'block';
     });
 }
 
