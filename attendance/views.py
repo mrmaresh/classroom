@@ -274,11 +274,11 @@ def dashboard(request):
 
     bathDate = {}
     for record in Bathroom.objects.all():
-        bathDate[record] = record.time_out.strftime("%m-%d-%Y %H:%M:%S")
+        bathDate[record] = record.time_out.strftime("%m-%d-%Y  %H:%M:%S")
 
     tardyDate = {}
     for record in AttendanceRecord.objects.all():
-        tardyDate[record] = record.timestamp.strftime("%m-%d-%Y %H:%M:%S")
+        tardyDate[record] = record.timestamp.strftime("%m-%d-%Y  %H:%M:%S")
 
 
     return render(request, 'dashboard.html',{
