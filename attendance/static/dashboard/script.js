@@ -27,9 +27,18 @@ function setTime() {
 
 resetButton.addEventListener('click', () => {
     console.log('clicked')
+    clearWaitlist();
 })
 setInterval(setTime, 1000);
 
 
 
-
+async function clearWaitlist(){
+    const response = await fetch('resetWaitlist',{
+        method: 'POST',
+        body: JSON.stringify({
+            mes: "delete stuff",
+        })
+    })
+    const data = await response.json();
+}
