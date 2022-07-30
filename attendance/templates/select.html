@@ -11,7 +11,7 @@
 
 
 <div class="grid">
-
+{% if returning == False and in_use == "True" or numPass == 0 %}
         <div class="option-container">
             <button class="btn option-button">Options</button>
             <form action="{% url 'login' %}" method="post">
@@ -24,12 +24,10 @@
                     {% csrf_token %}
                     <input hidden name="reason" value="use_restroom">
                     <input hidden name="student_id" value={{student.student_id}}>
-                    {% if returning == False and in_use == "True" or numPass == 0 %}
                         <input  class="btn option-restroom" type="submit" value="Use Restroom">
-                    {% endif %}
                 </form>
             </div>
-
+{% endif %}
 </div>
 
 
