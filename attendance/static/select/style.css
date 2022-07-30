@@ -97,7 +97,7 @@ body {
     padding: 20px 50px;
     margin: 0 20%;
     text-align: left;
-    height: 50vh;
+    max-height: 45vh;
     bottom: 3vh;
     overflow: auto;
     border-radius: 5px;
