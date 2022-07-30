@@ -9,7 +9,7 @@ if (document.querySelector('.option-button') != null){
         homeButton.classList.add('click');
     });
 }
-
+console.log("HERE I AM");
 
 const welcome = document.querySelector('.welcome');
 document.addEventListener("DOMContentLoaded", function(){
