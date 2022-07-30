@@ -11,25 +11,7 @@ body {
     overflow: hidden;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    gap: 20px;
-    width: 100vw;
-    height: 95vh;
-    align-items: center;
-    justify-items: center;
-    position: relative;
-}
 
-.option-container {
-    background-color: green;
-    grid-column-start: 5;
-    grid-column-end: 6;
-    grid-row-start: 1;
-    grid-row-end: 2;
-}
 
 .option-container .btn {
     position: absolute;
@@ -66,10 +48,6 @@ body {
 
 
 .welcome {
-    grid-column-start: 2;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 2;
     font-size: 25px;
     transition: font-size 5s;
 }
@@ -82,10 +60,6 @@ body {
     background-color: rgba(0,0,0,0.3);
     padding: 20px 100px;
     border-radius: 5px;
-    grid-column-start: 2;
-    grid-column-end: 5;
-    grid-row-start: 2;
-    grid-row-end: 3;
     font-size: 10px;
     display: flex;
     flex-direction: column;
@@ -105,10 +79,6 @@ body {
 
 .restroom-usage-container {
     background-color: rgba(210,215,211,.3);
-    grid-column-start: 2;
-    grid-column-end: 5;
-    grid-row-start: 3;
-    grid-row-end: 6;
     padding: 20px 50px;
     text-align: left;
     align: start;
