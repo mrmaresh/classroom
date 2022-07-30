@@ -34,4 +34,4 @@ labels.forEach(label => {
     }
 
     checkNewPeriod();
-    
+    setInterval(checkNewPeriod, 60000);
