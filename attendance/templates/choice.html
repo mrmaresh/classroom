@@ -31,6 +31,17 @@
                 <button class="btn">Click Here</button>
             </form>
         </div>
+
+        <div class="bottom-center">
+
+            <form action="" method="post">
+                {% csrf_token %}
+
+                <input hidden class="form-control" name="student_id" value={{student_id}}>
+                <button class="btn">Click Here</button>
+            </form>
+        </div>
+
     </div>
 
 <script src="{% static 'choice/script.js' %}"></script>
