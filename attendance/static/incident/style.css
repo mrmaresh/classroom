@@ -14,18 +14,19 @@ body {
 }
 
 .incident-container {
-    display: flex;              
+    display: flex;
     background-color: #DBF1FF;
     border: 4mm ridge #BFD1FD;
     margin: 5% 10%;
     padding: 0px 50px 30px;
 }
 
-input, select {
-    background-color: #BFD1FD;
-    padding: 10px 30px;
-    font-size: 1.5em;
+.select{
+    position: relative;
+    background-color: #EFE2BA;
+    display: flex;
+    margin: 20px;
+    padding: 20px;
     border-radius: 10px;
-    margin: 10px 0;
-    border-color: rgb(151,169,213);
+    height: 50px;
 }
