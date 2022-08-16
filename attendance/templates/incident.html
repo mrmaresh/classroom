@@ -4,31 +4,43 @@
 {% block head %}
     <title>Split Landing Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="" rel="stylesheet">
+    <link href="{% static 'incident/style.css' %}" rel="stylesheet">
 {% endblock %}
 
 
 {% block body %}
+    <h1 class="greeting"> Hello {{student.first}}! </h1>
     <div class="container">
         <div class="incident-container">
             <form action="{% url 'incident'%}" method="post">
                 {% csrf_token %}
                 <input hidden name="student_id" value={{student.student_id}}>
-                <select name="reason">
+                <select class="selectEl" name="reason">
                     <option selected="selected" value = "default" >Select Incident</option>
                     <option value = "Cell Phone Issue">Cell Phone Issue</option>
                 </select>
-                <input class="btn" type="submit" value="Enter">
+                <input class="selectBtn" type="submit" value="Enter">
             </form>
         </div>
 
         <div class="past-incidents-container">
-            {% for record in records %}
-                <p>Reason:{{record.reason}}  {{record.timestamp}}</p>
-            {% endfor %}
+            <table class="top5-table">
+                <thead>
+                    <th> Reason </th>
+                    <th> Timestamp </th>
+                </thead>
+                <tbody>
+                    {% for record in records %}
+                    <tr>
+                        <td>{{record.reason}}</td>
+                        <td>{{record.timestamp}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
 
     </div>
 
-<script src=""></script>
+<script src="{% static 'incident/script.js' %}"></script>
 {% endblock %}
