@@ -23,7 +23,10 @@
             </form>
         </div>
 
+        <div class="message"> </div>
+        {% if recordsLength > 0%}
         <div class="past-incidents-container">
+            <h3> Past Incidents </h3>
             <table class="top5-table">
                 <thead>
                     <th> Reason </th>
@@ -39,6 +42,7 @@
                 </tbody>
             </table>
         </div>
+        {% endif %}
 
     </div>
 

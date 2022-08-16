@@ -15,18 +15,55 @@ body {
 
 .incident-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     background-color: #DBF1FF;
     border: 4mm ridge #BFD1FD;
-    margin: 5% 10%;
-    padding: 0px 50px 30px;
+    margin: 5% 25%;
+    padding: 30px;
 }
 
-.select{
-    position: relative;
-    background-color: #EFE2BA;
-    display: flex;
-    margin: 20px;
-    padding: 20px;
+input, select {
+    background-color: #BFD1FD;
+    padding: 10px 30px;
+    font-size: 1.5em;
     border-radius: 10px;
-    height: 50px;
+    margin: 10px 0;
+    border-color: rgb(151,169,213);
 }
+
+select {
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+input:hover{
+    background-color: rgb(171, 189, 233);
+}
+
+.past-incidents-container {
+
+    justify-content: center;
+    align-items: center;
+    background-color: #DBF1FF;
+    margin: 5% 30%;
+    padding: 30px;
+}
+
+table{
+    border: solid;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table td, table th{
+    border: solid;
+    padding: 10px 20px;
+}
+
+table th{
+    text-align: left;
+}
+
