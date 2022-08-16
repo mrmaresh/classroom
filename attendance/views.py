@@ -312,6 +312,10 @@ def dashboard(request):
     for record in AttendanceRecord.objects.all():
         tardyDate[record] = record.timestamp.strftime("%m-%d-%Y  %H:%M:%S")
 
+    incidentDate = {}
+    for record in Incident.objects.all():
+        incidentDate[record] = record.timestamp.strftime("%m-%d-%Y  %H:%M:%S")
+
 
     return render(request, 'dashboard.html',{
         "tardyRecords": tardyRecords,
@@ -335,7 +339,8 @@ def dashboard(request):
         "using_restroom": students_using_restroom(),
         "options": Schedule.objects.all(),
         "bathDate": bathDate,
-        "tardyDate": tardyDate
+        "tardyDate": tardyDate,
+        "incidentDate": incidentDate
     })
 
 
