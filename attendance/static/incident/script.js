@@ -12,6 +12,8 @@ selectEl.addEventListener('change', () => {
         selectBtn.disabled = false;
     }
 
-    if (selectEl.value === )
+    if (selectEl.value === "Cell Phone Issue"){
+        messageEl.HTML
+    }
 });
 
