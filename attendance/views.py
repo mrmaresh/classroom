@@ -249,6 +249,7 @@ def incidentPage(request):
         student = Student.objects.get(student_id=student_id)
         return render(request, 'incident.html',{
             "student": student,
+            "records": Incident.objects
         })
 
 @login_required

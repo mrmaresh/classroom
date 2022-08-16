@@ -10,8 +10,6 @@
 
 {% block body %}
     <div class="container">
-        <h1> THIS IS THE INCIDENT PAGE </h1>
-
         <div class="schedule-container">
             <form action="{% url 'incident'%}" method="post">
                 {% csrf_token %}
