@@ -12,7 +12,7 @@ from django.db.models import Count
 
 # Create your views here.
 
-from .models import Student, Record, Bathroom, Waitlist, Schedule, AttendanceRecord
+from .models import Student, Record, Bathroom, Waitlist, Schedule, AttendanceRecord, Incident
 
 # ISSUE:  what period is detected during passing period?
 # Create a function that sets the default schedule and have it automatically run every morning prior to school
@@ -240,6 +240,27 @@ def attendancePage(request):
             "numTardies": len(records),
             "records": records
         })
+
+
+@login_required
+def incidentPage(request):
+    if request.method == "POST":
+        student_id = request.POST["student_id"]
+        student = Student.objects.get(student_id=student_id)
+        return render(request, 'incident.html',{
+            "student": student,
+        })
+
+@login_required
+def incident(request):
+    if request.method == "POST":
+        student_id = request.POST["student_id"]
+        reason = request.POST["reason"]
+        student = Student.objects.get(student_id=student_id)
+        record = Incident.objects.create(student=student, reason = reason)
+        record.save()
+
+        return HttpResponseRedirect(reverse('login'))
 
 
 def waitlist(request):

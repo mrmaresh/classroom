@@ -13,6 +13,9 @@ path("restricted", views.restricted, name="restricted"),
 path("choice", views.choice, name="choice"),
 path("select", views.select, name="select"),
 path("attendancePage", views.attendancePage, name="attendancePage"),
+path("incidentPage", views.incidentPage, name="incidentPage"),
+path("incident", views.incident, name="incident"),
+
 
 
 # API Routes

@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block head %}
+    <title>Split Landing Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="" rel="stylesheet">
+{% endblock %}
+
+
+{% block body %}
+    <div class="container">
+        <h1> THIS IS THE INCIDENT PAGE </h1>
+
+        <div class="schedule-container">
+            <form action="{% url 'incident'%}" method="post">
+                {% csrf_token %}
+                <input hidden name="student_id" value={{student.student_id}}>
+                <select name="reason">
+                    <option selected="selected" value = "default" >Select Incident</option>
+                    <option value = "Cell Phone Issue">Cell Phone Issue</option>
+                </select>
+                <input class="btn" type="submit" value="Enter">
+            </form>
+        </div>
+    </div>
+
+<script src=""></script>
+{% endblock %}

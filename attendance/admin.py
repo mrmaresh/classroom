@@ -1,7 +1,7 @@
 from django.contrib import admin
 from import_export.admin import ImportExportMixin
 
-from .models import Student, Record, Bathroom, Waitlist, Schedule, AttendanceRecord
+from .models import Student, Record, Bathroom, Waitlist, Schedule, AttendanceRecord, Incident
 
 class StudentAdmin (ImportExportMixin, admin.ModelAdmin):
     list_display = ("first", "last", "student_id", "period", "exception", "augPass", "sepPass", "octPass", "novPass", "decPass", "janPass", "febPass", "marPass", "aprPass", "mayPass", "junPass", "julPass", "id")
@@ -11,6 +11,9 @@ class RecordAdmin (ImportExportMixin, admin.ModelAdmin):
 
 class AttendanceRecordAdmin (ImportExportMixin, admin.ModelAdmin):
     list_display = ("student_id", "timestamp", "excused", "reason", "id")
+
+class IncidentAdmin (ImportExportMixin, admin.ModelAdmin):
+    list_display = ("student_id", "timestamp", "reason", "id")
 
 class BathroomAdmin (ImportExportMixin, admin.ModelAdmin):
     list_display = ("student_id", "time_out", "time_back", "minutes", "id")
@@ -29,5 +32,6 @@ admin.site.register(AttendanceRecord, AttendanceRecordAdmin)
 admin.site.register(Bathroom, BathroomAdmin)
 admin.site.register(Waitlist, WaitlistAdmin)
 admin.site.register(Schedule, ScheduleAdmin)
+admin.site.register(Incident, IncidentAdmin)
 
 

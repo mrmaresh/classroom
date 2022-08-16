@@ -78,6 +78,25 @@ h1 {
     overflow: hidden;
 }
 
+.bottom-center {
+    position: absolute;
+    left: 50%;
+    bottom: 15%;
+}
+
+.bottom-center .btn {
+    background: rgb(255,255,183);
+    border-radius: 15px;
+    border-color: black;
+    padding: 10px;
+    color: black;
+    font-size: 15px;
+}
+
+.bottom-center .btn:hover{
+    background: rgb(255,255, 53);
+}
+
 .split.left {
     left: 0;
     background: url('https://images.unsplash.com/photo-1550617376-7e405ef1c728?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cmVzdHJvb218ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60');

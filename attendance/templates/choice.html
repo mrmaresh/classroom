@@ -33,12 +33,11 @@
         </div>
 
         <div class="bottom-center">
-
-            <form action="" method="post">
+            <form action="{% url 'incidentPage' %}" method="post">
                 {% csrf_token %}
 
                 <input hidden class="form-control" name="student_id" value={{student_id}}>
-                <button class="btn">Click Here</button>
+                <button class="btn">Incident Report</button>
             </form>
         </div>
 
