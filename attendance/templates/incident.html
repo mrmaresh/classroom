@@ -10,7 +10,7 @@
 
 {% block body %}
     <div class="container">
-        <div class="schedule-container">
+        <div class="incident-container">
             <form action="{% url 'incident'%}" method="post">
                 {% csrf_token %}
                 <input hidden name="student_id" value={{student.student_id}}>
@@ -21,6 +21,13 @@
                 <input class="btn" type="submit" value="Enter">
             </form>
         </div>
+
+        <div class="past-incidents-container">
+            {% for record in records %}
+                <p>record.reason, record.timestamp</p>
+            {% endfor %}
+        </div>
+
     </div>
 
 <script src=""></script>
