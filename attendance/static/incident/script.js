@@ -16,11 +16,11 @@ selectEl.addEventListener('change', () => {
 
     if (selectEl.value === "Cell Phone Issue"){
         console.log("LKJLKJ");
-        messageEl.innerHTML = "Your phone will be sent to the office to be picked up later."
+        messageEl.innerHTML = "If you have had more than one phone incident, then your phone will be sent to the office to be picked up later."
     }
-    if (selectEl.value === "Ear Bud Issue"){
+    if (selectEl.value === "Earbud Issue"){
         console.log("LKJLKJ");
-        messageEl.innerHTML = "Your ear buds will be sent to the office to be picked up later."
+        messageEl.innerHTML = "If you have had more than one earbud incident, then your earbuds will be sent to the office to be picked up later."
     }
 });
 

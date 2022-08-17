@@ -4,7 +4,7 @@
 {% block head %}
     <title>Attendance</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="{% static 'attendance/style.css' %}" rel="stylesheet">
+    <link href="{% static 'attendance2/style.css' %}" rel="stylesheet">
 {% endblock %}
 
 
@@ -26,38 +26,13 @@
     <button class="previous">Previous Page</button>
 </div>
 
-<div class="policy-container">
-    <h1>Tardy Policy</h1>
-    <ul>
-        <li> 1st tardy consequence: <span>Warning</span></li>
-        <li> 2nd tardy consequence: <span>Assigned lunch detention</span></li>
-        <li> 3rd tardy consequence: <span>Assigned after school detention and parent will be notified</span></li>
-        <li> 4th or more tardy consequence: <span>Referral to office</span></li>
-    </ul>
-    <button class="policy-button"> I understand the Tardy Policy </button>
-</div>
-
-<div class="consequence-container">
-    <h1 class="consequence-warning"> This is your first tardy this semester. Consider this your <span>official warning</span>.</h1>
-    <h1 class="consequence-lunch-detention"> This is your second tardy this semester.  Mr. Maresh will be notified and he will assign you <span>lunch detention</span>.  Expect to hear further details from him.</h1>
-    <h1 class="consequence-after-school-detention">This is your third tardy this semester.  Mr. Maresh will be notified and he will assign you <span>after-school detention</span>.  Expect to hear further details from him.</h1>
-    <h1 class="consequence-referral">This is tardy number <span class="consequence-number">4</span> for you this semester.  Mr. Maresh will be notified and he will be sending you to the office with a <span>referral</span> to face further consequences.</h1>
-    {% if numTardies > 0 %}
-        <h3>Past Unexcused Tardies:</h3>
-        {% for record in records %}
-            <div class="record">
-                <p> Date: {{record.timestamp}} <span> Reason: {{record.reason}}</span></p>
-            </div>
-        {% endfor %}
-    {% endif %}
-</div>
-
 <div class="return-container">
-    <h1 class="return-excused-message">Make sure you give Mr. Maresh your tardy pass.  Thank you!!!</h1>
+
     <form action="{% url 'login' %}" method="post">
+        <h1 class="return-excused-message">Thank you!!!</h1>
         {% csrf_token %}
         <input class="return-button" type="submit" value="Return Home">
     </form>
 </div>
-<script src="{% static 'attendance/script.js' %}"></script>
+<script src="{% static 'attendance2/script.js' %}"></script>
 {% endblock %}
