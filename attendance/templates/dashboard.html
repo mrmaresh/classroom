@@ -55,7 +55,7 @@
             </td>
         </tr>
         <tr>
-            <td>Today's Tardies</td>
+        <td>Today's Tardies</td>
             <td>
                 <table>
                     {% for record in tardyRecords %}
@@ -75,6 +75,19 @@
                 </table>
             </td>
         </tr>
+        <td>Today's Incidents</td>
+        <td>
+            <table>
+                {% for record in incidentRecords %}
+                    <tr>
+                        <td><strong>{{record.student.first}}</strong></td>
+                        <td> {{record.timestamp}} </td>
+                        <td>{{record.reason}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </td>
+    </tr>
 
     </table>
 </div>
@@ -170,6 +183,13 @@
                         <p>{{i}}</p>
                     {% endfor %}
                 </td>
+                <td>
+                    {% for i in numBath%}
+                        <p>{{i}}</p>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
                 <td>
                     {% for i in numUnexTardies%}
                         <p>{{i}}</p>
