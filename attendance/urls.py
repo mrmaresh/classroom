@@ -22,5 +22,6 @@ path("incident", views.incident, name="incident"),
 path("attendance", views.attendance, name="attendance"),
 path("checkNewPeriod", views.checkNewPeriod, name="checkNewPeriod"),
 path("unexcused/<int:student_id>", views.unexcused, name="unexcused"),
-path("resetWaitlist", views.resetWaitlist, name="resetWaitlist")
+path("resetWaitlist", views.resetWaitlist, name="resetWaitlist"),
+path("randomStudent", views.randomStudent, name="randomStudent")
 ]
