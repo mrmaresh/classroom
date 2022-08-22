@@ -2,9 +2,13 @@ $(document).ready( function () {
     $('#filter-table').DataTable();
 } );
 
-resetButton = document.querySelector('#reset-button');
-timeEl = document.querySelector('#time');
-dateEl = document.querySelector('#date');
+const resetButton = document.querySelector('#reset-button');
+const pickStudentButton = document.querySelector('#pick-student');
+const okResponseButton = document.querySelector('#ok-response');
+const tryAgainButton = document.querySelector('#try-again');
+const absentButton = document.querySelector('#absent');
+const timeEl = document.querySelector('#time');
+const dateEl = document.querySelector('#date');
 
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];

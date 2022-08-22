@@ -38,10 +38,12 @@ body{
 input, button {
     background-color: #4056A1;
     font-size: 1em;
-    color: black;
+    color: grey;
     padding: 10px 30px;
     border-radius: 15px;
 }
+
+
 
 select{
     padding: 10px;
@@ -53,11 +55,11 @@ select{
 
 
 
-input:hover {
+input:hover, button:hover {
     background-color: rgba(64,86,161,0.9);
 }
 
-input:active {
+input:active, button:active {
     transform: scale(.98);
 }
 

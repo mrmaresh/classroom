@@ -21,7 +21,8 @@ class Student (models.Model):
     mayPass = models.BooleanField(default=True)
     junPass = models.BooleanField(default=True)
     julPass = models.BooleanField(default=True)
-
+    responses = models.IntegerField(default = 0)
+    absent = models.BooleanField(default=False)
 
 
 class Record (models.Model):
