@@ -365,7 +365,7 @@ def dashboard(request):
         "bathDate": bathDate,
         "tardyDate": tardyDate,
         "incidentDate": incidentDate,
-        "checking": Student.objects.filter(peRiod=peRiod).order_by('responses'),
+        "checking": Student.objects.filter(period=peRiod).order_by('responses').first().first,
         "period": peRiod
     })
 
