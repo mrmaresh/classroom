@@ -69,10 +69,13 @@ def randomStudent(request):
         period = getPeriod[0][-1]
 
         person = Student.objects.filter(period=period).order_by('responses').first()
+        first = person.first
+        last = 
         return JsonResponse({
             "currentPeriod": period,
             "answer": "YES",
-            "person": person
+            "first": first,
+            "last": last
         })
 
 
