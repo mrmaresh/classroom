@@ -35,6 +35,12 @@ resetButton.addEventListener('click', () => {
     clearWaitlist();
     location.reload();
 })
+
+pickStudentButton.addEventListener('click', () => {
+    console.log('clicked pickStudentButton');
+    randomStudent();
+})
+
 setInterval(setTime, 1000);
 
 
@@ -47,4 +53,10 @@ async function clearWaitlist(){
         })
     })
     const data = await response.json();
+}
+
+async function randomStudent(){
+    const response = await fetch('randomStudent');
+    const data = await response.json();
+    console.log(data);
 }

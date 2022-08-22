@@ -33,6 +33,10 @@ def attendance(request):
         record.save()
         return JsonResponse({"message": reason, "excused": excused, "student_id": student_id})
 
+
+
+
+
 @csrf_exempt
 @login_required
 def resetWaitlist(request):
@@ -55,6 +59,22 @@ def checkNewPeriod(request):
     if request.method == "GET":
         period = get_current_period()
         return JsonResponse({"currentPeriod": period[0]})
+
+
+@csrf_exempt
+@login_required
+def randomStudent(request):
+    if request.method == "GET":
+        getPeriod = get_current_period()
+        period = getPeriod[0][-1]
+
+        person = Student.objects.filter(period=period).order_by('responses').first()
+        return JsonResponse({
+            "currentPeriod": period,
+            "answer": "YES",
+            "person": person
+        })
+
 
 
 # This function detects what is the current period
@@ -317,6 +337,8 @@ def dashboard(request):
     for record in Incident.objects.all():
         incidentDate[record] = record.timestamp.strftime("%m-%d-%Y  %H:%M:%S")
 
+        getPeriod = get_current_period()
+        peRiod = getPeriod[0][-1]
 
     return render(request, 'dashboard.html',{
         "incidentRecords": incidentRecords,
@@ -342,7 +364,9 @@ def dashboard(request):
         "options": Schedule.objects.all(),
         "bathDate": bathDate,
         "tardyDate": tardyDate,
-        "incidentDate": incidentDate
+        "incidentDate": incidentDate,
+        "checking": Student.objects.filter(peRiod=peRiod).order_by('responses'),
+        "period": peRiod
     })
 
 
