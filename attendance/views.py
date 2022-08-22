@@ -1,5 +1,6 @@
 import json
 import time
+import random
 from datetime import datetime, timedelta, timezone, time, date
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -66,16 +67,19 @@ def checkNewPeriod(request):
 def randomStudent(request):
     if request.method == "GET":
         getPeriod = get_current_period()
-        period = getPeriod[0][-1]
-
-        person = Student.objects.filter(period=period).order_by('responses').first()
-        first = person.first
-        last = 
+        period_num = getPeriod[0][-1]
+        min_person = Student.objects.filter(period=period_num).order_by('responses').first()
+        min_responses = min_person.responses + 1
+        random_people = Student.objects.filter(period=period_num, responses__lte=min_responses)
+        num = len(random_people)
+        random_student = random_people[random.randint(0,num - 1)]
+        first = random_student.first
+        last = random_student.last
         return JsonResponse({
-            "currentPeriod": period,
-            "answer": "YES",
+            "responses": min_responses,
             "first": first,
-            "last": last
+            "last": last,
+            "num": num
         })
 
 
@@ -340,8 +344,6 @@ def dashboard(request):
     for record in Incident.objects.all():
         incidentDate[record] = record.timestamp.strftime("%m-%d-%Y  %H:%M:%S")
 
-        getPeriod = get_current_period()
-        peRiod = getPeriod[0][-1]
 
     return render(request, 'dashboard.html',{
         "incidentRecords": incidentRecords,
@@ -367,9 +369,7 @@ def dashboard(request):
         "options": Schedule.objects.all(),
         "bathDate": bathDate,
         "tardyDate": tardyDate,
-        "incidentDate": incidentDate,
-        "checking": Student.objects.filter(period=peRiod).order_by('responses').first().first,
-        "period": peRiod
+        "incidentDate": incidentDate
     })
 
 
