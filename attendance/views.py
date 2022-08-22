@@ -48,6 +48,27 @@ def resetWaitlist(request):
 
 @csrf_exempt
 @login_required
+def resetAbsences(request):
+    if request.method == "POST":
+        for record in Student.objects.all():
+            record.absent = False
+            record.save()
+        return JsonResponse({"message": "Waitlist has been reset"})
+
+@csrf_exempt
+@login_required
+def recordAbsence(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        student_id = data.get("student_id")
+        student = Student.objects.get(student_id=student_id)
+        student.absent = True
+        student.save()
+        return JsonResponse({"message": "student data has been updated"})
+
+
+@csrf_exempt
+@login_required
 def unexcused(request, student_id):
     if request.method == "GET":
         student = Student.objects.get(student_id=student_id)
@@ -61,25 +82,37 @@ def checkNewPeriod(request):
         period = get_current_period()
         return JsonResponse({"currentPeriod": period[0]})
 
-
+#This function will GET a random student within a period that is not absent or POST that a student has responded.
 @csrf_exempt
 @login_required
 def randomStudent(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        student_id = data.get("student_id")
+        student = Student.objects.get(student_id=student_id)
+        student.responses = student.responses + 1
+        student.save()
+        return JsonResponse({"message": "student data has been updated"})
+
     if request.method == "GET":
         getPeriod = get_current_period()
         period_num = getPeriod[0][-1]
-        min_person = Student.objects.filter(period=period_num).order_by('responses').first()
+        min_person = Student.objects.filter(period=period_num, absent = False).order_by('responses').first()
         min_responses = min_person.responses + 1
-        random_people = Student.objects.filter(period=period_num, responses__lte=min_responses)
+        random_people = Student.objects.filter(period=period_num, responses__lte=min_responses, absent = False)
         num = len(random_people)
         random_student = random_people[random.randint(0,num - 1)]
         first = random_student.first
         last = random_student.last
+        student_id = random_student.student_id
+        name = first + " " + last
         return JsonResponse({
             "responses": min_responses,
             "first": first,
             "last": last,
-            "num": num
+            "name": name,
+            "num": num,
+            "student_id": student_id
         })
 
 
