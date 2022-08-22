@@ -7,6 +7,7 @@ const pickStudentButton = document.querySelector('#pick-student');
 const okResponseButton = document.querySelector('#ok-response');
 const tryAgainButton = document.querySelector('#try-again');
 const absentButton = document.querySelector('#absent');
+const studentNameEl = document.querySelector('.student-name');
 const timeEl = document.querySelector('#time');
 const dateEl = document.querySelector('#date');
 
