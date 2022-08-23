@@ -138,5 +138,6 @@ async function checkNewPeriod() {
     }
 }
 
+randomStudent();
 checkNewPeriod();
 setInterval(checkNewPeriod, 60000);
