@@ -44,6 +44,11 @@ input, button {
 }
 
 
+.reset{
+    color: green;
+    margin-left: 10%
+}
+
 
 select{
     padding: 10px;

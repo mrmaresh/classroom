@@ -52,11 +52,13 @@ okResponseButton.addEventListener('click', () => {
     console.log('clicked okResponseButton');
     console.log(studentIdEl.innerHTML);
     responseCount();
+    randomStudent();
 })
 
 absentButton.addEventListener('click', () => {
     console.log('clicked absentButton');
     recordAbsence();
+    randomStudent();
 })
 
 setInterval(setTime, 1000);
