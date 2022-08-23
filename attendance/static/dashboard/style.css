@@ -43,6 +43,10 @@ input, button {
     border-radius: 15px;
 }
 
+.student-name{
+    color: blue;
+    font-size: 30px;
+}
 
 .reset{
     color: white;
