@@ -45,10 +45,32 @@ input, button {
 
 
 .reset{
-    color: green;
-    margin-left: 10%
+    color: white;
+    margin-left: 100px;
 }
 
+.nice-job{
+    background-color: green;
+    color: white;
+}
+
+.nice-job:hover{
+    background-color: rgb(50,128,50)
+}
+
+.try-again{
+    background-color: red;
+    color: white;
+}
+
+.try-again:hover{
+    background-color: rgb(255,50,50);
+}
+
+
+.waitlist, .schedule, .absent{
+    color: white;
+}
 
 select{
     padding: 10px;

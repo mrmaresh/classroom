@@ -34,13 +34,14 @@
         </tr>
         <tr>
             <td>
-                <button id="pick-student">Pick Student</button>
+                <span class="student-name">Student's Name</span>
+
             </td>
             <td>
-                <span class="student-name">Student's Name</span>
                 <span class="student-id" style='display: none'></span>
-                <button id="ok-response">OK Response</button>
-                <button id="absent">Absent</button>
+                <button class = "nice-job" id="ok-response">Nice Job</button>
+                <button class = "try-again" id="pick-student">Try Again</button>
+                <button class = "absent" id="absent">Absent</button>
                 <button class = "reset" id="reset-absences">Reset Absences</button>
             </td>
         </tr>
@@ -107,7 +108,7 @@
 
 <div class="select">
     <div class="reset-container">
-        <button class="bttn choice" id="reset-button">Reset Waitlist</button>
+        <button class="bttn choice waitlist" id="reset-button">Reset Waitlist</button>
     </div>
 
 
@@ -120,7 +121,7 @@
                     <option value = {{schedule.schedule_name}}>{{schedule.schedule_name}}</option>
                 {% endfor %}
             </select>
-            <input class="bttn choice" type="submit" value="Set Schedule">
+            <input class="bttn choice schedule" type="submit" value="Set Schedule">
         </form>
     </div>
 </div>
