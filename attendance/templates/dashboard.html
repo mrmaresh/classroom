@@ -197,19 +197,40 @@
                     {% endfor %}
                 </td>
                 <td>
-                    {% for i in numBath%}
-                        <p>{{i}}</p>
-                    {% endfor %}
-                </td>
-            </tr>
-            <tr>
-                <td>
                     {% for i in numUnexTardies%}
                         <p>{{i}}</p>
                     {% endfor %}
                 </td>
                 <td>
                     {% for i in numTardies%}
+                        <p>{{i}}</p>
+                    {% endfor %}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="top5-container">
+    <table class="top5-table">
+        <thead>
+            <th> Top 5 Cell Phone Incidents<br><span>(First, Last, Id, #Used)</span></th>
+            <th> Top 5 Earbud Incidents<br><span>(First, Last, Id, #Tardies)</span></th>
+            <th> Top 5 Dress Code Incidents<br><span>(First, Last, Id, #Tardies)</span></th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    {% for i in numPhone%}
+                        <p>{{i}}</p>
+                    {% endfor %}
+                </td>
+                <td>
+                    {% for i in numEarbud%}
+                        <p>{{i}}</p>
+                    {% endfor %}
+                </td>
+                <td>
+                    {% for i in numDressCode%}
                         <p>{{i}}</p>
                     {% endfor %}
                 </td>

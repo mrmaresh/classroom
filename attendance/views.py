@@ -353,13 +353,23 @@ def dashboard(request):
     numUnexTardies = []
     numTardies = []
     numBath = []
+    numPhone = []
+    numEarbud = []
+    numDressCode = []
     for student in Student.objects.all():
         numUnexTardies.append((student.first, student.last, student.student_id, len(AttendanceRecord.objects.filter(student=student, excused=False))))
         numTardies.append((student.first, student.last, student.student_id, len(AttendanceRecord.objects.filter(student=student))))
         numBath.append((student.first, student.last, student.student_id, len(Bathroom.objects.filter(student=student))))
+        numPhone.append((student.first, student.last, student.student_id, len(Incident.objects.filter(student=student, reason = "Cell Phone Issue"))))
+        numEarbud.append((student.first, student.last, student.student_id, len(Incident.objects.filter(student=student, reason = "Earbud Issue"))))
+        numDressCode.append((student.first, student.last, student.student_id, len(Incident.objects.filter(student=student, reason = "Dress Code Violation"))))
+
     numUnexTardies = sorted(numUnexTardies, key=lambda i:i[3], reverse=True)
     numTardies = sorted(numTardies, key=lambda i:i[3], reverse=True)
     numBath = sorted(numBath, key=lambda i:i[3], reverse=True)
+    numPhone = sorted(numPhone, key=lambda i:i[3], reverse=True)
+    numEarbud = sorted(numEarbud, key=lambda i:i[3], reverse=True)
+    numDressCode = sorted(numDressCode, key=lambda i:i[3], reverse=True)
 
     currentWaitlist = []
     for record in Waitlist.objects.all():
@@ -384,6 +394,9 @@ def dashboard(request):
         "numUnexTardies": numUnexTardies[0:5],
         "numTardies": numTardies[0:5],
         "numBath": numBath[0:5],
+        "numPhone": numPhone[0:5],
+        "numEarbud": numEarbud[0:5],
+        "numDressCode": numDressCode[0:5],
         "tardies": AttendanceRecord.objects.all(),
         "bathroom": Bathroom.objects.all(),
         "timeSpent":datetime.now() - start_time > timedelta(minutes = 60),
