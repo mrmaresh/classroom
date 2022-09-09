@@ -36,13 +36,13 @@ class AttendanceRecord (models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name = "studentAttendanceRecord")
     timestamp = models.DateTimeField(auto_now_add=True)
     excused = models.BooleanField()
-    reason = models.CharField(max_length=20)
+    reason = models.CharField(max_length=200)
 
 class Incident (models.Model):
     id = models.AutoField(primary_key=True)
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name = "studentIncident")
     timestamp = models.DateTimeField(auto_now_add=True)
-    reason = models.CharField(max_length=200)
+    reason = models.CharField(max_length=20)
 
 class Bathroom (models.Model):
     id = models.AutoField(primary_key=True)
