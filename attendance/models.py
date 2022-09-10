@@ -43,6 +43,7 @@ class Incident (models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name = "studentIncident")
     timestamp = models.DateTimeField(auto_now_add=True)
     reason = models.CharField(max_length=20)
+    referral_url = models.URLField()
 
 class Bathroom (models.Model):
     id = models.AutoField(primary_key=True)

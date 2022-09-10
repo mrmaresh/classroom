@@ -35,7 +35,7 @@ body{
     height: 50px;
 }
 
-input, button {
+input, button, .referral {
     background-color: #4056A1;
     font-size: 1em;
     color: grey;
@@ -86,11 +86,11 @@ select{
 
 
 
-input:hover, button:hover {
+input:hover, button:hover, referral:hover {
     background-color: rgba(64,86,161,0.9);
 }
 
-input:active, button:active {
+input:active, button:active, referral:active {
     transform: scale(.98);
 }
 

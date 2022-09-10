@@ -13,7 +13,7 @@ class AttendanceRecordAdmin (ImportExportMixin, admin.ModelAdmin):
     list_display = ("student_id", "timestamp", "excused", "reason", "id")
 
 class IncidentAdmin (ImportExportMixin, admin.ModelAdmin):
-    list_display = ("student_id", "timestamp", "reason", "id")
+    list_display = ("student_id", "timestamp", "reason", "referral_url", "id")
 
 class BathroomAdmin (ImportExportMixin, admin.ModelAdmin):
     list_display = ("student_id", "time_out", "time_back", "minutes", "id")
