@@ -8,7 +8,7 @@ class Student (models.Model):
     last = models.CharField(max_length=20)
     student_id = models.CharField(max_length=10)
     period = models.CharField(max_length=1)
-    grade = models.CharField(max_length = 2)
+    grade = models.CharField(max_length = 2, default = '9')
     exception = models.BooleanField()
     augPass = models.BooleanField(default=True)
     sepPass = models.BooleanField(default=True)
