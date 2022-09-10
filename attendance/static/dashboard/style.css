@@ -35,12 +35,23 @@ body{
     height: 50px;
 }
 
-input, button, .referral {
+input, button, .referral{
     background-color: #4056A1;
     font-size: 1em;
     color: grey;
     padding: 10px 30px;
     border-radius: 15px;
+}
+
+.referral{
+    text-decoration: none;
+}
+.referral:hover{
+    background-color: rgba(64,86,161,0.9);;
+}
+
+.referral-cell{
+    border-style : hidden!important;
 }
 
 .student-name{
@@ -72,7 +83,7 @@ input, button, .referral {
 }
 
 
-.waitlist, .schedule, .absent{
+.waitlist, .schedule, .absent, .referral{
     color: white;
 }
 
@@ -86,11 +97,11 @@ select{
 
 
 
-input:hover, button:hover, referral:hover {
+input:hover, button:hover {
     background-color: rgba(64,86,161,0.9);
 }
 
-input:active, button:active, referral:active {
+input:active, button:active {
     transform: scale(.98);
 }
 

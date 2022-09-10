@@ -8,6 +8,7 @@ class Student (models.Model):
     last = models.CharField(max_length=20)
     student_id = models.CharField(max_length=10)
     period = models.CharField(max_length=1)
+    grade = models.CharField(max_length = 2)
     exception = models.BooleanField()
     augPass = models.BooleanField(default=True)
     sepPass = models.BooleanField(default=True)
@@ -43,7 +44,7 @@ class Incident (models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name = "studentIncident")
     timestamp = models.DateTimeField(auto_now_add=True)
     reason = models.CharField(max_length=20)
-    referral_url = models.URLField()
+    referral_url = models.CharField(max_length=200)
 
 class Bathroom (models.Model):
     id = models.AutoField(primary_key=True)

@@ -318,8 +318,38 @@ def incident(request):
     if request.method == "POST":
         student_id = request.POST["student_id"]
         reason = request.POST["reason"]
+        if reason == "Cell Phone Issue":
+            Reason = "Cell+phone+disruption+in+class"
+        elif reason == "Earbud Issue":
+            Reason = "Repeated+or+defiant+earbud/headphone+use"
+        elif reason == "Dress Code Violation":
+            Reason = "Dress+Code"
         student = Student.objects.get(student_id=student_id)
-        record = Incident.objects.create(student=student, reason = reason)
+        referral_name = "entry.1761415926=" + student.last + ",+" + student.first
+        referral_teacher = "&entry.53902594=Maresh/D26"
+        referral_id = "&entry.560109928=" + student_id
+        referral_grade = "&entry.174482171=" + student.grade
+        referral_period = "&entry.751509150=" + student.period
+        referral_reason = "&entry.1334361462=" + Reason
+        referral_intervention = "&entry.1608002152=Warning/Counsel"
+        incidents = Incident.objects.filter(reason=reason, student=student)
+        num = len(incidents)
+        circumstance = "This+issue+has+already+happened+" + str(num)
+        if num == 1:
+            circumstance = circumstance + "time+before+on+the+following+date:+"
+        else:
+            circumstance = circumstance + "+times+before+on+the+following+dates:+"
+        for record in incidents:
+            circumstance = circumstance + record.timestamp.strftime("%m/%d/%Y") + ",+"
+        referral_circumstances = "&entry.656152471=" + circumstance
+        referral_choice = "&entry.674564845=Sending+Student"
+        now = datetime.now()
+        referral_date = "&entry.59733697_year=" + now.strftime("%Y") + "&entry.59733697_month=" + now.strftime("%m") + "&entry.59733697_day=" + now.strftime("%d")
+        referral_time = "&entry.462999847_hour=" + now.strftime("%H") + "&entry.462999847_minute=" + now.strftime("%M")
+        referral_url = "https://docs.google.com/forms/d/e/1FAIpQLSdndO7Z1TXeb0igq3lY7x6mX29Ezek00fBUwk05zNrHeXhqHg/viewform?"
+        referral_url = referral_url + referral_name  + referral_teacher + referral_id + referral_grade + referral_period + referral_reason + referral_intervention + referral_circumstances + referral_choice + referral_date + referral_time
+
+        record = Incident.objects.create(student=student, reason = reason, referral_url=referral_url)
         record.save()
 
         return HttpResponseRedirect(reverse('login'))
